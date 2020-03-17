@@ -17,6 +17,7 @@
         <EntityTypeShape EntityType="FAMSModel.tblNAVTransaction" Width="1.5" PointX="0.75" PointY="8.75" />
         <EntityTypeShape EntityType="FAMSModel.tblTransTransaction" Width="1.5" PointX="2.75" PointY="9.75" />
         <EntityTypeShape EntityType="FAMSModel.tblMstCOA" Width="1.5" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="FAMSModel.tbluserLogin" Width="1.5" PointX="10.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
