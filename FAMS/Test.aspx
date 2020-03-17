@@ -26,7 +26,7 @@ tr:nth-child(even) {
 <body>
     <form id="form1" runat="server" style="border: 1px solid #cdcdcd;padding: 9px;border-radius: 5px;background-color: #f5f5f5;">
         <div>
-            <div style="width:33%;display: inline-block;">
+            <div style="width:33%;display: none;">
             <label for="cars">Account Type:</label>
    <asp:DropDownList ID="ddlaccounttype" runat="server">
        <asp:ListItem Value="0">Select</asp:ListItem>
