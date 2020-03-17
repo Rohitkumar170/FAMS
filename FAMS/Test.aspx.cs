@@ -21,8 +21,6 @@ namespace FAMS
         }
         private void BindAccounts()
         {
-            
-          
             ddlaccounts.DataSource=dbcontext.BINDACCOUNTS("0").ToList();
             ddlaccounts.Enabled = true;
             ddlaccounts.DataTextField = "Accountname"; ddlaccounts.DataValueField = "ACID";
