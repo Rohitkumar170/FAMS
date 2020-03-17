@@ -3,6 +3,7 @@ using FAMS.Entity;
 using FAMS.Models.GETCOA;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -25,10 +26,11 @@ namespace FAMS.WebServices
         {
             try
             {
-                var results =  Common.Getdata(context.MultipleResults("[dbo].[BINDREPORTS]").With<GetReportData>()
-                          .Execute("@fromdate", "@Todate", "@customerid", "@Firstlevel", "@Secondlevel", "@Thirdlevel", "@Firstlevelid", "@Secondlevelid", "@Thirdlevelid", fromdate,Todate,customerid,Firstlevel,Secondlevel,Thirdlevel,Firstlevelid,Secondlevelid,Thirdlevelid));
+                
+                var results = Common.Getdata(context.MultipleResults("[dbo].[BINDREPORTS]").With<GetReportData>()
+                          .Execute("@fromdate", "@Todate", "@customerid", "@Firstlevel", "@Secondlevel", "@Thirdlevel", "@Firstlevelid", "@Secondlevelid", "@Thirdlevelid", fromdate, Todate, customerid, Firstlevel, Secondlevel, Thirdlevel, Firstlevelid, Secondlevelid, Thirdlevelid));
                 return results;
-               
+
             }
             catch (Exception ex)
             {

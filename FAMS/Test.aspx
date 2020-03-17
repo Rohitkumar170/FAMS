@@ -55,29 +55,7 @@ tr:nth-child(even) {
 </head>
 <body>
     <form id="form1" runat="server" style="border: 1px solid #cdcdcd;padding: 9px;border-radius: 5px;background-color: #f5f5f5;">
-        <div>
-            <div style="width:33%;display: none;">
-            <label for="cars">Account Type:</label>
-   <asp:DropDownList ID="ddlaccounttype" runat="server">
-       <asp:ListItem Value="0">Select</asp:ListItem>
-       <asp:ListItem Value="1">Trial Balance</asp:ListItem>
-       <asp:ListItem Value="2">NAV</asp:ListItem>
-       <asp:ListItem Value="3">Holding Report</asp:ListItem>
-       <asp:ListItem Value="4">Transaction Report</asp:ListItem>
-         <asp:ListItem Value="5">Cash Equivalent</asp:ListItem>
-   </asp:DropDownList>
-
-       
-               </div>
-            <div style="width:33%;display: inline-block;">
-     <label for="fname">From Date:</label>
-  <input type="date" id="fromdate" name=""/>
-        </div>
-            <div style="width:33%;display: inline-block;">
-     <label for="fname">To Date:</label>
-  <input type="date" id="todate" name=""/>
-        </div>
-        </div>
+     
 
          <div style="margin-top: 1%;">
             <div style="width:33%;display: inline-block;">
@@ -117,12 +95,35 @@ tr:nth-child(even) {
    </asp:DropDownList>
     
                </div>
+             <div style="width:33%;display: inline-block;">
+     <label for="fname">From Date:</label>
+  <input type="date" id="fromdate" name=""/>
+        </div>
             <div style="width:33%;display: inline-block;">
+     <label for="fname">To Date:</label>
+  <input type="date" id="todate" name=""/>
+        </div>
+        </div>
+            <div>
+            <div style="width:33%;display: none;">
+            <label for="cars">Account Type:</label>
+   <asp:DropDownList ID="ddlaccounttype" runat="server">
+       <asp:ListItem Value="0">Select</asp:ListItem>
+       <asp:ListItem Value="1">Trial Balance</asp:ListItem>
+       <asp:ListItem Value="2">NAV</asp:ListItem>
+       <asp:ListItem Value="3">Holding Report</asp:ListItem>
+       <asp:ListItem Value="4">Transaction Report</asp:ListItem>
+         <asp:ListItem Value="5">Cash Equivalent</asp:ListItem>
+   </asp:DropDownList>
+
+       
+               </div>
+          
+                 <div style="width:33%;display: inline-block;">
                <%-- <asp:Button ID="btnseach" runat="server" OnClick="btnseach_Click" Text="Search" />--%>
      <button type="button" id="btnseach">Search</button>
         </div>
         </div>
-         
 
         
     </form>
