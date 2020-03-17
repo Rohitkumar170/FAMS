@@ -39,6 +39,7 @@ namespace FAMS.Entity
         public virtual DbSet<tblNAVTransaction> tblNAVTransactions { get; set; }
         public virtual DbSet<tblTransTransaction> tblTransTransactions { get; set; }
         public virtual DbSet<tblMstCOA> tblMstCOAs { get; set; }
+        public virtual DbSet<tbluserLogin> tbluserLogins { get; set; }
     
         public virtual int INSERTTRANSHEADER(Nullable<long> bankcustomerid, Nullable<int> transdatatype, string custAccountno)
         {
@@ -314,6 +315,72 @@ namespace FAMS.Entity
                 new ObjectParameter("ParentID", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<BINDACCOUNTS_Result>("BINDACCOUNTS", parentIDParameter);
+        }
+    
+        public virtual ObjectResult<BINDREPORTS_Result> BINDREPORTS(string fromdate, string todate, Nullable<int> customerid, string firstlevel, string secondlevel, string thirdlevel, string firstlevelid, string secondlevelid, string thirdlevelid)
+        {
+            var fromdateParameter = fromdate != null ?
+                new ObjectParameter("fromdate", fromdate) :
+                new ObjectParameter("fromdate", typeof(string));
+    
+            var todateParameter = todate != null ?
+                new ObjectParameter("Todate", todate) :
+                new ObjectParameter("Todate", typeof(string));
+    
+            var customeridParameter = customerid.HasValue ?
+                new ObjectParameter("customerid", customerid) :
+                new ObjectParameter("customerid", typeof(int));
+    
+            var firstlevelParameter = firstlevel != null ?
+                new ObjectParameter("Firstlevel", firstlevel) :
+                new ObjectParameter("Firstlevel", typeof(string));
+    
+            var secondlevelParameter = secondlevel != null ?
+                new ObjectParameter("Secondlevel", secondlevel) :
+                new ObjectParameter("Secondlevel", typeof(string));
+    
+            var thirdlevelParameter = thirdlevel != null ?
+                new ObjectParameter("Thirdlevel", thirdlevel) :
+                new ObjectParameter("Thirdlevel", typeof(string));
+    
+            var firstlevelidParameter = firstlevelid != null ?
+                new ObjectParameter("Firstlevelid", firstlevelid) :
+                new ObjectParameter("Firstlevelid", typeof(string));
+    
+            var secondlevelidParameter = secondlevelid != null ?
+                new ObjectParameter("Secondlevelid", secondlevelid) :
+                new ObjectParameter("Secondlevelid", typeof(string));
+    
+            var thirdlevelidParameter = thirdlevelid != null ?
+                new ObjectParameter("Thirdlevelid", thirdlevelid) :
+                new ObjectParameter("Thirdlevelid", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<BINDREPORTS_Result>("BINDREPORTS", fromdateParameter, todateParameter, customeridParameter, firstlevelParameter, secondlevelParameter, thirdlevelParameter, firstlevelidParameter, secondlevelidParameter, thirdlevelidParameter);
+        }
+    
+        public virtual ObjectResult<string> FAMS_Login(string queryType, string emailid, string password, string passwordKey, Nullable<long> userId)
+        {
+            var queryTypeParameter = queryType != null ?
+                new ObjectParameter("QueryType", queryType) :
+                new ObjectParameter("QueryType", typeof(string));
+    
+            var emailidParameter = emailid != null ?
+                new ObjectParameter("Emailid", emailid) :
+                new ObjectParameter("Emailid", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var passwordKeyParameter = passwordKey != null ?
+                new ObjectParameter("PasswordKey", passwordKey) :
+                new ObjectParameter("PasswordKey", typeof(string));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("FAMS_Login", queryTypeParameter, emailidParameter, passwordParameter, passwordKeyParameter, userIdParameter);
         }
     }
 }

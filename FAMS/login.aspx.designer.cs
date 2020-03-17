@@ -10,7 +10,7 @@
 namespace FAMS {
     
     
-    public partial class Test {
+    public partial class login {
         
         /// <summary>
         /// form1 control.
@@ -22,48 +22,39 @@ namespace FAMS {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ddlaccounttype control.
+        /// txtUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlaccounttype;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtUserName;
         
         /// <summary>
-        /// ddlcustomer control.
+        /// txtpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlcustomer;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtpassword;
         
         /// <summary>
-        /// ddlaccounts control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlaccounts;
+        protected global::System.Web.UI.HtmlControls.HtmlInputSubmit btnSubmit;
         
         /// <summary>
-        /// ddlaccountsublevel control.
+        /// lblDispMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlaccountsublevel;
-        
-        /// <summary>
-        /// ddlsubcate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlsubcate;
+        protected global::System.Web.UI.WebControls.Label lblDispMessage;
     }
 }

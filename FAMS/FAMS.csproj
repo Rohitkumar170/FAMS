@@ -47,6 +47,9 @@
     <Reference Include="BusinessLibrary">
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="Encryption">
+      <HintPath>..\..\..\DLL\Encryption.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -79,6 +82,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\bootstrap-select.min.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\custom.css" />
+    <Content Include="Assets\css\font-awesome.min.css" />
+    <Content Include="Assets\css\jquery-ui.min.css" />
+    <Content Include="Assets\css\material-extended.min.css" />
+    <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\image\bgimage.png" />
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\jquery.min.js" />
     <Content Include="Entity\FAMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FAMS.edmx</DependentUpon>
@@ -89,15 +102,25 @@
       <DependentUpon>FAMS.edmx</DependentUpon>
       <LastGenOutput>FAMS.cs</LastGenOutput>
     </Content>
+    <Content Include="forgetpassword.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="JavaScript\GetReport.js" />
+    <Content Include="login.aspx" />
+    <Content Include="master\Entity.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="UploadCsv.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebServices\GetReport.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\BINDACCOUNTS_Result.cs">
       <DependentUpon>FAMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\BINDREPORTS_Result.cs">
+      <DependentUpon>FAMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Common.cs" />
+    <Compile Include="Entity\DbSecurity.cs" />
     <Compile Include="Entity\FAMS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,6 +136,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FAMS.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Global.cs" />
     <Compile Include="Entity\tblAccountType.cs">
       <DependentUpon>FAMS.tt</DependentUpon>
     </Compile>
@@ -149,11 +173,44 @@
     <Compile Include="Entity\tblTrialbalanceTra.cs">
       <DependentUpon>FAMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\tbluserLogin.cs">
+      <DependentUpon>FAMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="famsmaster.Master.cs">
+      <DependentUpon>famsmaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="famsmaster.Master.designer.cs">
+      <DependentUpon>famsmaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="forgetpassword.aspx.cs">
+      <DependentUpon>forgetpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgetpassword.aspx.designer.cs">
+      <DependentUpon>forgetpassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\Entity.aspx.cs">
+      <DependentUpon>Entity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\Entity.aspx.designer.cs">
+      <DependentUpon>Entity.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\GETCOA\AccountData.cs" />
     <Compile Include="Models\GETCOA\Customer.cs" />
+    <Compile Include="Models\GETCOA\GetReportData.cs" />
+    <Compile Include="Models\LoginClasss\Logindetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
@@ -168,6 +225,10 @@
     </Compile>
     <Compile Include="UploadCsv.aspx.designer.cs">
       <DependentUpon>UploadCsv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\GetReport.asmx.cs">
+      <DependentUpon>GetReport.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +247,7 @@
     <Content Include="FAMSIN\1 TB_Client3.csv" />
     <Content Include="FAMSIN\1 TB_Client4.csv" />
     <Content Include="FAMSIN\1 TB_Client5.csv" />
+    <Content Include="famsmaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
