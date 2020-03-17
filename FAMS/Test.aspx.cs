@@ -33,10 +33,10 @@ namespace FAMS
             ddlaccountsublevel.Items.Insert(0, "Select");
             ddlsubcate.Items.Insert(0, "Select");
         }
-        protected void btnseach_Click(object sender, EventArgs e)
-        {
+        //protected void btnseach_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         protected void ddlaccounts_SelectedIndexChanged(object sender, EventArgs e)
         {

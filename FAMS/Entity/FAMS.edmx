@@ -250,8 +250,53 @@ warning 6002: The table/view 'FAMS.dbo.tblTrialbalanceTras' does not have a prim
           <Property Name="CreatedOn" Type="smalldatetime" />
           <Property Name="UpdatedOn" Type="smalldatetime" />
         </EntityType>
+        <EntityType Name="tbluserLogin">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="AccountNo" Type="nvarchar" MaxLength="150" />
+          <Property Name="UserType" Type="int" />
+          <Property Name="CountryId" Type="bigint" />
+          <Property Name="PartnerId" Type="bigint" />
+          <Property Name="EntityId" Type="bigint" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="100" />
+          <Property Name="MobileNo" Type="bigint" />
+          <Property Name="UserRole" Type="int" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="PasswordKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmpFlag" Type="int" />
+          <Property Name="EmployeeId" Type="bigint" />
+          <Property Name="WareHouseId" Type="bigint" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsLogin" Type="bit" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="UpdatedBy" Type="bigint" />
+          <Property Name="CreatedOn" Type="smalldatetime" />
+          <Property Name="UpdatedOn" Type="smalldatetime" />
+        </EntityType>
         <Function Name="BINDACCOUNTS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ParentID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="BINDREPORTS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fromdate" Type="varchar" Mode="In" />
+          <Parameter Name="Todate" Type="varchar" Mode="In" />
+          <Parameter Name="customerid" Type="int" Mode="In" />
+          <Parameter Name="Firstlevel" Type="varchar" Mode="In" />
+          <Parameter Name="Secondlevel" Type="varchar" Mode="In" />
+          <Parameter Name="Thirdlevel" Type="varchar" Mode="In" />
+          <Parameter Name="Firstlevelid" Type="varchar" Mode="In" />
+          <Parameter Name="Secondlevelid" Type="varchar" Mode="In" />
+          <Parameter Name="Thirdlevelid" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="FAMS_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QueryType" Type="varchar" Mode="In" />
+          <Parameter Name="Emailid" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="PasswordKey" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
         </Function>
         <Function Name="FAMSCashTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="StandardAccount" Type="nvarchar(max)" Mode="In" />
@@ -310,6 +355,7 @@ warning 6002: The table/view 'FAMS.dbo.tblTrialbalanceTras' does not have a prim
           <Parameter Name="ClosingbalCR" Type="nvarchar(max)" Mode="In" />
         </Function>
         <EntityContainer Name="FAMSModelStoreContainer">
+          <EntitySet Name="tbluserLogin" EntityType="Self.tbluserLogin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAccountType" EntityType="Self.tblAccountType" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [tblAccountType].[Accounttyeid] AS [Accounttyeid], 
@@ -707,6 +753,25 @@ warning 6002: The table/view 'FAMS.dbo.tblTrialbalanceTras' does not have a prim
           <FunctionImport Name="BINDACCOUNTS" ReturnType="Collection(FAMSModel.BINDACCOUNTS_Result)">
           <Parameter Name="ParentID" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="tbluserLogins" EntityType="FAMSModel.tbluserLogin" />
+          <FunctionImport Name="BINDREPORTS" ReturnType="Collection(FAMSModel.BINDREPORTS_Result)" >
+            <Parameter Name="fromdate" Mode="In" Type="String" />
+            <Parameter Name="Todate" Mode="In" Type="String" />
+            <Parameter Name="customerid" Mode="In" Type="Int32" />
+            <Parameter Name="Firstlevel" Mode="In" Type="String" />
+            <Parameter Name="Secondlevel" Mode="In" Type="String" />
+            <Parameter Name="Thirdlevel" Mode="In" Type="String" />
+            <Parameter Name="Firstlevelid" Mode="In" Type="String" />
+            <Parameter Name="Secondlevelid" Mode="In" Type="String" />
+            <Parameter Name="Thirdlevelid" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FAMS_Login" ReturnType="Collection(String)">
+            <Parameter Name="QueryType" Mode="In" Type="String" />
+            <Parameter Name="Emailid" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="PasswordKey" Mode="In" Type="String" />
+            <Parameter Name="UserId" Mode="In" Type="Int64" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="tblTBTransaction">
           <Key>
@@ -836,6 +901,45 @@ warning 6002: The table/view 'FAMS.dbo.tblTrialbalanceTras' does not have a prim
         <ComplexType Name="BINDACCOUNTS_Result">
           <Property Type="Int32" Name="ACID" Nullable="false" />
           <Property Type="String" Name="Accountname" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="tbluserLogin">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AccountNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UserType" Type="Int32" />
+          <Property Name="CountryId" Type="Int64" />
+          <Property Name="PartnerId" Type="Int64" />
+          <Property Name="EntityId" Type="Int64" />
+          <Property Name="EmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="Int64" />
+          <Property Name="UserRole" Type="Int32" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EmpFlag" Type="Int32" />
+          <Property Name="EmployeeId" Type="Int64" />
+          <Property Name="WareHouseId" Type="Int64" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsLogin" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="0" />
+        </EntityType>
+        <ComplexType Name="BINDREPORTS_Result">
+          <Property Type="Int32" Name="TBID" Nullable="false" />
+          <Property Type="String" Name="AccontName" Nullable="true" />
+          <Property Type="String" Name="AccontSubName" Nullable="true" />
+          <Property Type="String" Name="AccontSubCat" Nullable="true" />
+          <Property Type="String" Name="OpeningbalDR" Nullable="true" />
+          <Property Type="String" Name="OpeningbalCR" Nullable="true" />
+          <Property Type="String" Name="TransduringDR" Nullable="true" />
+          <Property Type="String" Name="TransduringCR" Nullable="true" />
+          <Property Type="String" Name="ClosingbalDR" Nullable="true" />
+          <Property Type="String" Name="ClosingbalCR" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1088,6 +1192,51 @@ warning 6002: The table/view 'FAMS.dbo.tblTrialbalanceTras' does not have a prim
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="tbluserLogins">
+            <EntityTypeMapping TypeName="FAMSModel.tbluserLogin">
+              <MappingFragment StoreEntitySet="tbluserLogin">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="WareHouseId" ColumnName="WareHouseId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="EmpFlag" ColumnName="EmpFlag" />
+                <ScalarProperty Name="PasswordKey" ColumnName="PasswordKey" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="BINDREPORTS" FunctionName="FAMSModel.Store.BINDREPORTS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FAMSModel.BINDREPORTS_Result">
+                <ScalarProperty Name="TBID" ColumnName="TBID" />
+                <ScalarProperty Name="AccontName" ColumnName="AccontName" />
+                <ScalarProperty Name="AccontSubName" ColumnName="AccontSubName" />
+                <ScalarProperty Name="AccontSubCat" ColumnName="AccontSubCat" />
+                <ScalarProperty Name="OpeningbalDR" ColumnName="OpeningbalDR" />
+                <ScalarProperty Name="OpeningbalCR" ColumnName="OpeningbalCR" />
+                <ScalarProperty Name="TransduringDR" ColumnName="TransduringDR" />
+                <ScalarProperty Name="TransduringCR" ColumnName="TransduringCR" />
+                <ScalarProperty Name="ClosingbalDR" ColumnName="ClosingbalDR" />
+                <ScalarProperty Name="ClosingbalCR" ColumnName="ClosingbalCR" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FAMS_Login" FunctionName="FAMSModel.Store.FAMS_Login" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
