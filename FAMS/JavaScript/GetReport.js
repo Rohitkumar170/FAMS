@@ -5,9 +5,6 @@ $(document).ready(function () {
         GetData();
 });
 });
-
-
-
 function GetData() {
 
     var date = new Date($('#fromdate').val());
@@ -39,10 +36,6 @@ function GetData() {
     else {
         thirdlevel = $("#ddlsubcate option:selected").val();
     }
-
-   
-
-
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
