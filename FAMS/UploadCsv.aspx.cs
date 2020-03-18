@@ -17,11 +17,15 @@ namespace FAMS
         protected void Page_Load(object sender, EventArgs e)
         {
             UploadCSV();
+
         }
         private void UploadCSV()
         {
             try
             {
+                
+
+
                 string SourceDirectorypath = ""; string[] files; string filename = ""; string[] split; int flag = 0; string DestinationDirectorypath = "";
                 SourceDirectorypath = Server.MapPath("//FAMSIN//");
                 DestinationDirectorypath = Server.MapPath("//FAMSOUT//");
