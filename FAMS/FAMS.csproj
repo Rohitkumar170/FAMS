@@ -88,6 +88,7 @@
     <Content Include="Assets\css\material-extended.min.css" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\image\bgimage.png" />
+    <Content Include="Assets\image\preloader.gif" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\date-pickers.min.js" />
     <Content Include="Assets\js\jquery-ui.min.js" />
