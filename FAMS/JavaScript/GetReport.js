@@ -2,7 +2,8 @@
 $(document).ready(function () {
 
     $('#btnseach').click(function () {
-        GetData();
+       
+      GetData();
     });
 
     $('#btnExcel').click(function () {
@@ -15,39 +16,27 @@ $(document).ready(function () {
 });
 
 function GetData() {
-
-    var date = new Date($('#fromdate').val());
-    var day = date.getDate();
-    var month = date.getMonth() + 1;
-    var year = date.getFullYear();
-    var fromdate = month + "/" + day + "/" + year;
-
-    var date1 = new Date($('#todate').val());
-    var day1 = date1.getDate();
-    var month1 = date1.getMonth() + 1;
-    var year1 = date1.getFullYear();
-    var todate = month1 + "/" + day1 + "/" + year1;
-
-    //var todate = "03/15/2020"
+    var fromdate = $("#fromdate").val();
+    var todate = $("#todate").val();
     var secondlevel = 0;  var thirdlevel = 0
-    if ($("#ddlaccountsublevel option:selected").val() == -1) {
+    if ($("#ContentPlaceHolder1_ddlaccountsublevel option:selected").val() == -1) {
        secondlevel = 0;
     }
     else {
-        secondlevel = $("#ddlaccountsublevel option:selected").val();
+        secondlevel = $("#ContentPlaceHolder1_ddlaccountsublevel option:selected").val();
     }
 
-    if ($("#ddlsubcate option:selected").val() == -1) {
+    if ($("#ContentPlaceHolder1_ddlsubcate option:selected").val() == -1) {
         thirdlevel = 0;
     }
     else {
-        thirdlevel = $("#ddlsubcate option:selected").val();
+        thirdlevel = $("#ContentPlaceHolder1_ddlsubcate option:selected").val();
     }
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
         url: "../WebServices/GetReport.asmx/GetData",
-        data: "{'fromdate':'" + fromdate + "','Todate':'" + todate + "','customerid':'" + $("#ddlcustomer option:selected").val() + "','Firstlevel':'" + $("#ddlaccounts option:selected").text() + "','Secondlevel':'" + $("#ddlaccountsublevel option:selected").text() + "','Thirdlevel':'" + $("#ddlsubcate option:selected").text() + "','Firstlevelid':'" + $("#ddlaccounts option:selected").val() + "','Secondlevelid':'" + secondlevel + "','Thirdlevelid':'" + thirdlevel  + "'}",
+        data: "{'fromdate':'" + fromdate + "','Todate':'" + todate + "','customerid':'" + $("#ContentPlaceHolder1_ddlcustomer option:selected").val() + "','Firstlevel':'" + $("#ContentPlaceHolder1_ddlaccounts option:selected").text() + "','Secondlevel':'" + $("#ContentPlaceHolder1_ddlaccountsublevel option:selected").text() + "','Thirdlevel':'" + $("#ContentPlaceHolder1_ddlsubcate option:selected").text() + "','Firstlevelid':'" + $("#ContentPlaceHolder1_ddlaccounts option:selected").val() + "','Secondlevelid':'" + secondlevel + "','Thirdlevelid':'" + thirdlevel  + "'}",
         dataType: "json",
         async: false,
         success: function (result) {

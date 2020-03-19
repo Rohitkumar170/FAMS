@@ -1155,7 +1155,8 @@ span.utiltycheckbox:last-child {
 .bankmasterTable tbody {
     overflow: auto;
     display: block;
-    max-height: 60vh;
+    max-height: 31vh;
+    width: 100%;
 }
 
     .bankmasterTable tbody tr {
