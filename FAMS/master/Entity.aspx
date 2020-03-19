@@ -28,6 +28,17 @@ $(document).ready(function(){
 
 
     <style>
+        .faiconsarch {    position: absolute;
+    top: 4px;
+    right: 6px;
+    font-size: 12px;
+    color: #21343f;
+
+        }
+        .round {border-radius: 10px;
+    padding: 12px;
+    font-size:12px;
+        }
 
         #btnsave{
 
@@ -47,6 +58,15 @@ $(document).ready(function(){
         }
         .insidebox {
      margin-top:26px;}
+        .pdfexport {
+    padding: 5px 0;
+}
+        .pdfbtns {
+        font-size:12px;
+            color: #213642;
+    border: 1px solid #1f323d;
+        }
+   
     </style>
 
 </asp:Content>
@@ -70,7 +90,54 @@ $(document).ready(function(){
                           </div>         
                     </div>
                 </div>
+
+               
                  <div class="cardinside col-md-12 col-sm-12 col-xs-12">
+                      <div class="row ">
+
+    <div class="col-md-8 pull-left">    
+    <div class="pdfexport">
+   <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
+                            <i class="fa fa-file-excel-o"></i> </button>
+                            <button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
+                            <i class="fa fa-file-pdf-o"></i> </button>
+                          
+                          
+    </div>
+    
+    
+    </div>
+    <div class="col-md-2 pull-left mt-2">  
+        <div class="searchDropdown">
+         <div class="row">
+            <label class=" col-md-8 showLebel">  Show Records :</label>
+			<select id="ddlLoadMore" class=" col-md-4  showrecords pull-right">
+												<option>2 </option>
+                                                <option>5 </option>
+                                                <option>50 </option>
+												<option>100 </option>
+												<option>150</option>
+                                                <option>200</option>
+                                                 <option>500</option>
+                                                </select>
+    </div>
+					
+     </div>  </div>
+    <div class="col-md-2 pull-right mt-2 ">
+    
+                           
+    <div class="searchbox col-md-12 col-sm-12 col-xs-12 p-0">
+    
+                                
+                       
+                            <input type="text" class="col-md-12 col-sm-12 col-xs-12 round  " placeholder="Search" autocomplete="off" id="searchText">
+                            <div class="faiconsarch">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            
+                       </div>
+</div>
+</div>
                        <table class="bankmasterTable" id="entitygrid" >
                                 <thead>
                                     <tr>

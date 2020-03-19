@@ -44,7 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Encryption">
+    <Reference Include="BusinessLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Encryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\YOEKI-10\Desktop\dll\Encryption.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -54,7 +59,7 @@
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\DLL\itextsharp.dll</HintPath>
+      <HintPath>C:\Users\YOEKI-10\Downloads\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -114,9 +119,11 @@
     <Content Include="Global.asax" />
     <Content Include="JavaScript\Customer.js" />
     <Content Include="JavaScript\GetReport.js" />
+    <Content Include="master\legalField.aspx" />
     <Content Include="login.aspx" />
     <Content Include="master\customer.aspx" />
     <Content Include="master\Entity.aspx" />
+
     <Content Include="Telerix\content\dataviz\dashboards\area-chart.png" />
     <Content Include="Telerix\content\dataviz\dashboards\car-dashboard.png" />
     <Content Include="Telerix\content\dataviz\dashboards\car.gif" />
@@ -2019,6 +2026,9 @@
     <Content Include="Telerix\Style\Uniform\sprite_kpi.png" />
     <Content Include="Telerix\Style\Uniform\sprite_kpi_2x.png" />
     <Content Include="Test.aspx" />
+
+    <Content Include="master\report.aspx" />
+
     <Content Include="Web.config" />
     <Content Include="WebServices\Customer.asmx" />
     <Content Include="WebServices\GetReport.asmx" />
@@ -2107,6 +2117,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="master\legalField.aspx.cs">
+      <DependentUpon>legalField.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\legalField.aspx.designer.cs">
+      <DependentUpon>legalField.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2128,15 +2145,26 @@
     <Compile Include="master\Entity.aspx.designer.cs">
       <DependentUpon>Entity.aspx</DependentUpon>
     </Compile>
+
     <Compile Include="Models\CustomerClasses\BindCity.cs" />
     <Compile Include="Models\CustomerClasses\BindCustRep.cs" />
     <Compile Include="Models\CustomerClasses\BindCustomerType.cs" />
     <Compile Include="Models\CustomerClasses\BindState.cs" />
+
+    <Compile Include="master\report.aspx.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\report.aspx.designer.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+    </Compile>
+
     <Compile Include="Models\GETCOA\AccountData.cs" />
     <Compile Include="Models\GETCOA\Customer.cs" />
     <Compile Include="Models\GETCOA\GetReportData.cs" />
     <Compile Include="Models\LoginClasss\Logindetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2148,6 +2176,8 @@
       <DependentUpon>Customer.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+
+
     <Compile Include="WebServices\GetReport.asmx.cs">
       <DependentUpon>GetReport.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -2378,12 +2408,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BusinessLibrary\BusinessLibrary.csproj">
-      <Project>{82e12120-2ba7-4313-ab7f-f845f69980bb}</Project>
-      <Name>BusinessLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
