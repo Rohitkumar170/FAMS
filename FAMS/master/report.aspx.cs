@@ -12,21 +12,24 @@ using iTextSharp.text.pdf;
 using System.Data;
 using Newtonsoft.Json;
 
-namespace FAMS
+
+namespace FAMS.master
 {
-    public partial class Test : System.Web.UI.Page
+    public partial class report : System.Web.UI.Page
     {
         FAMSEntities dbcontext = new FAMSEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
                 BindAccounts();
             }
+
         }
         private void BindAccounts()
         {
-            ddlaccounts.DataSource=dbcontext.BINDACCOUNTS("0").ToList();
+            ddlaccounts.DataSource = dbcontext.BINDACCOUNTS("0").ToList();
             ddlaccounts.Enabled = true;
             ddlaccounts.DataTextField = "Accountname"; ddlaccounts.DataValueField = "ACID";
             ddlaccounts.DataBind();
@@ -84,7 +87,7 @@ namespace FAMS
                 //    cellCols.Add(chunkCols);
                 //    pdfTable.AddCell(cellCols);
                 //}
-                
+
 
                 for (int k = 0; k < rows; k++)
                 {
@@ -108,7 +111,7 @@ namespace FAMS
                 pdfDoc.Close();
                 Response.ContentType = "application/octet-stream";
                 Response.AddHeader("Content-Disposition", "attachment; filename=" + Name + "_" + DateTime.Now.ToString() + ".pdf");
-               Response.Clear();
+                Response.Clear();
                 Response.BinaryWrite(mStream.ToArray());
                 Response.End();
 
@@ -139,7 +142,7 @@ namespace FAMS
             ddlsubcate.DataTextField = "Accountname"; ddlsubcate.DataValueField = "ACID";
             ddlsubcate.DataBind();
             ddlsubcate.Items.Insert(0, "Select");
-            
+
         }
     }
 }
