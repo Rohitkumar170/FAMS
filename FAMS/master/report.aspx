@@ -8,7 +8,7 @@
     <link href="../Assets/css/custom.css" rel="stylesheet" />
     <script src="../Assets/js/jquery.min.js"></script>
     <script src="../Assets/js/bootstrap.min.js"></script>
-     <script src="JavaScript/GetReport.js"></script>
+     <script src="../JavaScript/GetReport.js"></script>
        <style>
 
            .tblegridform{overflow: hidden;
