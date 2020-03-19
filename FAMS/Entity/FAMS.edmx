@@ -291,6 +291,11 @@ warning 6002: The table/view 'FAMS.dbo.tblTrialbalanceTras' does not have a prim
           <Parameter Name="Secondlevelid" Type="varchar" Mode="In" />
           <Parameter Name="Thirdlevelid" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="FAMS_Customer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QueryType" Type="varchar" Mode="In" />
+          <Parameter Name="Emailid" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+        </Function>
         <Function Name="FAMS_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="QueryType" Type="varchar" Mode="In" />
           <Parameter Name="Emailid" Type="varchar" Mode="In" />
@@ -772,6 +777,11 @@ warning 6002: The table/view 'FAMS.dbo.tblTrialbalanceTras' does not have a prim
             <Parameter Name="PasswordKey" Mode="In" Type="String" />
             <Parameter Name="UserId" Mode="In" Type="Int64" />
           </FunctionImport>
+          <FunctionImport Name="FAMS_Customer" ReturnType="Collection(FAMSModel.FAMS_Customer_Result)">
+            <Parameter Name="QueryType" Mode="In" Type="String" />
+            <Parameter Name="Emailid" Mode="In" Type="String" />
+            <Parameter Name="UserId" Mode="In" Type="Int64" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="tblTBTransaction">
           <Key>
@@ -940,6 +950,10 @@ warning 6002: The table/view 'FAMS.dbo.tblTrialbalanceTras' does not have a prim
           <Property Type="String" Name="TransduringCR" Nullable="true" />
           <Property Type="String" Name="ClosingbalDR" Nullable="true" />
           <Property Type="String" Name="ClosingbalCR" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="FAMS_Customer_Result">
+          <Property Type="Int32" Name="CustTypeId" Nullable="false" />
+          <Property Type="String" Name="CustType" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1237,6 +1251,14 @@ warning 6002: The table/view 'FAMS.dbo.tblTrialbalanceTras' does not have a prim
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="FAMS_Login" FunctionName="FAMSModel.Store.FAMS_Login" />
+          <FunctionImportMapping FunctionImportName="FAMS_Customer" FunctionName="FAMSModel.Store.FAMS_Customer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FAMSModel.FAMS_Customer_Result">
+                <ScalarProperty Name="CustTypeId" ColumnName="CustTypeId" />
+                <ScalarProperty Name="CustType" ColumnName="CustType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
