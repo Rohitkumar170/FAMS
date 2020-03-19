@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FAMS {
+namespace FAMS.master {
     
     
-    public partial class Test {
+    public partial class report {
         
         /// <summary>
         /// form1 control.
@@ -65,14 +65,5 @@ namespace FAMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlaccounttype;
-        
-        /// <summary>
-        /// btnPdf control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPdf;
     }
 }
