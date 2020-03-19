@@ -44,11 +44,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BusinessLibrary">
-      <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="Encryption">
-      <HintPath>..\..\..\FAMS\FAMS\BusinessLibrary\bin\Debug\Encryption.dll</HintPath>
+      <HintPath>C:\Users\YOEKI-10\Desktop\dll\Encryption.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
@@ -93,11 +90,15 @@
     <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\css\custom.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
+    <Content Include="Assets\css\fontfamily.css" />
     <Content Include="Assets\css\jquery-ui.min.css" />
     <Content Include="Assets\css\material-extended.min.css" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\image\bgimage.png" />
+    <Content Include="Assets\image\preloader.gif" />
     <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\date-pickers.min.js" />
+    <Content Include="Assets\js\jquery-ui.min.js" />
     <Content Include="Assets\js\jquery.min.js" />
     <Content Include="Entity\FAMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -113,9 +114,9 @@
     <Content Include="Global.asax" />
     <Content Include="JavaScript\GetReport.js" />
     <Content Include="login.aspx" />
+    <Content Include="master\customer.aspx" />
     <Content Include="master\Entity.aspx" />
     <Content Include="Test.aspx" />
-    <Content Include="UploadCsv.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebServices\GetReport.asmx" />
   </ItemGroup>
@@ -207,6 +208,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="master\customer.aspx.cs">
+      <DependentUpon>customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\customer.aspx.designer.cs">
+      <DependentUpon>customer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="master\Entity.aspx.cs">
       <DependentUpon>Entity.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,13 +233,6 @@
     </Compile>
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UploadCsv.aspx.cs">
-      <DependentUpon>UploadCsv.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UploadCsv.aspx.designer.cs">
-      <DependentUpon>UploadCsv.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebServices\GetReport.asmx.cs">
       <DependentUpon>GetReport.asmx</DependentUpon>
@@ -269,6 +270,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLibrary\BusinessLibrary.csproj">
+      <Project>{82e12120-2ba7-4313-ab7f-f845f69980bb}</Project>
+      <Name>BusinessLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

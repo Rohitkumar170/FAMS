@@ -14,11 +14,6 @@ $(document).ready(function () {
    
 });
 
-
-
-
-
-
 function GetData() {
 
     var date = new Date($('#fromdate').val());
