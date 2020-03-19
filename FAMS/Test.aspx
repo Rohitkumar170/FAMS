@@ -122,6 +122,10 @@ tr:nth-child(even) {
                  <div style="width:33%;display: inline-block;">
                <%-- <asp:Button ID="btnseach" runat="server" OnClick="btnseach_Click" Text="Search" />--%>
      <button type="button" id="btnseach">Search</button>
+                      <button type="button" id="btnExcel">Excel</button>
+                     <input type="hidden" name="CustomerJSON"/>
+<asp:Button ID = "btnPdf" Text="PDF" runat="server" OnClientClick = "GenratePDF() " OnClick ="btnPdf_Click" />
+                     <%-- <button type="button" id="btnPdf" runat="server"  OnClick="btnPdf_Click">PDF</button>--%>
         </div>
         </div>
 
