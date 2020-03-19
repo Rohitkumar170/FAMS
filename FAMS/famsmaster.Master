@@ -28,10 +28,9 @@
               margin-right: 34px;
           }
           .bankingname {
-                 position: absolute;
-    top: 16px;
-    right: 42%;
-
+              position: absolute;
+              top: 16px;
+              left: 11%;
           }
           .bank-nameInfo {font-size: 15px;
     color: #fff;
@@ -96,8 +95,23 @@
                           </div>
                          
                     </div>
-                  <div class="bankingname">
-                      <span class="bank-nameInfo" id="SpnClientName">FAMS (Fund Accounting Managment System) </span>  
+               <div class="bankingname">
+                        <%--   <span class="bank-nameInfo" id="SpnClientName">FAMS (Fund Accounting Managment System) </span>  --%>
+
+                  <%--  <div class="col-md-12 pull-left  ">
+    
+                           
+    <div class="searchbox col-md-12 col-sm-12 col-xs-12 p-0">
+    
+                                
+                       
+                            <input type="text" class="col-md-12 col-sm-12 col-xs-12 round  " placeholder="Search" autocomplete="off" id="searchText" style="background-color:#fff">
+                            <div class="faiconsarch">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            
+                       </div>
+</div>--%>
                     
                     </div>
                     
@@ -121,6 +135,15 @@
                 <div class="col-md-2 col-sm-2 col-xs-2 p-0 sidenav">
                     <div class="sidenavlist">
                         <ul class="menudropdown">
+                               <li class="reports" id="UserMasterli"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Reports </a>
+ <ul class=" submenudropdownone" style="display:none">
+   
+       <li><a href="  ../master/report.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i>Report</a></li>
+               <li><a href="../master/legalField.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Legal Fields</a></li>
+     </ul>
+
+
+                               </li>
                         <li class="adminastator"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Administrator </a>
                             <ul class=" submenudropdown" style="display:none">
                <li><a href="../master/Entity.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Entity</a></li>
@@ -130,7 +153,7 @@
 
 
                         </li>
-                       <li id="UserMasterli"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Reports </a></li>
+                    
 
                         </ul>
                     </div>
@@ -181,9 +204,13 @@
           });
            $(".adminastator").click(function(){
     $(".submenudropdown").toggle('100');
+          });
+             $(".reports").click(function(){
+    $(".submenudropdownone").toggle('100');
   });
            });
           </script>
+ 
 
 
 

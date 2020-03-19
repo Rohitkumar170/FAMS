@@ -10,6 +10,33 @@
     color: #0a2e40;
 }
 
+
+.faiconsarch {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    font-size: 12px;
+    color: #21343f;
+}
+.pdfexport {
+    padding: 5px 0;
+}
+ 
+.round {
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 12px;
+}
+.pdfbtns {
+    font-size: 12px;
+    color: #213642;
+    border: 1px solid #1f323d;
+}
+   
+
+
+
+
 select {
     font-size: 12px;
 }
