@@ -54,7 +54,7 @@
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\DLL\itextsharp.dll</HintPath>
+      <HintPath>C:\Users\YoekiSoft\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\All\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -117,6 +117,7 @@
     <Content Include="master\customer.aspx" />
     <Content Include="master\Entity.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="UploadCsv.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebServices\GetReport.asmx" />
   </ItemGroup>
@@ -233,6 +234,13 @@
     </Compile>
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadCsv.aspx.cs">
+      <DependentUpon>UploadCsv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadCsv.aspx.designer.cs">
+      <DependentUpon>UploadCsv.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebServices\GetReport.asmx.cs">
       <DependentUpon>GetReport.asmx</DependentUpon>
