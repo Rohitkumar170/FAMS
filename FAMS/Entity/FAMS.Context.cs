@@ -382,5 +382,22 @@ namespace FAMS.Entity
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("FAMS_Login", queryTypeParameter, emailidParameter, passwordParameter, passwordKeyParameter, userIdParameter);
         }
+    
+        public virtual ObjectResult<FAMS_Customer_Result> FAMS_Customer(string queryType, string emailid, Nullable<long> userId)
+        {
+            var queryTypeParameter = queryType != null ?
+                new ObjectParameter("QueryType", queryType) :
+                new ObjectParameter("QueryType", typeof(string));
+    
+            var emailidParameter = emailid != null ?
+                new ObjectParameter("Emailid", emailid) :
+                new ObjectParameter("Emailid", typeof(string));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<FAMS_Customer_Result>("FAMS_Customer", queryTypeParameter, emailidParameter, userIdParameter);
+        }
     }
 }
