@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
            <link href="../Assets/css/bootstrap.min.css" rel="stylesheet" />
-    
     <link href="../Assets/css/font-awesome.min.css" rel="stylesheet" />
     <link href="../Assets/css/jquery-ui.min.css" rel="stylesheet" />
     <link href="../Assets/css/custom.css" rel="stylesheet" />
@@ -10,6 +9,8 @@
     <script src="../Assets/js/bootstrap.min.js"></script>
      <script src="../JavaScript/GetReport.js"></script>
        <style>
+           .pdfbtns {
+           border:1px solid #223641;!important}
 
            .tblegridform{overflow: hidden;
  
@@ -21,13 +22,57 @@
     padding: 10px 3px 10px 5px;
     border-radius: 4px;
 }
-           #btnseach{
-                   position: absolute;
-    right: 30px;
-    background-color: #1e2f3a;
-    color: #fff;
-    font-size: 12px;
+           #btnseach {
+               position: absolute;
+               right: 30px;
+               background-color: #1e2f3a;
+               color: #fff;
+               font-size: 12px;
            }
+
+
+
+       
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#entitygrid {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#entitygrid td, #entitygrid th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size:12px;
+}
+
+#entitygrid tr:nth-child(even){background-color: #f2f2f2;}
+
+#entitygrid tr:hover {background-color: #ddd;}
+
+#entitygrid th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #6d6d6d;
+  color: white;
+}
 </style>
      <link href="../Assets/css/bootstrap.min.css" rel="stylesheet"   type="text/css" />
     <script src="Assets/js/jquery.min.js"></script>
@@ -257,9 +302,9 @@
                 <%-- <div style="width:33%;display: inline-block;">--%>
                <%-- <asp:Button ID="btnseach" runat="server" OnClick="btnseach_Click" Text="Search" />--%>
    
-                 <%--     <button type="button" id="btnExcel">Excel</button>
+                    <button type="button" id="btnExcel">Excel</button>
                      <input type="hidden" name="CustomerJSON"/>
-<asp:Button ID = "btnPdf" Text="PDF" runat="server" OnClientClick = "GenratePDF() " OnClick ="btnPdf_Click" />commentby tarun--%>
+ <asp:Button ID = "btnPdf" Text="PDF" runat="server" OnClientClick = "GenratePDF() " OnClick ="btnPdf_Click" />
                      <%-- <button type="button" id="btnPdf" runat="server"  OnClick="btnPdf_Click">PDF</button>--%>
         
             </form>
@@ -267,9 +312,25 @@
 
         
 <div class="col-md-12 col-sm-12 col-xs-12 tblegridform scrollbar p-0">
+       <div class="row ">
+
+    <div class="col-md-8 pull-left">    
+    <div class="pdfexport">
+   <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
+                            <i class="fa fa-file-excel-o"></i> </button>
+                            <button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
+                            <i class="fa fa-file-pdf-o"></i> </button>
+                          
+                          
+    </div>
+    
+    
+    </div>
+ 
+</div>
                            
-     <table class="bankmasterTable" id="entitygrid"  style="margin-top:10px;">
-                               <thead>
+     <table class="bankmasterTable" id="entitygrid"  style="margin-top:10px;overflow:scroll;">
+                          <%--     <thead>
                                    <tr>
                                        <th style="width:150px ;display:none;"></th>
                                        <th style="width:1000px"></th>
@@ -285,7 +346,7 @@
 
                                    </tr>
 
-                               </thead>
+                               </thead>--%>
                                     <tbody class="scrollbar" >
                                     
                                   </tbody>

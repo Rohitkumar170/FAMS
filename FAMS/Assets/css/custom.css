@@ -40,6 +40,22 @@
 select {
     font-size: 12px;
 }
+.k-dropdown-wrap {
+    height:22px;
+}
+.k-state-default {
+    height:22px;
+
+}
+.k-widget {
+    width:100%!important;
+}
+.k-dropdown {
+    width: 100% ! important;
+}
+.k-header {
+    width: 100% !important;
+}
 
 .formlogin .fa-key {
     position: absolute;
@@ -1139,7 +1155,8 @@ span.utiltycheckbox:last-child {
 .bankmasterTable tbody {
     overflow: auto;
     display: block;
-    max-height: 60vh;
+    max-height: 31vh;
+    width: 100%;
 }
 
     .bankmasterTable tbody tr {
