@@ -118,7 +118,9 @@
     <Content Include="forgetpassword.aspx" />
     <Content Include="Global.asax" />
     <Content Include="JavaScript\Customer.js" />
+    <Content Include="JavaScript\Entity.js" />
     <Content Include="JavaScript\GetReport.js" />
+    <Content Include="master\Dashboard.aspx" />
     <Content Include="master\legalField.aspx" />
     <Content Include="login.aspx" />
     <Content Include="master\customer.aspx" />
@@ -2113,6 +2115,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="master\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="master\legalField.aspx.cs">
       <DependentUpon>legalField.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2141,6 +2150,8 @@
     <Compile Include="master\Entity.aspx.designer.cs">
       <DependentUpon>Entity.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CommonFlag.cs" />
+    <Compile Include="Models\CustomerClasses\Bindbankcust.cs" />
     <Compile Include="Models\CustomerClasses\BindCity.cs" />
     <Compile Include="Models\CustomerClasses\BindCustRep.cs" />
     <Compile Include="Models\CustomerClasses\BindCustomerType.cs" />
@@ -2174,14 +2185,6 @@
     <Content Include="Entity\FAMS.edmx.diagram">
       <DependentUpon>FAMS.edmx</DependentUpon>
     </Content>
-    <Content Include="FAMSIN\2 NAV_Summary_Report.csv" />
-    <Content Include="FAMSIN\3 Holding Report.csv" />
-    <Content Include="FAMSIN\4 Transaction_Statement.csv" />
-    <Content Include="FAMSIN\5 Cash_Equivalent.csv" />
-    <Content Include="FAMSIN\1 TB_Client %282%29.csv" />
-    <Content Include="FAMSIN\1 TB_Client3.csv" />
-    <Content Include="FAMSIN\1 TB_Client4.csv" />
-    <Content Include="FAMSIN\1 TB_Client5.csv" />
     <Content Include="famsmaster.Master" />
     <None Include="packages.config" />
     <Content Include="Telerix\content\dataviz\dashboards\stock-data-2007.json" />
@@ -2378,6 +2381,7 @@
     <Content Include="Telerix\Style\fonts\DejaVu\LICENSE" />
     <Content Include="Telerix\Style\images\kendoui.ttf" />
     <Content Include="Telerix\Style\images\kendoui.woff" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2387,7 +2391,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="FAMSOUT\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

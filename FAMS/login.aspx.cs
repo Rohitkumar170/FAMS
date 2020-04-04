@@ -146,7 +146,7 @@ namespace FAMS
                                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Only alert Message');", true);
                                         txtpassword.Value = "";
                                         txtUserName.Value = "";
-                                        Response.Redirect("\\master\\Entity.aspx");
+                                        Response.Redirect("\\master\\Dashboard.aspx");
                                     }
                                     else
                                     {

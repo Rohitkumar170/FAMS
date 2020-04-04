@@ -19,6 +19,20 @@
     <script src="../Telerix/js/jszip.min.js" type="text/javascript"></script>
     <script src="../JavaScript/Customer.js"></script>
   
+       <script>
+$(document).ready(function(){
+  $("#btnNew").click(function(){
+      $(".boxrow").hide();
+      $("#gridtable").hide();
+        $(".formclientmaster").show();
+  });
+  $("#Btnback").click(function(){
+      $(".boxrow").show();
+        $("#gridtable").show();
+       $(".formclientmaster").hide();
+  });
+});
+</script>
 
     <script>
         $(document).ready(function () {
@@ -60,7 +74,11 @@
     <style>
         #firstone {
         height:151px;}
-
+        #btnproceed {
+            position: absolute;
+    top: 100px;
+    right:13px;
+        }
 
         .btnprocced {
             position: absolute;
@@ -117,7 +135,90 @@
 
 
                 <div class="cardinside col-md-12 col-sm-12 col-xs-12">
-                        <div class="formclientmaster scrollbar" style="display:block;">
+
+                      <div class="row boxrow">
+
+    <div class="col-md-8 pull-left">    
+    <div class="pdfexport">
+   <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
+                            <i class="fa fa-file-excel-o"></i> </button>
+                            <button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
+                            <i class="fa fa-file-pdf-o"></i> </button>
+                          
+                          
+    </div>
+    
+    
+    </div>
+    <div class="col-md-2 pull-left mt-2">  
+        <div class="searchDropdown">
+         <div class="row">
+            <label class=" col-md-8 showLebel">  Show Records :</label>
+			<select id="ddlLoadMore" class=" col-md-4  showrecords pull-right">
+												<option>2 </option>
+                                                <option>5 </option>
+                                                <option>50 </option>
+												<option>100 </option>
+												<option>150</option>
+                                                <option>200</option>
+                                                 <option>500</option>
+                                                </select>
+    </div>
+					
+     </div>  </div>
+    <div class="col-md-2 pull-right mt-2 ">
+    
+                           
+    <div class="searchbox col-md-12 col-sm-12 col-xs-12 p-0">
+    
+                                
+                       
+                            <input type="text" class="col-md-12 col-sm-12 col-xs-12 round  " placeholder="Search" autocomplete="off" id="searchText">
+                            <div class="faiconsarch">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            
+                       </div>
+</div>
+</div>
+                       <table class="bankmasterTable" id="gridtable" >
+                                <thead>
+                                    <tr>
+                                         <th style="display:none"></th>
+                                     <th style="width:60px">
+                                         <input type="checkbox" id="chkAll"> All
+                                        </th>
+                                        <th style="width:60px">
+                                             Name
+                                        </th>
+                                        <th style="width:60px">
+                                            Account Number
+                                        </th>
+                                      <%--  <th style="width:160px">
+                                            Customer Account number
+                                        </th>--%>
+                                     
+                                    </tr>
+                                    </thead>
+                                    <tbody class="scrollbar" >
+                                    </tbody>
+                                   <tr>
+                                        <td style="width:60px">
+                                          <input type="checkbox" id="">
+                                        </td>
+                                        <td style="width:60px">
+                                           Yoeki Softech Pvt.ltd
+                                        </td>
+                                        <td style="width:60px">
+                                            Under Progress
+                                        </td>
+                                        
+                                    </tr>
+                                   
+                                </table>
+                   
+
+                        <div class="formclientmaster scrollbar" style="display:none;">
                            
                     <div class="set">
                         <a href="#">Customer Details <i class="fa fa-plus"></i></a>
@@ -127,32 +228,29 @@
                                 <div class="row">
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                         <div class="form-group">
-                                            <div class="row">
-<label class="col-md-4 col-sm-4 col-xs-4">Customer Code:</label>
-                                                <input type="text" class="col-md-7 col-xs-7 col-sm-7" />
+                                            
+<label class="col-md-12 col-sm-4 col-xs-4 p-0">Customer Code:</label> 
+                                                <input type="text" class="col-md-12 col-xs-7 col-sm-7" id="txtcustcode" onkeypress="RemoveValidation()" />
 
-                                            </div>
+                                        
 
                                         </div>
                                     </div>
                                        <div class="col-md-4 col-sm-4 col-xs-4">
                                         <div class="form-group">
-                                            <div class="row">
-<label class="col-md-4 col-sm-4 col-xs-4">Customer Name:</label>
-                                                <input type="text" class="col-md-7 col-xs-7 col-sm-7" />
+                                          
+<label class="col-md-12 col-sm-4 col-xs-4 p-0">Customer Name:</label>
+                                                <input type="text" id="txtcustname" onkeypress="RemoveValidation()" class="col-md-12 col-xs-7 col-sm-7" />
 
-                                            </div>
+                                          
 
                                         </div>
                                     </div>
-                                       <div class="col-md-4 col-sm-4 col-xs-4">
+                                       <%--<div class="col-md-4 col-sm-4 col-xs-4">
                                         <div class="form-group">
                                             <div class="row">
 <label class="col-md-4 col-sm-4 col-xs-4">Customer Type:</label>
-                                                <%--<select class="col-md-7 col-xs-7 col-sm-7 dropdown">
-                                                    <option>Customer </option>
-
-                                                </select>--%>
+                                               
                                                 <div class="col-md-7 col-xs-7 col-sm-7 p-0">
                                                 <input type="text"  id ="ddlcusttype" class=" col-md-12 col-sm-12 col-xs-12 p-0"/>
                                                     </div>
@@ -160,34 +258,34 @@
                                             </div>
 
                                         </div>
-                                    </div>
+                                    </div>--%>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <div class="form-group">
+                                          
+<label class="col-md-12 col-sm-4 col-xs-4 p-0">Description:</label>
+                                               
+                                                <input type="text" id="txtdesc"  onkeypress="RemoveValidation()" class="col-md-12 col-xs-7 col-sm-7"/>
+                                           
 
+                                        </div>
+                                    </div>
 
                                 </div>
 
                                          <div class="row">
-                                    <div class="col-md-4 col-sm-4 col-xs-4">
-                                        <div class="form-group">
-                                            <div class="row">
-<label class="col-md-4 col-sm-4 col-xs-4">Description:</label>
-                                               
-                                                <textarea id="" rows="4" cols="50" class="col-md-7 col-xs-7 col-sm-7"></textarea>
-                                            </div>
-
-                                        </div>
-                                    </div>
+                                    
                                       
                                        <div class="col-md-4 col-sm-4 col-xs-4">
                                         <div class="form-group">
-                                            <div class="row">
-<label class="col-md-4 col-sm-4 col-xs-4">Customer Representative:</label>
+                                          
+<label class="col-md-12 col-sm-4 col-xs-4 p-0">Customer Representative:</label>
                                                <%-- <select class="col-md-7 col-xs-7 col-sm-7 dropdown">
                                                     <option>1 </option>
 
                                                 </select>--%>
-                                                  <div class="col-md-7 col-xs-7 col-sm-7 p-0">
-                                                <input type="text" id="ddlcustRep" class=" col-md-12 col-sm-12 col-xs-12 p-0"/>
-                                                      </div>
+                                                  <div class="col-md-12 col-xs-7 col-sm-7 p-0 kendobox">
+                                                <input type="text" id="ddlcustRep" class=" col-md-12 col-sm-12 col-xs-12 p-0 kendobox"/>
+                                                     
                                             </div>
 
                                         </div>
@@ -198,7 +296,7 @@
 
 
                                     
-                                        <button type="button" class="btn btn-sm btnconinsideBtn  pull-right btnprocced" id=""> Proceed</button>
+                                        <button type="button" id="btnproceed" class="btn btn-sm btnconinsideBtn  pull-right btnprocced" id=""> Proceed</button>
                                         
                                      </div>
 
@@ -472,7 +570,7 @@
                           
 </div>
 
-
+<label id="lblUserId" runat="server" style="display: none"> </label>
 
                 </div>
             </div>
