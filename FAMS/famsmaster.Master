@@ -120,7 +120,7 @@
                   <div class="loginavtar">
                     <div class="userwelcominfo">
                 <span class="user-info">Welcome</span>
-                <span class="user-name" id="SPUserName">Tarun Sharma</span>
+                <span class="user-name" id="SPUserName">Lighthouse Financials</span>
                 </div>
                         <i class="fa fa-user-circle-o usericon" aria-hidden="true"></i>
                         <ul class="changePannel" style="display: none;">
@@ -135,11 +135,16 @@
                 <div class="col-md-2 col-sm-2 col-xs-2 p-0 sidenav">
                     <div class="sidenavlist">
                         <ul class="menudropdown">
+                            <li>
+                            <a href="../master/Dashboard.aspx"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Dashboard</a>
+
+                            </li>
+
                                <li class="reports" id="UserMasterli"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Reports </a>
  <ul class=" submenudropdownone" style="display:none">
    
        <li><a href="  ../master/report.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i>Report</a></li>
-               <li><a href="../master/legalField.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Legal Fields</a></li>
+               <%--<li><a href="../master/legalField.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Legal Fields</a></li>--%>
      </ul>
 
 

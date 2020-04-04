@@ -1,6 +1,7 @@
 ﻿using BusinessLibrary;
 using FAMS.Entity;
 using FAMS.Models.CustomerClasses;
+using FAMS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,6 +63,57 @@ namespace FAMS.WebServices
 
                 var results = Common.Getdata(context.MultipleResults("[dbo].[FAMS_Customer]").With<BindCity>()
                           .Execute("@QueryType", "@StateId" , "BindCity", StateId));
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        [WebMethod]
+        public Dictionary<string, object> SaveEntity(string json)
+        {
+            try
+            {
+
+                var results = Common.Getdata(context.MultipleResults("[dbo].[FAMS_Customer]").With<CommonFlag>()
+                          .Execute("@QueryType", "@Jsondata", "InsertBankCust", json));
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        [WebMethod]
+        public Dictionary<string, object> BindBankCust()
+        {
+            try
+            {
+
+                var results = Common.Getdata(context.MultipleResults("[dbo].[FAMS_Customer]").With<Bindbankcust>()
+                          .Execute("@QueryType", "BindBankcust"));
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        [WebMethod]
+        public Dictionary<string, object> UpdateEntity(string json)
+        {
+            try
+            {
+
+                var results = Common.Getdata(context.MultipleResults("[dbo].[FAMS_Customer]").With<CommonFlag>()
+                          .Execute("@QueryType", "@Jsondata", "UpdateBankCust", json));
                 return results;
 
             }

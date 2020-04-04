@@ -1,33 +1,35 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="Entity.aspx.cs" Inherits="FAMS.master.Adminstator" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../Assets/css/bootstrap.min.css" rel="stylesheet" />
-<link href="/Assets/css/custom.css" rel="stylesheet" />
-
-    <link href="../Assets/css/font-awesome.min.css" rel="stylesheet" />
-    <script src="../Assets/js/bootstrap.min.js"></script>
-    <script src="../Assets/js/jquery.min.js"></script>
-
-<script>
+     <script>     var jquery_1_11_3_min_p = jQuery.noConflict();</script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script>        var bootstrap_min_js = jQuery.noConflict();</script>
+      <link href="../Telerix/Style/kendo.default.mobile.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Telerix/Style/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Telerix/Style/kendo.rtl.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Telerix/Style/kendo.default.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Telerix/Style/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Telerix/Style/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css" />
+      <script src="../Telerix/js/jquery.min.js"></script>
+    <script src="../Telerix/js/kendo.all.min.js"></script>
+    <script src="../Telerix/js/angular.min.js"></script>
+    <script src="../Telerix/js/kendo.all.min.js"></script>
+    <script>        var kendo_all_min_js = jQuery.noConflict();</script>
+    <script src="../Telerix/js/jquery.min.js"></script>
+    <script src="../Telerix/js/jszip.min.js" type="text/javascript"></script>
+    <script src="../JavaScript/Entity.js"></script>
+    <script>
 $(document).ready(function(){
   $("#btnNew").click(function(){
-    $("#entitygrid").hide();
+    $(".boxrow").hide();
   });
-  $("#btnNew").click(function(){
-    $("#boxgrid").show();
-    });
-     $("#Btnback").click(function(){
-    $("#entitygrid").show();
-    });
-     $("#Btnback").click(function(){
-    $("#boxgrid").hide();
-    });
-
-
+  $("#Btnback").click(function(){
+    $(".boxrow").show();
+  });
 });
 </script>
 
-
     <style>
+       
         .faiconsarch {    position: absolute;
     top: 4px;
     right: 6px;
@@ -42,17 +44,18 @@ $(document).ready(function(){
 
         #btnsave{
 
-                background-color: #0a2e40;
+                   background-color: #0a2e40;
     color: #fff;
     padding: 1px 12px 1px 12px;
     position: absolute;
     right: 0px;
+    top: 77px;
         }
 
 
        .gridbox {
-            background-color: #143c651a;
-            height: 100px;
+          
+            height: 150px;
             border-radius: 3px;
             border: 1px solid #dddddd;
         }
@@ -83,7 +86,7 @@ $(document).ready(function(){
                     <div class="btnpannel">
                        <button type="button" class="btn btn-sm btnconinsideBtn" id="btnNew" data-toggle="modal" data-target=""><i class="fa fa-plus-square aria-hidden="true"></i> New</button> 
 
-                       <button type="button" class="btn btn-sm btnconinsideBtn" id="Btnback" style='display:inline-block' data-toggle="modal" data-target=""><i class="fa fa-undo" aria-hidden="true"></i> Back</button> 
+                       <button type="button" class="btn btn-sm btnconinsideBtn" id="Btnback" style='display:none' data-toggle="modal" data-target=""><i class="fa fa-undo" aria-hidden="true"></i> Back</button> 
                          <%-- <button type="button" class="btn btn-sm btnconinsideBtn" id="Button1" data-toggle="modal" data-target="#successpop"><i class="fa fa-plus-square" aria-hidden="true"></i> savesucessfully</button> 
                            <button type="button" class="btn btn-sm btnconinsideBtn" id="Button2" data-toggle="modal" data-target="#alertpop"><i class="fa fa-plus-square" aria-hidden="true"></i> Alert </button> --%>
                        
@@ -93,7 +96,7 @@ $(document).ready(function(){
 
                
                  <div class="cardinside col-md-12 col-sm-12 col-xs-12">
-                      <div class="row ">
+                      <div class="row boxrow">
 
     <div class="col-md-8 pull-left">    
     <div class="pdfexport">
@@ -141,24 +144,25 @@ $(document).ready(function(){
                        <table class="bankmasterTable" id="entitygrid" >
                                 <thead>
                                     <tr>
+                                         <th style="display:none"></th>
                                      <th style="width:60px">
-                                            Sr No.
+                                         <input type="checkbox" id="chkAll"> All
                                         </th>
-                                        <th style="width:160px">
-                                            Company Name
+                                        <th style="width:60px">
+                                             Name
                                         </th>
-                                        <th style="width:160px">
-                                            Through
+                                        <th style="width:60px">
+                                            Account Number
                                         </th>
-                                        <th style="width:160px">
-                                            Status
-                                        </th>
+                                      <%--  <th style="width:160px">
+                                            Customer Account number
+                                        </th>--%>
                                      
                                     </tr>
                                     </thead>
                                     <tbody class="scrollbar" >
                                     </tbody>
-                                   <tr>
+                                  <%-- <tr>
                                         <td style="width:60px">
                                             1
                                         </td>
@@ -255,22 +259,70 @@ $(document).ready(function(){
                                         <td style="width:160px">
                                             Running
                                         </td>
-                                    </tr>
+                                    </tr>--%>
                                 </table>
 
                      <div class="col-md-12 col-sm-12 col-xs-12 gridbox" id="boxgrid" style=" display:none;">
 
+
+
+                         <div class="row boxrow">
+
+    <div class="col-md-8 pull-left">    
+    <div class="pdfexport">
+   <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
+                            <i class="fa fa-file-excel-o"></i> </button>
+                            <button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
+                            <i class="fa fa-file-pdf-o"></i> </button>
+                          
+                          
+    </div>
+    
+    
+    </div>
+    <div class="col-md-2 pull-left mt-2">  
+        <div class="searchDropdown">
+         <div class="row">
+            <label class=" col-md-8 showLebel">  Show Records :</label>
+			<select id="ddlLoadMore" class=" col-md-4  showrecords pull-right">
+												<option>2 </option>
+                                                <option>5 </option>
+                                                <option>50 </option>
+												<option>100 </option>
+												<option>150</option>
+                                                <option>200</option>
+                                                 <option>500</option>
+                                                </select>
+    </div>
+					
+     </div>  </div>
+    <div class="col-md-2 pull-right mt-2 ">
+    
+                           
+    <div class="searchbox col-md-12 col-sm-12 col-xs-12 p-0">
+    
+                                
+                       
+                            <input type="text" class="col-md-12 col-sm-12 col-xs-12 round  " placeholder="Search" autocomplete="off" id="searchText">
+                            <div class="faiconsarch">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            
+                       </div>
+</div>
+</div>
+
                            <div class="col-md-12 col-sm-12 col-xs-12 insidebox" >
                                <div class="row">
-                     <div class="col-md-4 col-sm-4 col-xs-4">
+                               <div class="col-md-4 col-sm-6 col-xs-4">
                          <div class="form-group">
-<div class="row">
-    <label class="col-md-3 col-sm-3 col-xs-3 pl-0">Entity:</label>
-    <input type="text" class="col-md-9 col-sm-9 col-xs-9" />
+
+    <label class="col-md-12 p-0">Name</label>
+    <input type="text" id="txtname" class="col-md-12" onkeypress="RemoveValidation()"  />
 
 
 
-</div>
+
 
 
 
@@ -278,15 +330,15 @@ $(document).ready(function(){
 
 
                      </div>
-                               <div class="col-md-4 col-sm-4 col-xs-4">
+                               <div class="col-md-4 col-sm-6 col-xs-4">
                          <div class="form-group">
-<div class="row">
-    <label class="col-md-3 col-sm-3 col-xs-3">Admin:</label>
-    <input type="text" class="col-md-9 col-sm-9 col-xs-9" />
+
+    <label class="col-md-12 p-0" >Account No</label>
+    <input type="text" id="txtaccountno" class="col-md-12" onkeypress="RemoveValidation()"/>
 
 
 
-</div>
+
 
 
 
@@ -294,7 +346,7 @@ $(document).ready(function(){
 
 
                      </div>
-                               <div class="col-md-4 col-sm-4 col-xs-4">
+                               <%--<div class="col-md-4 col-sm-4 col-xs-4">
                          <div class="form-group">
 <div class="row">
     <label class="col-md-3 col-sm-3 col-xs-3">Master:</label>
@@ -316,7 +368,7 @@ $(document).ready(function(){
                          </div>
 
 
-                     </div>
+                     </div>--%>
                                </div>
                                
 
@@ -328,7 +380,7 @@ $(document).ready(function(){
 
                      </div>
 
-
+                     <label id="lblUserId" runat="server" style="display: none"> </label>
 
                      </div>
 
