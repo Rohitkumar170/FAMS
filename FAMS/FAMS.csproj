@@ -120,11 +120,20 @@
     <Content Include="JavaScript\Customer.js" />
     <Content Include="JavaScript\Entity.js" />
     <Content Include="JavaScript\GetReport.js" />
+    <Content Include="master\cityMaster.aspx" />
+    <Content Include="master\countryMaster.aspx" />
+    <Content Include="master\custodian.aspx" />
     <Content Include="master\Dashboard.aspx" />
+    <Content Include="master\designationMaster.aspx" />
     <Content Include="master\legalField.aspx" />
     <Content Include="login.aspx" />
     <Content Include="master\customer.aspx" />
     <Content Include="master\Entity.aspx" />
+    <Content Include="master\PMSProvider.aspx" />
+    <Content Include="master\sectorsMaster.aspx" />
+    <Content Include="master\securities.aspx" />
+    <Content Include="master\stateMaster.aspx" />
+    <Content Include="master\TBStructure.aspx" />
     <Content Include="Telerix\content\dataviz\dashboards\area-chart.png" />
     <Content Include="Telerix\content\dataviz\dashboards\car-dashboard.png" />
     <Content Include="Telerix\content\dataviz\dashboards\car.gif" />
@@ -2115,12 +2124,40 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="master\cityMaster.aspx.cs">
+      <DependentUpon>cityMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\cityMaster.aspx.designer.cs">
+      <DependentUpon>cityMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\countryMaster.aspx.cs">
+      <DependentUpon>countryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\countryMaster.aspx.designer.cs">
+      <DependentUpon>countryMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\custodian.aspx.cs">
+      <DependentUpon>custodian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\custodian.aspx.designer.cs">
+      <DependentUpon>custodian.aspx</DependentUpon>
+    </Compile>
     <Compile Include="master\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="master\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\designationMaster.aspx.cs">
+      <DependentUpon>designationMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\designationMaster.aspx.designer.cs">
+      <DependentUpon>designationMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="master\legalField.aspx.cs">
       <DependentUpon>legalField.aspx</DependentUpon>
@@ -2149,6 +2186,41 @@
     </Compile>
     <Compile Include="master\Entity.aspx.designer.cs">
       <DependentUpon>Entity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\PMSProvider.aspx.cs">
+      <DependentUpon>PMSProvider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\PMSProvider.aspx.designer.cs">
+      <DependentUpon>PMSProvider.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\sectorsMaster.aspx.cs">
+      <DependentUpon>sectorsMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\sectorsMaster.aspx.designer.cs">
+      <DependentUpon>sectorsMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\securities.aspx.cs">
+      <DependentUpon>securities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\securities.aspx.designer.cs">
+      <DependentUpon>securities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\stateMaster.aspx.cs">
+      <DependentUpon>stateMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\stateMaster.aspx.designer.cs">
+      <DependentUpon>stateMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\TBStructure.aspx.cs">
+      <DependentUpon>TBStructure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\TBStructure.aspx.designer.cs">
+      <DependentUpon>TBStructure.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CommonFlag.cs" />
     <Compile Include="Models\CustomerClasses\Bindbankcust.cs" />

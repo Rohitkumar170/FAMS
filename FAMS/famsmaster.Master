@@ -141,7 +141,7 @@
                             </li>
 
                                <li class="reports" id="UserMasterli"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Reports </a>
- <ul class=" submenudropdownone" style="display:none">
+ <ul class=" submenudropdownone" >
    
        <li><a href="  ../master/report.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i>Report</a></li>
                <%--<li><a href="../master/legalField.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Legal Fields</a></li>--%>
@@ -150,7 +150,7 @@
 
                                </li>
                         <li class="adminastator"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Administrator </a>
-                            <ul class=" submenudropdown" style="display:none">
+                            <ul class=" submenudropdown">
                <li><a href="../master/Entity.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Entity</a></li>
             <li><a href="../master/customer.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Customer</a></li>
               
@@ -159,7 +159,24 @@
 
                         </li>
                     
+          <li class="adminastator"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Master </a>
+                            <ul class=" submenudropdown">
+               <li><a href="../master/countryMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Country</a></li>
+            <li><a href="../master/stateMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> State</a></li>
+                                <li><a href="../master/cityMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> City</a></li>
+                                <li><a href="../master/sectorsMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Sector</a></li>
+                                <li><a href="../master/designationMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Designation</a></li>
+                                <li><a href="../master/custodian.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Custodian</a></li>
+              <li><a href="../master/securities.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Securities</a></li>
+                                <li><a href="../master/TBStructure.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> TB Structure</a></li>
+                                <li><a href="../master/PMSProvider.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Provider</a></li>
+              
+              
+              
+            </ul>
 
+
+                        </li>
                         </ul>
                     </div>
                 </div>
@@ -225,7 +242,7 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-         <h4 class="modal-title">Changed Password</h4>
+         <h4 class="modal-title">Change Password</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
          
         </div>
@@ -271,7 +288,7 @@
   
 
          
-    <button type="button" class="btn btn-default closexbtn" id="btnUpdatePassword">Submit</button>
+    <button type="button" class="btn btn-default closexbtn mt-1" id="btnUpdatePassword">Submit</button>
         </div>
    
        

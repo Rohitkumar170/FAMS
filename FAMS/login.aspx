@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>FAMS(Fund Account Managment System)</title>
+    <title>FAMS(Fund Account Management System)</title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../Assets/css/bootstrap.min.css" rel="stylesheet"   type="text/css" />
     <script src="Assets/js/jquery.min.js"></script>
@@ -230,7 +230,7 @@
         <div class="row mainlogidiv">
             <div class="loginCon">
                 <div class="text-center mb-2">
-                <span class="txtfams">Fund Accounting Managment System</span>
+                <span class="txtfams">Fund Accounting Management System</span>
                </div>
                 <div class="login-form-1">
                     <h3>

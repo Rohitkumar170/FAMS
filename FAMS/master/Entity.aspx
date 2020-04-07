@@ -61,14 +61,7 @@ $(document).ready(function(){
         }
         .insidebox {
      margin-top:26px;}
-        .pdfexport {
-    padding: 5px 0;
-}
-        .pdfbtns {
-        font-size:12px;
-            color: #213642;
-    border: 1px solid #1f323d;
-        }
+   
    
     </style>
 

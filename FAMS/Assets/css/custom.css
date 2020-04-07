@@ -9,7 +9,9 @@
     border-right: 1px solid blue;
     color: #0a2e40;
 }
-
+.form-group {
+    margin-bottom: 0px !important;
+}
 .showrecords {
     padding: 0px;
 }
@@ -31,13 +33,25 @@
     font-size: 12px;
 }
 .pdfbtns {
-    font-size: 12px;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 2px 7px 3px !important;
     color: #213642;
-    border: 1px solid #1f323d;
+    border: 1px solid #bdc1c3;
 }
-   
+.searchbox input:focus {
+ 
+    outline-offset: 0px !important;
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+.searchbox input::placeholder {
+color:#999}
+.searchDropdown .showLebel {
+text-align:right}
 
-
+.btn-default:hover {
+    background-color: #2e4b5b !important;
+}
 
 
 select {
@@ -146,11 +160,12 @@ select {
 }
 
 .cardbody {
-    border: 2px solid #c5c5c5;
+    /*border: 2px solid #c5c5c5;*/
     width: 100%;
     height: 528px;
     margin: 18px 0px 0px 1px;
     overflow: hidden;
+    box-shadow: 0px 0px 3px 1px #c5c5c5;
 }
 
 .logonav {
@@ -223,9 +238,9 @@ select {
             padding: 7px 5px 7px 10px;
             display: block;
         }
-        .sidenavlist > ul > li> :hover{
+        /*.sidenavlist > ul > li> :hover{
             background-color:#16222A;
-        }
+        }*/
       
 .Htmlpages {
     display: block;
@@ -396,8 +411,24 @@ label {
     max-height: 238px;
     overflow-x: hidden;
 }
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
 
-.scrollbar::-webkit-scrollbar-track {
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0a2e40; /* border: 2px solid #555555; */
+    border-radius: 5px;
+    border: none;
+}
+
+::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     background-color: #F5F5F5;
 }
@@ -483,8 +514,8 @@ input[type="checkbox"] {
 
 .modal-header {
     background: #16222A; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #3A6073, #16222A); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #223c4a, #2b4857); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #223c4a, #2b4857); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #fff;
     border: 1px solid #fff;
     height: 41px;
@@ -576,8 +607,7 @@ input[type="checkbox"] {
     right: 3%;
     top: 26%;
 }
-input[type=text]
-{
+input[type=text], input[type="password"] {
     height: 22px;
     border: none;
     background: transparent;
@@ -585,13 +615,13 @@ input[type=text]
 }
 .dropdown {
     height: 22px;
-    border: none;
     background: transparent;
-    border: 1px solid #77848a;
-    width: 70%;
+    border: 1px solid #9ea5a9;
+    width: 100%;
+    border-radius: 3px;
 }
 
-*/
+
 input[type=date] {
     border: none;
     background: transparent;
@@ -606,12 +636,12 @@ input[type=date] {
     font-size: 10px;
     padding-left:0px;
 }
-input[type=text] {
-    border: none;
+input[type="text"], input[type="password"] {
     background: transparent;
-    border-bottom: 1px solid #77848a;
+    border: 1px solid #9ea5a9;
     padding-left: 3px;
-    font-size: 10px;
+    font-size: 11px;
+    border-radius: 3px;
 }
 .k-dropdown-wrap {
     width: 100% !important;
@@ -630,12 +660,11 @@ input[type=text] {
 .kendobox {
     border-bottom: 1px solid #77848a !important;
 }
-input: focus {
+input:focus {
     outline: none;
 }
-.searchbox {
+.searchbox input[type="text"] {
     border: 1px solid #77848a;
-    ;
     border-radius: 10px;
 }
 
@@ -737,6 +766,17 @@ span.utiltycheckbox:last-child {
     font-size: 11px;
     cursor: pointer;
     font-weight: bold;
+    border-radius: 2px !important;
+}
+.btnconinsideBtn {
+    background-color: #0a2e40;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 2px !important;
 }
 
 .bankmasterTable {
@@ -754,7 +794,6 @@ span.utiltycheckbox:last-child {
     }
 
     .bankmasterTable th {
-        border: 1px solid #ddd;
         padding: 3px;
         font-size: 11px;
         padding-left: 11px;
@@ -940,10 +979,10 @@ span.utiltycheckbox:last-child {
 }
 
 .btn-default {
-    background-color: #051720 !important;
+    background-color: #26414f !important;
     color: #fff !important;
     padding: 1px 8px 3px 8px !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
 }
 
 .btn-center {
@@ -1268,3 +1307,18 @@ span.utiltycheckbox:last-child {
     color: #c33131;
     font-size: 16px !important;
 }
+.detailBox {
+    background: #e9ecec;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+.tableScroll {
+overflow-x:scroll}
+#createPMSProvider .modal-dialog {
+    max-width: 80%;
+    margin-top: 3rem;
+}
+.detailsBox h6 {
+padding:12px !important}
