@@ -1,37 +1,25 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="PMSProvider.aspx.cs" Inherits="FAMS.master.PMSProvider" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="allCustomers.aspx.cs" Inherits="FAMS.master.allCustomers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-      <script type="text/javascript">
+     <script type="text/javascript">
     $(function () {
-        $("#pmsProviderHeader table tr").dblclick(function () {
-            $("#pmsProviderHeader").css('display', 'none');
-            $("#pmsProviderDetail").css('display', 'block'); 
-            $("#btnBack").css('display', 'block');
-            $("#btnNew").css('display', 'none');
-             $("#btnEdit").css('display','none');
-        });
-
-         $("#btnBack").click(function () {
-            $("#pmsProviderHeader").css('display', 'block');
-            $("#pmsProviderDetail").css('display', 'none'); 
-            $("#btnBack").css('display', 'none');
-            $("#btnNew").css('display', 'inline-block');
-             $("#btnEdit").css('display','inline-block');
+        $("table tr").dblclick(function () {
+            $("#customerDetail").modal("show");
         });
     });
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-         <div class="cardbody">
+     <div class="cardbody">
         <div class="row">
             <div class="allHtmlCode col-md-12 col-sm-12 col-xs-12">
 
 
     <div class="row pl-3">
                     <div class="legal col-md-3 col-sm-3 col-xs-12">
-                    PMS Provider</div>
+                    All Customers</div>
                     <div class="btncon col-md-9 col-sm-9 col-xs-12">
                     <div class="btnpannel">
-                       <button type="button" class="btn btn-sm btnconinsideBtn" id="btnNew" data-toggle="modal" data-target="#createPMSProvider"><i class="fa fa-plus-square" aria-hidden="true"></i> New</button> 
+                       <button type="button" class="btn btn-sm btnconinsideBtn" id="btnNew" data-toggle="modal" data-target="#createCustomers"><i class="fa fa-plus-square" aria-hidden="true"></i> New</button> 
                       <button type="button" class="btn btn-sm btnconinsideBtn" id="btnEdit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button> 
                     <button type="button" class="btn btn-sm btnconinsideBtn" id="btnBack" style="display:none"><i class="fa fa fa-undo" aria-hidden="true" style="padding-right:2px"></i>Back</button> 
                    
@@ -97,19 +85,37 @@
                                              Sr No.
                                         </th>
                                         <th style="width:100px">
-                                             Country
-                                        </th>
-                                         <th style="width:100px">
-                                             PMS Code
+                                             List Code
                                         </th>
                                         <th style="width:100px">
-                                            Name
+                                             Custodian
+                                        </th>
+                                         <th style="width:150px">
+                                             Customer Account
+                                        </th>
+                                        <th style="width:150px">
+                                            Customer Name
+                                        </th>
+                                        <th style="width:100px">
+                                             Portfolio
+                                        </th>
+                                        <th style="width:150px">
+                                            PMS Employee
+                                        </th>
+                                        <th style="width:100px">
+                                             Inception Date
                                         </th>
                                         <th style="width:200px">
-                                            Address
+                                            Address Line
                                         </th>
                                         <th style="width:100px">
-                                            GSTN
+                                            City
+                                        </th>
+                                        <th style="width:100px">
+                                            State
+                                        </th>
+                                        <th style="width:100px">
+                                            PAN
                                         </th>
                                         <th style="width:200px">
                                              Primary Contact Name
@@ -141,23 +147,27 @@
                                         <th style="width:200px">
                                             Billing Contact Mobile
                                         </th>
-                                        <th style="width:200px">
-                                             System Admin Name
-                                        </th>
-                                         <th style="width:200px">
-                                             System Admin Designation
-                                        </th>
-                                        <th style="width:200px">
-                                           System Admin Email
-                                        </th>
-                                        <th style="width:200px">
-                                            System Admin Phone
-                                        </th>
-                                        <th style="width:200px">
-                                            System Admin Mobile
-                                        </th>
-                                       <th style="width:100px">
+                                        <th style="width:100px">
                                            Logo
+                                        </th>
+                                        <th style="width:150px">
+                                             User Name
+                                        </th>
+                                        
+                                        <th style="width:200px">
+                                           User Email
+                                        </th>
+                                        <th style="width:200px">
+                                            User Mobile No.
+                                        </th>
+                                        <th style="width:200px">
+                                           Login with Acc No.
+                                        </th>
+                                        <th style="width:200px">
+                                            Login with Mobile No.
+                                        </th>
+                                        <th style="width:200px">
+                                            Login with User Email
                                         </th>
                                         <th style="width:100px">
                                             Active
@@ -174,67 +184,89 @@
                                              1
                                         </td>
                                         <td style="width:100px">
-                                             Country
-                                        </td>
-                                         <td style="width:100px">
-                                             PMS Code
+                                             LC01
                                         </td>
                                         <td style="width:100px">
-                                            Name
+                                             CUS1
                                         </td>
-                                        <td style="width:200px">
-                                            Address
+                                         <td style="width:150px">
+                                             1100011
+                                        </td>
+                                        <td style="width:150px">
+                                            Customer 1
                                         </td>
                                         <td style="width:100px">
-                                            GSTN
+                                             Portfolio 1
+                                        </td>
+                                        <td style="width:150px">
+                                            EMP01
+                                        </td>
+                                        <td style="width:100px">
+                                             09/04/2020
                                         </td>
                                         <td style="width:200px">
-                                             Doe John
+                                            Greater Noida, UP
+                                        </td>
+                                        <td style="width:100px">
+                                            GN
+                                        </td>
+                                        <td style="width:100px">
+                                            UP
+                                        </td>
+                                        <td style="width:100px">
+                                            AKQPT7688O
+                                        </td>
+                                        <td style="width:200px">
+                                             ABC
                                         </td>
                                          <td style="width:200px">
-                                            MD
+                                             MD
                                         </td>
                                         <td style="width:200px">
-                                           doe@gmail.com
+                                            abc@gmail.com
                                         </td>
                                         <td style="width:200px">
-                                            0112234567
+                                            01122345679
                                         </td>
                                         <td style="width:200px">
                                            9876543210
                                         </td>
                                         <td style="width:200px">
-                                             Doe John
+                                             ABC
                                         </td>
                                          <td style="width:200px">
-                                            MD
+                                             MD
                                         </td>
                                         <td style="width:200px">
-                                           doe@gmail.com
+                                           abc@gmail.com
                                         </td>
                                         <td style="width:200px">
-                                            0112234567
+                                            01122345679
                                         </td>
                                         <td style="width:200px">
                                             9876543210
                                         </td>
-                                        <td style="width:200px">
-                                             John Doe
+                                        <td style="width:100px">
+                                           Logo.png
                                         </td>
-                                         <td style="width:200px">
-                                            CEO
+                                        <td style="width:150px">
+                                             User 1
                                         </td>
+                                        
                                         <td style="width:200px">
-                                           john@gmail.com
-                                        </td>
-                                        <td style="width:200px">
-                                            0112228877
+                                          user@gmail.com
                                         </td>
                                         <td style="width:200px">
-                                            9876543210
+                                            9809876543
                                         </td>
-                                       <td style="width:100px">
-                                           Yoeki Logo
+                                        <td style="width:200px">
+                                          No
+                                        </td>
+                                        <td style="width:200px">
+                                            No
+                                        </td>
+                                        <td style="width:200px">
+                                            Yes
                                         </td>
                                         <td style="width:100px">
                                             Active
@@ -300,7 +332,7 @@
     
                                 
                        
-                            <input type="text" class="col-md-12 col-sm-12 col-xs-12 round" placeholder="Search" autocomplete="off" id="searchText">
+                            <input type="text" class="col-md-12 col-sm-12 col-xs-12 round" placeholder="Search" autocomplete="off" />
                             <div class="faiconsarch">
                                 <i class="fa fa-search"></i>
                             </div>
@@ -429,13 +461,13 @@
          </div>
 
 
-    <div class="modal fade" id="createPMSProvider" role="dialog">
+    <div class="modal fade" id="createCustomers" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-         <h4 class="modal-title">Create PMS Provider</h4>
+         <h4 class="modal-title">Customers Detail</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
          
         </div>
@@ -444,6 +476,33 @@
    <div class="form-group">
     <div class="row">
         <div class="col-md-4 col-xs-12 col-sm-4">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">List Code:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+            <label class="col-md-12 col-xs-12 col-sm-12">LC01</label>
+    
+        </div>
+            </div>
+        <div class="col-md-4 col-xs-12 col-sm-4">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Custodian:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+            <label class="col-md-12 col-xs-12 col-sm-12">CUS1</label>
+    
+        </div>
+            </div>
+        <div class="col-md-4 col-xs-12 col-sm-4">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Customer Acc:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+            <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
+    
+        </div>
+            </div>
+        <%--<div class="col-md-4 col-xs-12 col-sm-4">
    <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
         <label class="col-md-12 col-xs-12 col-sm-12 p-0">Country:</label>
         </div>
@@ -459,15 +518,7 @@
     
         </div>
             </div>
-        <div class="col-md-4 col-xs-12 col-sm-4">
-   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0">PMS Code:</label>
-        </div>
-        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-            <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
-    
-        </div>
-            </div>
+        
         <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
    <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
         <label class="col-md-12 col-xs-12 col-sm-12 p-0">Name:</label>
@@ -476,16 +527,70 @@
                <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
     
         </div>
+            </div>--%>
+        </div>
+        </div>
+            <div class="form-group">
+    <div class="row">
+        
+        
+        <div class="col-md-4 col-xs-12 col-sm-4">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block pr-0">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Customer Name:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+            <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
+    
+        </div>
+            </div>
+        <div class="col-md-4 col-xs-12 col-sm-4">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Portfolia:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+            <select class="dropdown">
+                <option>Select Portfolia</option>
+                <option>Portfolia 1</option>
+                <option>Portfolia 2</option>
+                <option>Portfolia 3</option>
+                <option>Portfolia 4</option>
+                <option>Portfolia 5</option>
+            </select>
+    
+        </div>
+            </div>
+        
+        <div class="col-md-4 col-xs-12 col-sm-4">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">PMS Employee:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+            <select class="dropdown">
+                <option>EMP01</option>
+                <option>EMP02</option>
+                <option>EMP03</option>
+                <option>EMP04</option>
+                <option>EMP05</option>
+            </select>
+    
+        </div>
             </div>
         </div>
         </div>
-
             <div class="form-group">
     <div class="row">
-       
+       <div class="col-md-4 col-xs-12 col-sm-4 ">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Inception Date:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+              <input type="date" class="col-md-12 col-xs-12 col-sm-12" />
+    
+        </div>
+            </div>
         <div class="col-md-4 col-xs-12 col-sm-4 ">
    <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Address:</label>
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Address Line:</label>
         </div>
         <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
               <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
@@ -494,17 +599,52 @@
             </div>
         <div class="col-md-4 col-xs-12 col-sm-4">
    <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0">GSTN:</label>
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">City:</label>
         </div>
         <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-               <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
+               <select class="dropdown">
+                <option>SD</option>
+                <option>GN</option>
+                <option>SH</option>
+                <option>JP</option>
+            </select>
     
         </div>
             </div>
         </div>
         </div>
 
-            
+            <div class="form-group">
+    <div class="row">
+         <div class="col-md-4 col-xs-12 col-sm-4">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">State:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+               <select class="dropdown">
+                <option>DL</option>
+                <option>UP</option>
+                <option>HP</option>
+                <option>RJ</option>
+            </select>
+    
+        </div>
+            </div>
+     
+        <div class="col-md-4 col-xs-12 col-sm-4 ">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">PAN:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+              <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
+    
+        </div>
+            </div>
+         <div class="col-md-4 col-xs-12 col-sm-4 ">
+   
+            </div>
+        </div>
+        </div>
 
         <div class="detailsBox">
 
@@ -642,74 +782,9 @@
 
              <div class="detailsBox">
 
-            <h6>System Admin Details</h6>
-            <div class="form-group">
-    <div class="row">
-        <div class="col-md-4 col-xs-12 col-sm-4">
-   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Name:</label>
-        </div>
-        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-            <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
-    
-        </div>
-            </div>
-        <div class="col-md-4 col-xs-12 col-sm-4">
-   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0"> Designation:</label>
-        </div>
-        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-            <select class="dropdown">
-                <option>Select Designation</option>
-                <option>MD</option>
-                <option>CEO</option>
-                <option>CFO</option>
-                <option>SE</option>
-                <option>AE</option>
-            </select>
-    
-        </div>
-            </div>
-        <div class="col-md-4 col-xs-12 col-sm-4">
-   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Email:</label>
-        </div>
-        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-               <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
-    
-        </div>
-            </div>
-        </div>
-        </div>
-
-            <div class="form-group">
-    <div class="row">
-       
-        <div class="col-md-4 col-xs-12 col-sm-4">
-   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Phone:</label>
-        </div>
-        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-              <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
-    
-        </div>
-            </div>
-        <div class="col-md-4 col-xs-12 col-sm-4">
-   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Mobile:</label>
-        </div>
-        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-               <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
-    
-        </div>
-            </div>
-        </div>
-        </div>
-
-        </div>
-
-
-            <div class="form-group mt-2">
+            <h6>User Details</h6>
+            
+                 <div class="form-group">
     <div class="row">
        
         <div class="col-md-4 col-xs-12 col-sm-4 ">
@@ -721,20 +796,95 @@
     
         </div>
             </div>
-        <%-- <div class="col-md-4 col-xs-12 col-sm-4">
-             <div class="logoImg"></div>
-             </div>--%>
-        <div class="col-md-4 col-xs-12 col-sm-4">
+      <div class="col-md-4 col-xs-12 col-sm-4 ">
    <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Active:</label>
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">User Name:</label>
         </div>
         <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+              <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
+    
+        </div>
+            </div>
+        <div class="col-md-4 col-xs-12 col-sm-4 ">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">User Email:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+              <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
+    
+        </div>
+            </div>
+     
+        </div>
+        </div>
+            <div class="form-group">
+    <div class="row">
+       
+      
+      <div class="col-md-4 col-xs-12 col-sm-4 ">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Mobile No.:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+              <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
+    
+        </div>
+            </div>
+            <div class="col-md-4 col-xs-12 col-sm-4">
+   <div class="col-md-5 col-xs-12 col-sm-5 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Login with Acc No.:</label>
+        </div>
+        <div class="col-md-6 col-xs-12 col-sm-6 d-inline-block p-0">
+               <input type="checkbox" />
+    
+        </div>
+            </div>
+        <div class="col-md-4 col-xs-12 col-sm-4">
+   <div class="col-md-6 col-xs-12 col-sm-6 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Login with Mobile No.:</label>
+        </div>
+        <div class="col-md-5 col-xs-12 col-sm-5 d-inline-block p-0">
                <input type="checkbox" />
     
         </div>
             </div>
         </div>
         </div>
+                 <div class="form-group">
+    <div class="row">
+       
+      
+  
+            <div class="col-md-4 col-xs-12 col-sm-4">
+   <div class="col-md-6 col-xs-12 col-sm-6 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Login with User Email:</label>
+        </div>
+        <div class="col-md-5 col-xs-12 col-sm-5 d-inline-block p-0">
+               <input type="checkbox" />
+    
+        </div>
+            </div>
+        <div class="col-md-4 col-xs-12 col-sm-4">
+   <div class="col-md-4 col-xs-12 col-sm-4 d-inline-block">
+        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Active:</label>
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+              
+                <select class="dropdown">
+                 <option>Active</option>
+                <option>Inactive</option>
+            </select>
+        </div>
+            </div>
+            <div class="col-md-4 col-xs-12 col-sm-4 ">
+   
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+            
 
          <div class="pull-right mt-1">
     <button type="button" class="btn btn-default mr-1" >Create</button>
@@ -751,4 +901,196 @@
        
        
        </div> 
+
+
+    <div class="modal fade" id="customerDetail" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+         <h4 class="modal-title">Customers Detail</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+        </div>
+        <div class="modal-body">
+        
+   
+
+<div class="boxrow">
+     <div class="col-md-12 col-sm-12 col-xs-12 ">
+    
+         </div>
+                          <div class="col-md-12 col-sm-12 col-xs-12 detailBox">
+                                
+                              <div class="form-group">
+          <div class="row">
+       
+              <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">GSTN:</label>
+            <input type="text" class="col-md-7 col-xs-12 col-sm-7">
+        </div>
+               <div class="col-md-4 col-xs-12 col-sm-4">
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">State:</label>
+                   <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
+             <select class="dropdown">
+                <option>DL</option>
+                <option>UP</option>
+                <option>HP</option>
+                <option>RJ</option>
+            </select>
+                       </div>
+        </div>
+         <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
+       
+        </div>
+        </div>
+         </div>  
+    
+                          </div>
+    <button type="button" class="btn btn-sm btnconinsideBtn pull-right mr-2" id="btnRemove"><i class="fa fa-trash" aria-hidden="true"></i> Remove</button> 
+               <button type="button" class="btn btn-sm btnconinsideBtn pull-right mr-2" id="btnSave"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button> 
+   
+<div class="clearfix"></div>
+    <div class="col-md-8 pull-left pl-0">    
+    <div class="pdfexport">
+   <button type="button" class="btn  pdfbtns" title="Export">
+                            <i class="fa fa-file-excel-o"></i> </button>
+                            <button type="button" class="btn  pdfbtns" title="PDF">
+                            <i class="fa fa-file-pdf-o"></i> </button>
+                          
+                          
+    </div>
+    
+    
+    </div>
+    <div class="col-md-2 pull-left mt-2">  
+        </div>
+    <div class="col-md-2 pull-right mt-2 pr-0">
+    
+                           
+    <div class="searchbox col-md-12 col-sm-12 col-xs-12 p-0">
+    
+                                
+                       
+                            <input type="text" class="col-md-12 col-sm-12 col-xs-12 round" placeholder="Search" autocomplete="off" id="searchText">
+                            <div class="faiconsarch">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            
+                       </div>
+</div>
+</div>
+         
+            <div class="clearfix"></div>
+      
+   <table class="bankmasterTable mt-1" >
+                                <thead>
+                                    <tr>
+                                        
+                                     <th style="width:30px">
+                                         <input type="checkbox"> All
+                                        </th>
+                                       <th style="width:30px">
+                                             Sr No.
+                                        </th>
+                                        <th style="width:100px">
+                                             GSTN
+                                        </th>
+                                        
+                                        <th style="width:350px">
+                                            State
+                                        </th>
+                                       
+                                    </tr>
+                                    </thead>
+                                    <tbody class="scrollbar" >
+                                        <tr>
+                                            <td style="width:30px">
+                                         <input type="checkbox"> 
+                                        </td>
+                                        <td style="width:30px">
+                                            1
+                                        </td>
+                                        <td style="width:100px">
+                                           GSTN 1
+                                        </td>
+                                        
+                                        <td style="width:350px">
+                                            UP
+                                        </td>
+                                    </tr>
+                                        <tr>
+                                            <td style="width:30px">
+                                         <input type="checkbox"> 
+                                        </td>
+                                        <td style="width:30px">
+                                            2
+                                        </td>
+                                      <td style="width:100px">
+                                           GSTN 2
+                                        </td>
+                                        
+                                        <td style="width:350px">
+                                            HP
+                                        </td>
+                                    </tr>
+                                        <tr>
+                                            <td style="width:30px">
+                                         <input type="checkbox"> 
+                                        </td>
+                                        <td style="width:30px">
+                                            3
+                                        </td>
+                                          <td style="width:100px">
+                                           GSTN 3
+                                        </td>
+                                        
+                                        <td style="width:350px">
+                                            RJ
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:30px">
+                                         <input type="checkbox"> 
+                                        </td>
+                                        <td style="width:30px">
+                                            4
+                                        </td>
+                                           <td style="width:100px">
+                                           GSTN 4
+                                        </td>
+                                        
+                                        <td style="width:350px">
+                                            MP
+                                        </td>
+                                    </tr>
+                                        <tr>
+                                            <td style="width:30px">
+                                         <input type="checkbox"> 
+                                        </td>
+                                        <td style="width:30px">
+                                            5
+                                        </td>
+                                          <td style="width:100px">
+                                           GSTN 5
+                                        </td>
+                                        
+                                        <td style="width:350px">
+                                            DL
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+      </div> 
+        
+       
+      </div>
+      
+    </div>
+  
+       
+       
+       </div>
 </asp:Content>

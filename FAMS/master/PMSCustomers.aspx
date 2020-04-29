@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="custodian.aspx.cs" Inherits="FAMS.master.custodian" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="PMSCustomers.aspx.cs" Inherits="FAMS.master.PMSCustomers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
     $(function () {
         $("table tr").dblclick(function () {
-            $("#custodianDetail").modal("show");
+            $("#pmsCustomerDetail").modal("show");
         });
     });
 </script>
@@ -16,10 +16,10 @@
 
     <div class="row pl-3">
                     <div class="legal col-md-3 col-sm-3 col-xs-12">
-                    Custodian</div>
+                    PMS Customers List</div>
                     <div class="btncon col-md-9 col-sm-9 col-xs-12">
                     <div class="btnpannel">
-                       <button type="button" class="btn btn-sm btnconinsideBtn" id="btnNew" data-toggle="modal" data-target="#custodianDetail"><i class="fa fa-plus-square" aria-hidden="true"></i> New</button> 
+                       <button type="button" class="btn btn-sm btnconinsideBtn" id="btnNew" data-toggle="modal" data-target="#pmsCustomerDetail"><i class="fa fa-plus-square" aria-hidden="true"></i> New</button> 
                       <button type="button" class="btn btn-sm btnconinsideBtn" id="btnEdit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button> 
                    
                     </div>         
@@ -65,7 +65,7 @@
     
                                 
                        
-                            <input type="text" class="col-md-12 col-sm-12 col-xs-12 round" placeholder="Search" autocomplete="off" id="searchText">
+                            <input type="text" class="col-md-12 col-sm-12 col-xs-12 round" placeholder="Search" autocomplete="off" />
                             <div class="faiconsarch">
                                 <i class="fa fa-search"></i>
                             </div>
@@ -84,13 +84,13 @@
                                              Sr No.
                                         </th>
                                         <th style="width:100px">
-                                             Country
+                                             Custodian
                                         </th>
                                         <th style="width:100px">
-                                             Custodian Code
+                                             List Code
                                         </th>
                                         <th style="width:250px">
-                                            Custodian Name
+                                            Enable
                                         </th>
                                        
                                     </tr>
@@ -104,13 +104,13 @@
                                             1
                                         </td>
                                         <td style="width:100px">
-                                           IND
+                                           CUS1
                                         </td>
                                         <td style="width:100px">
-                                            CUS1
+                                            L001
                                         </td>
                                         <td style="width:250px">
-                                            Custodian 1
+                                            Yes
                                         </td>
                                     </tr>
                                         <tr>
@@ -121,13 +121,13 @@
                                             2
                                         </td>
                                        <td style="width:100px">
-                                           IND
+                                           CUS2
                                         </td>
                                         <td style="width:100px">
-                                            CUS2
+                                            L002
                                         </td>
                                         <td style="width:250px">
-                                             Custodian 2
+                                             No
                                         </td>
                                     </tr>
                                         <tr>
@@ -138,13 +138,13 @@
                                             3
                                         </td>
                                            <td style="width:100px">
-                                           IND
+                                           CUS3
                                         </td>
                                         <td style="width:100px">
-                                            CUS3
+                                            L003
                                         </td>
                                         <td style="width:250px">
-                                             Custodian 3
+                                             No
                                         </td>
                                     </tr>
                                     <tr>
@@ -155,13 +155,13 @@
                                             4
                                         </td>
                                              <td style="width:100px">
-                                           IND
-                                        </td>
-                                       <td style="width:100px">
                                            CUS4
                                         </td>
+                                       <td style="width:100px">
+                                           L004
+                                        </td>
                                         <td style="width:250px">
-                                             Custodian 4
+                                             No
                                         </td>
                                     </tr>
                                         <tr>
@@ -172,13 +172,13 @@
                                             5
                                         </td>
                                             <td style="width:100px">
-                                           IND
+                                           CUS5
                                         </td>
                                         <td style="width:100px">
-                                            CUS5
+                                            L005
                                         </td>
                                         <td style="width:250px">
-                                             Custodian 5
+                                             No
                                         </td>
                                     </tr>
 
@@ -193,82 +193,15 @@
          </div>
 
 
-    <div class="modal fade" id="createCustodian" role="dialog">
+
+
+    <div class="modal fade" id="pmsCustomerDetail" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-         <h4 class="modal-title">Create Custodian</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-         
-        </div>
-        <div class="modal-body">
-        
-   <div class="form-group">
-    <div class="row">
-   <div class="col-md-4 col-xs-12 col-sm-4">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Country:</label>
-        </div>
-        <div class="col-md-8 col-xs-12 col-sm-8">
-            <select class="dropdown">
-                <option>Select Country</option>
-                <option>IND</option>
-                <option>AUS</option>
-                <option>PAK</option>
-                <option>USA</option>
-                <option>AFG</option>
-            </select>
-        <%--<input type="text" class="col-md-12 col-xs-12 col-sm-12" />--%>
-        </div>
-        </div>
-        </div>
-   <div class="form-group">
-    <div class="row">
-   <div class="col-md-4 col-xs-12 col-sm-4">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Custodian Code:</label>
-        </div>
-        <div class="col-md-8 col-xs-12 col-sm-8">
-        <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
-        </div>
-        </div>
-        </div>
-   <div class="form-group">
-          <div class="row">
-        <div class="col-md-4 col-xs-12 col-sm-4">
-        <label class="col-md-12 col-xs-12 col-sm-12 p-0">Custodian Name:</label>
-        </div>
-        <div class="col-md-8 col-xs-12 col-sm-8">
-        <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
-        </div>
-        </div>
-         </div>  
-
-         <div class="pull-right mt-1">
-    <button type="button" class="btn btn-default mr-1" >Create</button>
-            <button type="button" class="btn btn-default">Cancel</button>
-        </div>
-   
-      </div> 
-        
-       
-      </div>
-      
-    </div>
-  
-       
-       
-       </div> 
-
-
-
-    <div class="modal fade" id="custodianDetail" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-         <h4 class="modal-title">Custodian Details</h4>
+         <h4 class="modal-title">PMS Customer Details</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
          
         </div>
@@ -281,26 +214,26 @@
     <div class="form-group">
           <div class="row">
               <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
-        <label class="col-md-4 col-xs-12 col-sm-4 p-0">Country:</label>
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">Custodian:</label>
   
             <select class="dropdown col-md-7 col-xs-12 col-sm-7">
-                 <option>Select Country</option>
-                <option>IND</option>
-                <option>AUS</option>
-                <option>PAK</option>
-                <option>USA</option>
-                <option>AFG</option>
+                 <option>Select Custodian</option>
+                <option>CUS1</option>
+                <option>CUS2</option>
+                <option>CUS3</option>
+                <option>CUS4</option>
+                <option>CUS5</option>
             </select>
          
                
         </div>
         <div class="col-md-4 col-xs-12 col-sm-4">
-        <label class="col-md-4 col-xs-12 col-sm-4 p-0">Custodian Code:</label>
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">List Code:</label>
              <input type="text" class="col-md-7 col-xs-12 col-sm-7 /">
         </div>
               <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
-        <label class="col-md-4 col-xs-12 col-sm-4 p-0">Custodian Name:</label>
-            <input type="text" class="col-md-7 col-xs-12 col-sm-7 /">
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">Enable:</label>
+            <input type="checkbox" class="col-md-1 col-xs-12 col-sm-1" />
         </div>
        
         </div>
@@ -311,30 +244,50 @@
                               <div class="form-group">
           <div class="row">
               <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
-        <label class="col-md-4 col-xs-12 col-sm-4 p-0">PMS Code:</label>
-  
-            <select class="dropdown col-md-7 col-xs-12 col-sm-7">
-                <option>PMS1</option>
-                <option>PMS2</option>
-                <option>PMS3</option>
-                <option>PMS4</option>
-                <option>PMS5</option>
-                <option>PMS6</option>
-            </select>
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">Customer Acc:</label>
+            <input type="text" class="col-md-7 col-xs-12 col-sm-7">
+           
                
         </div>
-        <div class="col-md-4 col-xs-12 col-sm-4">
-        <label class="col-md-4 col-xs-12 col-sm-4 p-0">PMS Name:</label>
-             <label class="col-md-7 col-xs-12 col-sm-7">PMS 1</label>
-        </div>
+       
               <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
-        <label class="col-md-4 col-xs-12 col-sm-4 p-0">PMS Acc No:</label>
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">Customer Name:</label>
             <input type="text" class="col-md-7 col-xs-12 col-sm-7">
         </div>
-       
+        <div class="col-md-4 col-xs-12 col-sm-4">
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">Portfolio Type:</label>
+              <select class="dropdown col-md-7 col-xs-12 col-sm-7">
+                <option>Portfolio 1</option>
+                <option>Portfolio 2</option>
+                <option>Portfolio 3</option>
+                
+            </select>
+        </div>
         </div>
          </div>  
-    
+                            <div class="form-group">
+          <div class="row">
+              <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">Inception Date:</label>
+            <input type="date" class="col-md-7 col-xs-12 col-sm-7">
+           
+               
+        </div>
+       
+              <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
+                <label class="col-md-4 col-xs-12 col-sm-4 p-0">Linked PMS Emp:</label>
+              <select class="dropdown col-md-7 col-xs-12 col-sm-7">
+                <option>PMS 1</option>
+                <option>PMS 2</option>
+                <option>PMS 3</option>
+                
+            </select>
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-4">
+        
+        </div>
+        </div>
+         </div>  
                           </div>
     <button type="button" class="btn btn-sm btnconinsideBtn pull-right mr-2" id="btnRemove"><i class="fa fa-trash" aria-hidden="true"></i> Remove</button> 
                <button type="button" class="btn btn-sm btnconinsideBtn pull-right mr-2" id="btnSave"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button> 
@@ -376,108 +329,144 @@
                                 <thead>
                                     <tr>
                                         
-                                     <th style="width:30px">
+                                     <th style="width:50px">
                                          <input type="checkbox"> All
                                         </th>
-                                       <th style="width:30px">
+                                       <th style="width:50px">
                                              Sr No.
                                         </th>
-                                        <th style="width:100px">
-                                             PMS Code
+                                        <th style="width:150px">
+                                             Customer Account
                                         </th>
-                                        <th style="width:100px">
-                                             PMS Name
+                                        <th style="width:150px">
+                                             Customer Name
                                         </th>
-                                        <th style="width:250px">
-                                            PMS Account No.
+                                        <th style="width:150px">
+                                            Portfolio Type
                                         </th>
-                                       
+                                       <th style="width:150px">
+                                             Inception Date
+                                        </th>
+                                        <th style="width:200px">
+                                            Linked PMS Employee
+                                        </th>
                                     </tr>
                                     </thead>
                                     <tbody class="scrollbar" >
                                         <tr>
-                                            <td style="width:30px">
+                                            <td style="width:50px">
                                          <input type="checkbox"> 
                                         </td>
-                                        <td style="width:30px">
+                                        <td style="width:50px">
                                             1
                                         </td>
-                                        <td style="width:100px">
-                                           PMS1
+                                        <td style="width:150px">
+                                           1001
                                         </td>
-                                        <td style="width:100px">
-                                            PMS 1
+                                        <td style="width:150px">
+                                            Amit
                                         </td>
-                                        <td style="width:250px">
-                                            111100000
+                                        <td style="width:150px">
+                                            Portfolio 1
+                                        </td>
+                                            <td style="width:150px">
+                                            09/04/2020
+                                        </td>
+                                            <td style="width:200px">
+                                            PMS1
                                         </td>
                                     </tr>
                                         <tr>
-                                            <td style="width:30px">
+                                            <td style="width:50px">
                                          <input type="checkbox"> 
                                         </td>
-                                        <td style="width:30px">
+                                            <td style="width:50px">
                                             2
                                         </td>
-                                       <td style="width:100px">
-                                           PMS2
+                                        <td style="width:150px">
+                                           1002
                                         </td>
-                                        <td style="width:100px">
-                                            PMS 2
+                                        <td style="width:150px">
+                                            Amit
                                         </td>
-                                        <td style="width:250px">
-                                             111100001
+                                        <td style="width:150px">
+                                            Portfolio 2
+                                        </td>
+                                            <td style="width:150px">
+                                            09/04/2020
+                                        </td>
+                                            <td style="width:200px">
+                                            PMS2
                                         </td>
                                     </tr>
                                         <tr>
-                                            <td style="width:30px">
+                                            <td style="width:50px">
                                          <input type="checkbox"> 
                                         </td>
-                                        <td style="width:30px">
+                                            <td style="width:50px">
                                             3
                                         </td>
-                                           <td style="width:100px">
-                                           PMS3
+                                        <td style="width:150px">
+                                           1003
                                         </td>
-                                        <td style="width:100px">
-                                            PMS 3
+                                        <td style="width:150px">
+                                            Amit
                                         </td>
-                                        <td style="width:250px">
-                                             111100002
+                                        <td style="width:150px">
+                                            Portfolio 3
+                                        </td>
+                                            <td style="width:150px">
+                                            09/04/2020
+                                        </td>
+                                            <td style="width:200px">
+                                            PMS3
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width:30px">
+                                        <td style="width:50px">
                                          <input type="checkbox"> 
                                         </td>
-                                        <td style="width:30px">
+                                            <td style="width:50px">
                                             4
                                         </td>
-                                              <td style="width:100px">
-                                           PMS3
+                                        <td style="width:150px">
+                                           1004
                                         </td>
-                                        <td style="width:100px">
-                                            PMS 3
+                                        <td style="width:150px">
+                                            Amit
                                         </td>
-                                        <td style="width:250px">
-                                             111100002
+                                        <td style="width:150px">
+                                            Portfolio 4
+                                        </td>
+                                            <td style="width:150px">
+                                            09/04/2020
+                                        </td>
+                                            <td style="width:200px">
+                                            PMS4
                                         </td>
                                     </tr>
                                         <tr>
-                                            <td style="width:30px">
+                                            <td style="width:50px">
                                          <input type="checkbox"> 
                                         </td>
-                                        <td style="width:30px">
+                                            <td style="width:50px">
                                             5
                                         </td>
-                                            <td style="width:100px">
-                                           PMS3
+                                        <td style="width:150px">
+                                           1005
                                         </td>
-                                        <td style="width:100px">
-                                            PMS 3
+                                        <td style="width:150px">
+                                            Amit
                                         </td>
-                                        <td style="width:250px">
-                                             111100002
+                                        <td style="width:150px">
+                                            Portfolio 5
+                                        </td>
+                                            <td style="width:150px">
+                                            09/04/2020
+                                        </td>
+                                            <td style="width:200px">
+                                            PMS5
+                                       
                                         </td>
                                     </tr>
 

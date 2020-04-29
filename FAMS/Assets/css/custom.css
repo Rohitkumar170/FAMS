@@ -46,8 +46,11 @@
 }
 .searchbox input::placeholder {
 color:#999}
+.searchDropdown {
+margin-top:2px}
 .searchDropdown .showLebel {
-text-align:right}
+    text-align: right
+}
 
 .btn-default:hover {
     background-color: #2e4b5b !important;
@@ -627,6 +630,7 @@ input[type=date] {
     background: transparent;
     border: 1px solid #77848a;
     padding: 2px;
+    height:24px
 }
 
 
@@ -636,7 +640,7 @@ input[type=date] {
     font-size: 10px;
     padding-left:0px;
 }
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="date"] {
     background: transparent;
     border: 1px solid #9ea5a9;
     padding-left: 3px;
@@ -800,7 +804,7 @@ span.utiltycheckbox:last-child {
     }
 
     .bankmasterTable tr:nth-child(even) {
-        background-color: #f2f2f2;
+        background-color: #dadee0;
     }
 
     .bankmasterTable tr:hover {
@@ -812,7 +816,9 @@ span.utiltycheckbox:last-child {
         background-color: #0a2e40;
         color: white;
     }
-
+input[type="file"] {
+    font-size: 12px;
+}
 .keytermscondition {
     font-size: 11px;
 }
@@ -937,7 +943,7 @@ span.utiltycheckbox:last-child {
 
 .modal-body label {
     padding-left: 0 !important;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .formclientmaster input {
@@ -1309,16 +1315,27 @@ span.utiltycheckbox:last-child {
 }
 .detailBox {
     background: #e9ecec;
-    padding: 10px;
+    padding: 10px 15px;
     overflow: hidden;
     border-radius: 3px;
     margin-bottom: 5px;
 }
 .tableScroll {
 overflow-x:scroll}
-#createPMSProvider .modal-dialog {
+#createPMSProvider .modal-dialog, #createCustomers .modal-dialog {
     max-width: 80%;
     margin-top: 3rem;
 }
+#custodianDetail .modal-dialog, #tbstructureDetailPopup .modal-dialog, #securitiesDetailPopup .modal-dialog, #pmsCustomerDetail .modal-dialog, #pmsEmployeesDetail .modal-dialog {
+    max-width: 70%;
+}
+#customerDetail .modal-dialog {
+    max-width: 60%;
+}
 .detailsBox h6 {
-padding:12px !important}
+    padding: 12px !important
+}
+.sidenavlist {
+    max-height: 560px;
+    overflow: auto;
+}

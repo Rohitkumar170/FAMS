@@ -120,6 +120,7 @@
     <Content Include="JavaScript\Customer.js" />
     <Content Include="JavaScript\Entity.js" />
     <Content Include="JavaScript\GetReport.js" />
+    <Content Include="master\allCustomers.aspx" />
     <Content Include="master\cityMaster.aspx" />
     <Content Include="master\countryMaster.aspx" />
     <Content Include="master\custodian.aspx" />
@@ -129,6 +130,8 @@
     <Content Include="login.aspx" />
     <Content Include="master\customer.aspx" />
     <Content Include="master\Entity.aspx" />
+    <Content Include="master\PMSCustomers.aspx" />
+    <Content Include="master\PMSEmployees.aspx" />
     <Content Include="master\PMSProvider.aspx" />
     <Content Include="master\sectorsMaster.aspx" />
     <Content Include="master\securities.aspx" />
@@ -2124,6 +2127,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="master\allCustomers.aspx.cs">
+      <DependentUpon>allCustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\allCustomers.aspx.designer.cs">
+      <DependentUpon>allCustomers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="master\cityMaster.aspx.cs">
       <DependentUpon>cityMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2186,6 +2196,20 @@
     </Compile>
     <Compile Include="master\Entity.aspx.designer.cs">
       <DependentUpon>Entity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\PMSCustomers.aspx.cs">
+      <DependentUpon>PMSCustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\PMSCustomers.aspx.designer.cs">
+      <DependentUpon>PMSCustomers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\PMSEmployees.aspx.cs">
+      <DependentUpon>PMSEmployees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\PMSEmployees.aspx.designer.cs">
+      <DependentUpon>PMSEmployees.aspx</DependentUpon>
     </Compile>
     <Compile Include="master\PMSProvider.aspx.cs">
       <DependentUpon>PMSProvider.aspx</DependentUpon>

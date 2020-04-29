@@ -14,7 +14,34 @@
     <script src="../Assets/js/jquery.min.js"></script>
         <script src="../Assets/js/bootstrap.min.js"></script>
          
+          <script>
+        $(document).ready(function () {
+            $(".barbtn").click(function () {
+                $(".sidenav").css('display', 'block');
+                $("#crossbtn").css('display', 'block');
+            });
+
+
+
+            $("#crossbtn").click(function () {
+                $(".sidenav").css('display', 'none');
+            });
+
+        })
+    
+    </script>
+         
       <style>
+          #crossbtn {
+                  right: 6px;
+    position: absolute;
+    z-index: 9999;
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    top: 4px;
+    display:none;
+          }
           .user-info, .user-name {
     font-size: 12px;
     color: #fff;
@@ -54,6 +81,12 @@
             font-size: 32px;
             margin:4%;
         }
+       @media screen and (max-width: 640px) {
+          .sidenav {
+          position:relative;
+          margin-top:-56px !important;
+          }
+}
         
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -133,6 +166,7 @@
         
                 <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-2 p-0 sidenav">
+                    <i class="fa fa-times" aria-hidden="true" id="crossbtn"></i>
                     <div class="sidenavlist">
                         <ul class="menudropdown">
                             <li>
@@ -170,6 +204,9 @@
               <li><a href="../master/securities.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Securities</a></li>
                                 <li><a href="../master/TBStructure.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> TB Structure</a></li>
                                 <li><a href="../master/PMSProvider.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Provider</a></li>
+                                <li><a href="../master/PMSCustomers.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Customers List</a></li>
+                                <li><a href="../master/PMSEmployees.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Employees</a></li>
+               <li><a href="../master/allCustomers.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> All Customers</a></li>
               
               
               
