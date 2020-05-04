@@ -177,7 +177,7 @@
                                <li class="reports" id="UserMasterli"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Reports </a>
  <ul class=" submenudropdownone" >
    
-       <li><a href="  ../master/report.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i>Report</a></li>
+       <li><a href="  ../master/reportNew.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i>Report</a></li>
                <%--<li><a href="../master/legalField.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Legal Fields</a></li>--%>
      </ul>
 

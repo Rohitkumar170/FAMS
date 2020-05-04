@@ -101,6 +101,7 @@
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\image\bgimage.png" />
     <Content Include="Assets\image\preloader.gif" />
+    <Content Include="Assets\image\ui-icons_ffffff_256x240.png" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\date-pickers.min.js" />
     <Content Include="Assets\js\jquery-ui.min.js" />
@@ -133,6 +134,7 @@
     <Content Include="master\PMSCustomers.aspx" />
     <Content Include="master\PMSEmployees.aspx" />
     <Content Include="master\PMSProvider.aspx" />
+    <Content Include="master\reportNew.aspx" />
     <Content Include="master\sectorsMaster.aspx" />
     <Content Include="master\securities.aspx" />
     <Content Include="master\stateMaster.aspx" />
@@ -2217,6 +2219,13 @@
     </Compile>
     <Compile Include="master\PMSProvider.aspx.designer.cs">
       <DependentUpon>PMSProvider.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\reportNew.aspx.cs">
+      <DependentUpon>reportNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\reportNew.aspx.designer.cs">
+      <DependentUpon>reportNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="master\sectorsMaster.aspx.cs">
       <DependentUpon>sectorsMaster.aspx</DependentUpon>

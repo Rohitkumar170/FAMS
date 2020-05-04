@@ -622,6 +622,7 @@ input[type=text], input[type="password"] {
     border: 1px solid #9ea5a9;
     width: 100%;
     border-radius: 3px;
+    padding-left: 5px;
 }
 
 
@@ -1268,41 +1269,43 @@ input[type="file"] {
 
 
 .ui-datepicker-title {
-    background-color: #051720;
+    background-color: #335566;
     color: #fff;
 }
-
+.ui-state-default {
+text-align:center !important}
 .ui-datepicker-header {
-    background-color: #051720;
+    background-color: #335566;
     color: #fff;
 }
 
 .ui-widget-header {
-    background-color: #051720;
+    background-color: #335566;
     color: #fff;
 }
 
 .ui-helper-clearfix {
-    background-color: #051720;
-    color: #fff;
+    background-color: #335566; color: #fff;
 }
 
 .ui-corner-all {
-    background-color: #051720;
+    background-color: #335566;
     color: #fff;
 }
-
-.ui-datepicker-calendar {
-    background-color: #051720;
-    color: #fff;
-}
+    .ui-state-hover {
+        background-color: #77848a !important;
+    }
+    .ui-datepicker-calendar {
+        background-color: #64808e;
+        color: #fff;
+    }
 
     .ui-datepicker-calendar thead tr {
         border: 1px solid #fff;
     }
 
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
-    background: #051720;
+    background: #335566;
     font-weight: normal;
     color: #fff;
     text-align: center;
