@@ -101,6 +101,7 @@
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\image\bgimage.png" />
     <Content Include="Assets\image\preloader.gif" />
+    <Content Include="Assets\image\trial_icon.png" />
     <Content Include="Assets\image\ui-icons_ffffff_256x240.png" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\date-pickers.min.js" />
@@ -131,6 +132,7 @@
     <Content Include="login.aspx" />
     <Content Include="master\customer.aspx" />
     <Content Include="master\Entity.aspx" />
+    <Content Include="master\mainDashboard.aspx" />
     <Content Include="master\PMSCustomers.aspx" />
     <Content Include="master\PMSEmployees.aspx" />
     <Content Include="master\PMSProvider.aspx" />
@@ -2198,6 +2200,13 @@
     </Compile>
     <Compile Include="master\Entity.aspx.designer.cs">
       <DependentUpon>Entity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\mainDashboard.aspx.cs">
+      <DependentUpon>mainDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\mainDashboard.aspx.designer.cs">
+      <DependentUpon>mainDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="master\PMSCustomers.aspx.cs">
       <DependentUpon>PMSCustomers.aspx</DependentUpon>

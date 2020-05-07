@@ -173,12 +173,11 @@ select {
 
 .logonav {
     background: #16222A; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #3A6073, #16222A); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #1c2c37, #395f71); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1c2c37, #395f71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /*background-color: #0a2e40;*/
     width: 100%;
     height: 57px;
-    border-right: 1px solid #60747d;
     border-bottom: 1px solid #60747d;
 }
 
@@ -193,21 +192,21 @@ select {
 
 .sidenav {
     background: #16222A; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #3A6073, #16222A); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #1c2c37, #304f5f); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1c2c37, #304f5f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /*background-color: #0a2e40;*/
     width: 100%;
-    height: 556px;
+    height: 598px;
     border-right: 1px solid #fff;
 }
-
+footer {
+position:fixed; width:100%; bottom:0px}
 .footerbar {
     background: #16222A; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #3A6073, #16222A); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /*background-color: #0a2e40;*/
-    width: 100%;
-    height: 44px;
+    height: 32px;
     border-top: 1px solid #60747d;
 }
 
@@ -215,9 +214,10 @@ select {
         text-align: center;
         font-size: 12px;
         color: #fff;
-        position: absolute;
-        top: 9px;
-        right: 41%;
+        /* position: absolute; */
+        /* top: 9px; */
+        /* right: 41%; */
+        padding-top: 7px;
     }
 
 .sidenavlist > ul {
@@ -1308,11 +1308,10 @@ text-align:center !important}
     .ui-state-hover {
         background-color: #77848a !important;
     }
-    .ui-datepicker-calendar {
-        background-color: #64808e;
-        color: #fff;
-    }
-
+.ui-datepicker-calendar {
+    background-color: #ced4d8;
+    color: #356;
+}
     .ui-datepicker-calendar thead tr {
         border: 1px solid #fff;
     }
@@ -1352,9 +1351,52 @@ overflow-x:scroll}
     padding: 12px !important
 }
 .sidenavlist {
-    max-height: 560px;
+    max-height: 568px;
     overflow: auto;
 }
 button i {
     padding-right: 3px;
+}
+.panel-default > .panel-heading {
+    color: #2e2e2e !important;
+    background: rgb(218, 219, 220) !important;
+    border-color: #ddd;
+    position: relative;
+}
+.panel-title {
+    margin-top: 0;
+    font-size: 14px !important;
+}
+    .panel-title > a {
+        display: block !important;
+        padding: 6px 15px 10px !important;
+        font-size: 12px;
+        color: #2e2e2e !important;
+        font-weight: bold;
+    }
+.panel-group {
+    padding: 10px 15px;
+}
+.filterBox {
+    position: absolute;
+    right: 5px;
+    top: 4px;
+}
+.filterBox label {
+        margin: 0 !important;
+        font-size: 11px;
+    }
+.filterDropdown {
+    border: 1px solid #cacbcc;
+    padding: 1px 5px 1px 0px !important;
+    height: 20px !important;
+    width: 115px;
+    background: #f3f5f5;
+    font-size: 11px;
+}
+.ui-datepicker th {
+    padding: .4em .3em !important;
+}
+.ui-datepicker td span, .ui-datepicker td a {
+    padding: .1em !important;
 }
