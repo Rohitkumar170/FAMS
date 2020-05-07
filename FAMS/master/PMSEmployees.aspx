@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="PMSEmployees.aspx.cs" Inherits="FAMS.master.PMSEmployees" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+       <link href="../Assets/css/jquery-ui.min.css" rel="stylesheet" />
      <script type="text/javascript">
     $(function () {
         $("table tr").dblclick(function () {
@@ -326,14 +327,14 @@
           <div class="row">
               <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
         <label class="col-md-4 col-xs-12 col-sm-4 p-0">Inception Date:</label>
-            <input type="date" class="col-md-7 col-xs-12 col-sm-7">
+            <input type="text" id="txtdate1" class="col-md-7 col-xs-12 col-sm-7" />
            
                
         </div>
        
               <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
                 <label class="col-md-4 col-xs-12 col-sm-4 p-0">Emp Linking Date:</label>
-              <input type="date" class="col-md-7 col-xs-12 col-sm-7">
+              <input type="text" id="txtdate2" class="col-md-7 col-xs-12 col-sm-7" />
         </div>
         <div class="col-md-4 col-xs-12 col-sm-4">
         
@@ -534,4 +535,15 @@
        
        
        </div> 
+          <script src="../Assets/js/bootstrap.min.js"></script>
+    <script src="../Assets/js/date-pickers.min.js"></script>
+    <script src="../Assets/js/jquery-ui.min.js"></script>
+     <script>
+           $(function () {
+               $("#txtdate1").datepicker();
+                   $("#txtdate2").datepicker();
+
+           });
+  </script>
+    
 </asp:Content>

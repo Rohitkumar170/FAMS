@@ -80,13 +80,13 @@
               <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
         <label class="col-md-4 col-xs-12 col-sm-4 p-0">From Date:</label>
   
-            <input type="text" id="fromdate" name="" class="col-md-7 col-xs-12 col-sm-7" placeholder="Select Date" />
+            <input type="text" id="fromdate" name="" class="col-md-7 col-xs-12 col-sm-7" placeholder=" " />
                
         </div>
         <div class="col-md-4 col-xs-12 col-sm-4">
          <label class="col-md-4 col-xs-12 col-sm-4 p-0">To Date:</label>
   
-            <input type="text" id="todate" class="col-md-7 col-xs-12 col-sm-7" placeholder="Select Date" />
+            <input type="text" id="todate" class="col-md-7 col-xs-12 col-sm-7" placeholder=" " />
         </div>
               <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
          <label class="col-md-4 col-xs-12 col-sm-4 p-0">Account Type:</label>

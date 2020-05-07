@@ -619,10 +619,17 @@ input[type=text], input[type="password"] {
 .dropdown {
     height: 22px;
     background: transparent;
+    border: none;
+    border-bottom: 1px solid #9ea5a9;
+    width: 100%;
+    border-radius: 0px;
+    padding-left: 5px;
+    /*height: 22px;
+    background: transparent;
     border: 1px solid #9ea5a9;
     width: 100%;
     border-radius: 3px;
-    padding-left: 5px;
+    padding-left: 5px;*/
 }
 
 
@@ -643,10 +650,16 @@ input[type=date] {
 }
 input[type="text"], input[type="password"], input[type="date"] {
     background: transparent;
+    border: none;
+    border-bottom: 1px solid #9ea5a9;
+    padding-left: 3px;
+    font-size: 11px;
+    border-radius: 0px;
+    /*background: transparent;
     border: 1px solid #9ea5a9;
     padding-left: 3px;
     font-size: 11px;
-    border-radius: 3px;
+    border-radius: 3px;*/
 }
 .k-dropdown-wrap {
     width: 100% !important;
@@ -792,7 +805,7 @@ span.utiltycheckbox:last-child {
 }
 
     .bankmasterTable td {
-        border-left: 1px solid #ddd;
+        /*border-left: 1px solid #ddd;*/
         padding: 3px;
         font-size: 11px;
         padding-left: 11px;
@@ -805,11 +818,11 @@ span.utiltycheckbox:last-child {
     }
 
     .bankmasterTable tr:nth-child(even) {
-        background-color: #dadee0;
+        background-color: #dae2e6;
     }
 
     .bankmasterTable tr:hover {
-        background-color: #ddd;
+        background-color: #b2bec3;
     }
 
     .bankmasterTable th {
@@ -1341,4 +1354,7 @@ overflow-x:scroll}
 .sidenavlist {
     max-height: 560px;
     overflow: auto;
+}
+button i {
+    padding-right: 3px;
 }

@@ -30,6 +30,7 @@ $(document).ready(function () {
         var row = jquery_1_11_3_min_p(this);
         $("#entitygrid").hide();
         $("#boxgrid").show();
+        $(".boxrow").hide();
         $("#btnNew").hide();
         $("#Btnback").show();
         $('#txtname').val(row.find('td:nth-child(3)').text().trim()); $('#txtaccountno').val(row.find('td:nth-child(4)').text().trim())

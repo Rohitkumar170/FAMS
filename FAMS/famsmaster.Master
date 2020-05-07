@@ -193,8 +193,8 @@
 
                         </li>
                     
-          <li class="adminastator"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Master </a>
-                            <ul class=" submenudropdown">
+          <li class="master"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Master </a>
+                            <ul class="submenudropdowntwo">
                <li><a href="../master/countryMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Country</a></li>
             <li><a href="../master/stateMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> State</a></li>
                                 <li><a href="../master/cityMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> City</a></li>
@@ -266,6 +266,9 @@
           });
              $(".reports").click(function(){
     $(".submenudropdownone").toggle('100');
+          });
+           $(".master").click(function(){
+    $(".submenudropdowntwo").toggle('200');
   });
            });
           </script>

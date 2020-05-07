@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="allCustomers.aspx.cs" Inherits="FAMS.master.allCustomers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../Assets/css/jquery-ui.min.css" rel="stylesheet" />
      <script type="text/javascript">
+      
     $(function () {
         $("table tr").dblclick(function () {
             $("#customerDetail").modal("show");
@@ -584,7 +586,7 @@
         <label class="col-md-12 col-xs-12 col-sm-12 p-0">Inception Date:</label>
         </div>
         <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-              <input type="date" class="col-md-12 col-xs-12 col-sm-12" />
+               <input type="text" id="txtdate1" class="col-md-12 col-xs-12 col-sm-12" />
     
         </div>
             </div>
@@ -1093,4 +1095,13 @@
        
        
        </div>
+              <script src="../Assets/js/bootstrap.min.js"></script>
+    <script src="../Assets/js/date-pickers.min.js"></script>
+    <script src="../Assets/js/jquery-ui.min.js"></script>
+     <script>
+           $(function () {
+               $("#txtdate1").datepicker();
+
+           });
+  </script>
 </asp:Content>

@@ -42,18 +42,7 @@ $(document).ready(function(){
     font-size:12px;
         }
 
-        #btnsave{
-
-                   background-color: #0a2e40;
-    color: #fff;
-    padding: 1px 12px 1px 12px;
-    position: absolute;
-    right: 0px;
-    top: 77px;
-        }
-
-
-       .gridbox {
+         .gridbox {
           
             height: 150px;
             border-radius: 3px;
@@ -255,119 +244,38 @@ $(document).ready(function(){
                                     </tr>--%>
                                 </table>
 
-                     <div class="col-md-12 col-sm-12 col-xs-12 gridbox" id="boxgrid" style=" display:none;">
+                     <div id="boxgrid" style=" display:none;">
 
 
 
-                         <div class="row boxrow">
-
-    <div class="col-md-8 pull-left">    
-    <div class="pdfexport">
-   <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
-                            <i class="fa fa-file-excel-o"></i> </button>
-                            <button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
-                            <i class="fa fa-file-pdf-o"></i> </button>
-                          
-                          
-    </div>
-    
-    
-    </div>
-    <div class="col-md-2 pull-left mt-2">  
-        <div class="searchDropdown">
-         <div class="row">
-            <label class=" col-md-8 showLebel">  Show Records :</label>
-			<select id="ddlLoadMore" class=" col-md-4  showrecords pull-right">
-												<option>2 </option>
-                                                <option>5 </option>
-                                                <option>50 </option>
-												<option>100 </option>
-												<option>150</option>
-                                                <option>200</option>
-                                                 <option>500</option>
-                                                </select>
-    </div>
-					
-     </div>  </div>
-    <div class="col-md-2 pull-right mt-2 ">
-    
-                           
-    <div class="searchbox col-md-12 col-sm-12 col-xs-12 p-0">
-    
+                           <div class="col-md-12 col-sm-12 col-xs-12 insidebox p-0" >
+                               <div class="col-md-12 col-sm-12 col-xs-12 detailBox">
                                 
-                       
-                            <input type="text" class="col-md-12 col-sm-12 col-xs-12 round  " placeholder="Search" autocomplete="off" id="searchText">
-                            <div class="faiconsarch">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            
-                       </div>
-</div>
-</div>
+                              
+                           <div class="form-group">
+          <div class="row">
+              <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">Name:</label>
+  <input type="text" id="txtname" class="col-md-7 col-xs-12 col-sm-7" onkeypress="RemoveValidation()"  />
+               
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-4">
+         <label class="col-md-4 col-xs-12 col-sm-4 p-0">Account No.:</label>
+  
+              <input type="text" id="txtaccountno" class="col-md-7 col-xs-12 col-sm-7" onkeypress="RemoveValidation()"/>
+        </div>
+             
+       <div class="col-md-4 col-xs-12 col-sm-4">
+            <button type="button" class="btn btn-sm btnconinsideBtn pull-right" id="btnsave"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button> 
 
-                           <div class="col-md-12 col-sm-12 col-xs-12 insidebox" >
-                               <div class="row">
-                               <div class="col-md-4 col-sm-6 col-xs-4">
-                         <div class="form-group">
-
-    <label class="col-md-12 p-0">Name</label>
-    <input type="text" id="txtname" class="col-md-12" onkeypress="RemoveValidation()"  />
-
-
-
-
-
-
-
-                         </div>
-
-
-                     </div>
-                               <div class="col-md-4 col-sm-6 col-xs-4">
-                         <div class="form-group">
-
-    <label class="col-md-12 p-0" >Account No</label>
-    <input type="text" id="txtaccountno" class="col-md-12" onkeypress="RemoveValidation()"/>
-
-
-
-
-
-
-
-                         </div>
-
-
-                     </div>
-                               <%--<div class="col-md-4 col-sm-4 col-xs-4">
-                         <div class="form-group">
-<div class="row">
-    <label class="col-md-3 col-sm-3 col-xs-3">Master:</label>
-    <select class="col-md-9 col-xs-9 col-sm-9 dropdown">
-        <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-
-
-    </select>
-
-
-
-</div>
-
-
-
-                         </div>
-
-
-                     </div>--%>
-                               </div>
-                               
-
-                                <button type="button" class="btn btn-sm btnconinsideBtn pull-right" id="btnsave" data-toggle="modal" data-target=""> <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button> 
-
-                               </div>
+       </div>
+        </div>
+         </div>  
+                         
+          
+                          </div>
+                              
+        </div>
 
 
 
