@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FAMS.master
+namespace FAMS.Reports
 {
 
 
-    public partial class mainDashboard
+    public partial class cashEquivalent
     {
     }
 }

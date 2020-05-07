@@ -790,11 +790,10 @@ span.utiltycheckbox:last-child {
     background-color: #0a2e40;
     color: #fff;
     border: none;
-    border-radius: 2px;
     font-size: 11px;
     cursor: pointer;
     font-weight: bold;
-    border-radius: 2px !important;
+    border-radius: 3px !important;
 }
 
 .bankmasterTable {

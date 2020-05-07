@@ -100,7 +100,11 @@
     <Content Include="Assets\css\material-extended.min.css" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\image\bgimage.png" />
+    <Content Include="Assets\image\cash_icon.png" />
+    <Content Include="Assets\image\holding_icon.png" />
     <Content Include="Assets\image\preloader.gif" />
+    <Content Include="Assets\image\summary_icon.png" />
+    <Content Include="Assets\image\transaction_icon.png" />
     <Content Include="Assets\image\trial_icon.png" />
     <Content Include="Assets\image\ui-icons_ffffff_256x240.png" />
     <Content Include="Assets\js\bootstrap.min.js" />
@@ -132,7 +136,7 @@
     <Content Include="login.aspx" />
     <Content Include="master\customer.aspx" />
     <Content Include="master\Entity.aspx" />
-    <Content Include="master\mainDashboard.aspx" />
+    <Content Include="master\reportsDashboard.aspx" />
     <Content Include="master\PMSCustomers.aspx" />
     <Content Include="master\PMSEmployees.aspx" />
     <Content Include="master\PMSProvider.aspx" />
@@ -141,6 +145,11 @@
     <Content Include="master\securities.aspx" />
     <Content Include="master\stateMaster.aspx" />
     <Content Include="master\TBStructure.aspx" />
+    <Content Include="Reports\cashEquivalent.aspx" />
+    <Content Include="Reports\holdingReport.aspx" />
+    <Content Include="Reports\summaryReport.aspx" />
+    <Content Include="Reports\transactionStatement.aspx" />
+    <Content Include="Reports\trialBalanceReport.aspx" />
     <Content Include="Telerix\content\dataviz\dashboards\area-chart.png" />
     <Content Include="Telerix\content\dataviz\dashboards\car-dashboard.png" />
     <Content Include="Telerix\content\dataviz\dashboards\car.gif" />
@@ -2201,12 +2210,12 @@
     <Compile Include="master\Entity.aspx.designer.cs">
       <DependentUpon>Entity.aspx</DependentUpon>
     </Compile>
-    <Compile Include="master\mainDashboard.aspx.cs">
-      <DependentUpon>mainDashboard.aspx</DependentUpon>
+    <Compile Include="master\reportsDashboard.aspx.cs">
+      <DependentUpon>reportsDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="master\mainDashboard.aspx.designer.cs">
-      <DependentUpon>mainDashboard.aspx</DependentUpon>
+    <Compile Include="master\reportsDashboard.aspx.designer.cs">
+      <DependentUpon>reportsDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="master\PMSCustomers.aspx.cs">
       <DependentUpon>PMSCustomers.aspx</DependentUpon>
@@ -2282,6 +2291,41 @@
     <Compile Include="Models\GETCOA\GetReportData.cs" />
     <Compile Include="Models\LoginClasss\Logindetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\cashEquivalent.aspx.cs">
+      <DependentUpon>cashEquivalent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\cashEquivalent.aspx.designer.cs">
+      <DependentUpon>cashEquivalent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\holdingReport.aspx.cs">
+      <DependentUpon>holdingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\holdingReport.aspx.designer.cs">
+      <DependentUpon>holdingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\summaryReport.aspx.cs">
+      <DependentUpon>summaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\summaryReport.aspx.designer.cs">
+      <DependentUpon>summaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\transactionStatement.aspx.cs">
+      <DependentUpon>transactionStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\transactionStatement.aspx.designer.cs">
+      <DependentUpon>transactionStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\trialBalanceReport.aspx.cs">
+      <DependentUpon>trialBalanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\trialBalanceReport.aspx.designer.cs">
+      <DependentUpon>trialBalanceReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebServices\Customer.asmx.cs">
       <DependentUpon>Customer.asmx</DependentUpon>
       <SubType>Component</SubType>
