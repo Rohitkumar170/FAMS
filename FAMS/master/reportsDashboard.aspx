@@ -25,7 +25,7 @@
         <div class="row">
             <div class="allHtmlCode col-md-12 col-sm-12 col-xs-12">
 
-
+              
      <div class="row pl-3">
                     <div class="legal col-md-3 col-sm-3 col-xs-12">
                    Reports Dashboard</div>
@@ -39,7 +39,7 @@
           <div class="row">
                         <div class="col-sm-12 col-md-12 mt-3">
                            <div class=" col-md-12 col-sm-12 col-xs-12" >
-             <a href="#">
+             <a href="../Reports/trialBalanceReport.aspx">
                     <div class=" portalBox" >
                         <img src="../Assets/image/trial_icon.png" />
                         <h5>Trial Balance Report</h5>
@@ -48,17 +48,17 @@
                      <a href="../Reports/summaryReport.aspx">
                     <div class="portalBox" >
                         <img src="../Assets/image/summary_icon.png" />
-                        <h5>Summary Report</h5>
+                        <h5>Portfolio Performance Summary</h5>
                      
                     </div>
                     </a>
-                    <a href="#">
+                    <a href="../Reports/holdingReport.aspx">
                     <div class="portalBox" >
                         <img src="../Assets/image/holding_icon.png" />
-                        <h5>Holding Report</h5>
+                        <h5>Portfolio Appraisal</h5>
                           
                     </div></a>
-                     <a href="#">
+                    <a href="../Reports/transactionStatement.aspx">
                     <div class="portalBox" >
                         <img src="../Assets/image/transaction_icon.png" />
                         <h5>Transaction Statement</h5>

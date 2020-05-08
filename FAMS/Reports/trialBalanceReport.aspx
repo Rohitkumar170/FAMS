@@ -11,11 +11,37 @@
         }
 
         .cardbody {
-            width: 120%
+            width: 108%;
         }
+        #trialBalanceGrid .bankmasterTable tbody {
+            max-height: 45vh !important;
+        }
+        #trialBalanceGrid thead th {text-align:center
+        }
+         #trialBalanceGrid { overflow:hidden; border-right:1px solid #ddd; border-left:1px solid #ddd  
+        }
+        strong {
+            color: #0a2e40;
+            font-size: 12px;
+        }
+        .bankmasterTable tr td table tr:nth-child(even) {
+            background-color:transparent;
+        }
+        .bankmasterTable thead tr:first-child th:first-child {
+        padding-left:0px}
+        .bankmasterTable thead tr:first-child th {
+        padding-left:10%}
+        .bankmasterTable tr td table tr td:first-child {
+        text-align:left !important}
+        .bankmasterTable tr td table tr td {
+        text-align:right !important}
+            .bankmasterTable tbody tr td table tbody {
+            overflow:hidden !important}
 
-        #reportGrid .bankmasterTable tbody {
-            max-height: 55vh !important;
+        @media screen and (max-width:1024px) {
+            .cardbody {
+            width: 100%;
+        }
         }
     </style>
 </asp:Content>
@@ -81,8 +107,15 @@
 
 
                         </div>
-
-                        <div class="col-md-2 pull-left mt-2">
+                        <div class="btncon col-md-4 col-sm-4 col-xs-12 pt-2">
+                            <div class="pull-right">
+                             <button type="button" class="btn btn-sm btnconinsideBtn"> Yesterday</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn"> Last Week</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn"> Last 2 Weeks</button>
+                                </div>
+                        
+                    </div>
+<%--                        <div class="col-md-2 pull-left mt-2">
                             <div class="searchDropdown">
                                 <div class="row">
                                     <label class=" col-md-8 showLebel">Show Records :</label>
@@ -112,99 +145,234 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
-                    <div id="reportGrid">
+                    <div id="trialBalanceGrid">
                         <table class="bankmasterTable">
                             <thead>
                                 <tr>
 
+                                    <th style="width: 300px">Account</th>
+                                    <th style="width: 300px" colspan="2">Opening Balance</th>
+                                    <th style="width: 300px" colspan="2">Transaction During Period</th>
+                                    <th style="width: 300px" colspan="2">Closing Balance</th>
+
+                                </tr>
+                                <tr>
+
                                     <th style="width: 300px"></th>
-                                    <th style="width: 500px"></th>
+                                    <th class="text-right" style="width: 150px">Debit</th>
+                                    <th class="text-right" style="width: 150px">Credit</th>
+                                    <th class="text-right" style="width: 150px">Debit</th>
+                                    <th class="text-right" style="width: 150px">Credit</th>
+                                    <th class="text-right" style="width: 150px">Debit</th>
+                                    <th class="text-right" style="width: 150px; padding-right:10px">Credit</th>
 
                                 </tr>
                             </thead>
                             <tbody class="scrollbar">
                                 <tr>
 
+                                    <td colspan="7"><strong>Assets</strong>
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                     <td colspan="7"><strong>Current Assets</strong>
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                    <td width="300px">Receivable-KOTAK-Shares-Listed</td>
+                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
 
-                                    <td style="width: 300px">Market Value as of 01/04/2014
+                                            </tr>
+                                                <tr>
+                                    <td width="300px">Bank balance-DUMMY-100345</td>
+                                    <td class="text-center" style="width: 150px">333,372.14</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+
                                     </td>
-                                    <td style="width: 500px">32,604,127.40
+
+                                            </tr>
+                                                 <tr>
+                                     <td colspan="7"><strong>Investment</strong>
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                    <td width="300px">Receivable-KOTAK-Shares-Listed</td>
+                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+
+                                            </tr>
+                                                <tr>
+                                    <td width="300px">Bank balance-DUMMY-100345</td>
+                                    <td class="text-center" style="width: 150px">333,372.14</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+
                                     </td>
+
+                                            </tr>
+                                             
+                                            </tbody>
+                                        </table>
+
+
+                                    </td>
+                                   
                                 </tr>
+                         <tr>
+
+                                    <td colspan="7"><strong>Expense</strong>
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                     <td colspan="7">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                    <td width="300px">Management Fees</td>
+                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+
+                                            </tr>
+                                                <tr>
+                                    <td width="300px">STT</td>
+                                    <td class="text-center" style="width: 150px">333,372.14</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+
+                                    </td>
+
+                                            </tr>
+                                                
+                                            </tbody>
+                                        </table>
+
+
+                                    </td>
+                                   
+                                </tr>
+
                                 <tr>
 
+                                    <td colspan="7"><strong>Income</strong>
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                     <td colspan="7"><strong>Dividend</strong>
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                    <td width="300px">Dividend-Shares Listed</td>
+                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
 
-                                    <td style="width: 300px">Opening NAV as of 01/04/2014
+                                            </tr>
+                                              
+                                            </tbody>
+                                        </table>
+
+
                                     </td>
-                                    <td style="width: 500px">14.1757
+
+                                            </tr>
+                                                 <tr>
+                                     <td colspan="7"><strong>Gain/Loss</strong>
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                    <td width="300px">Shares-Listed</td>
+                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+
+                                            </tr>
+                                                <tr>
+                                    <td width="300px">Mutual Funds-Liquid Fund</td>
+                                    <td class="text-center" style="width: 150px">333,372.14</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px">0.00</td>
+
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+
                                     </td>
+
+                                            </tr>
+                                             
+                                            </tbody>
+                                        </table>
+
+
+                                    </td>
+                                   
                                 </tr>
-                                <tr>
-
-
-                                    <td style="width: 300px">Opening Outstanding Units as of 01/04/2014
-                                    </td>
-                                    <td style="width: 500px">2,300,000.000
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-
-                                    <td style="width: 300px">Capital In(+)/Out(-)
-                                    </td>
-                                    <td style="width: 500px">0.00
-                                    </td>
-                                </tr>
-
-
-                                <tr>
-
-
-                                    <td style="width: 300px">Realized Gain
-                                    </td>
-                                    <td style="width: 500px">58,242.77
-                                    </td>
-                                </tr>
-                                <tr>
-
-
-                                    <td style="width: 300px">Unrealized Gain
-                                    </td>
-                                    <td style="width: 500px">7,392,785.99
-                                    </td>
-                                </tr>
-
-                                <tr>
-
-
-                                    <td style="width: 300px">Gain Prior to Take-over
-                                    </td>
-                                    <td style="width: 500px">0.00
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 300px">Income
-                                    </td>
-                                    <td style="width: 500px">144,572.90
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 300px">Fees
-                                    </td>
-                                    <td style="width: 500px">126,904.25
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="width: 300px">Expenses
-                                    </td>
-                                    <td style="width: 500px">0.00
-                                    </td>
-                                </tr>
+                           
                             </tbody>
+                            <tfoot >
+                                <tr>
+                                     <td style="width: 300px">Total</td>
+                                    <td class="text-right" style="width: 150px"></td>
+                                    <td class="text-right" style="width: 150px"></td>
+                                     <td class="text-right" style="width: 150px">28,968,151.508</td>
+                                    <td class="text-right" style="width: 150px"></td>
+                                    <td class="text-right" style="width: 150px">47,267,111.90</td>
+                                    <td class="text-right" style="width: 150px">18,298,960</td>
+                                    <td class="text-right" style="width: 150px">63.17%</td>
+
+                                </tr>
+
+                            </tfoot>
                         </table>
 
                     </div>

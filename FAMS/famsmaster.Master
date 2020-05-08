@@ -153,7 +153,7 @@
                   <div class="loginavtar">
                     <div class="userwelcominfo">
                 <span class="user-info">Welcome</span>
-                <span class="user-name" id="SPUserName">Lighthouse Financials</span>
+                <span class="user-name" id="SPUserName">User 1</span>
                 </div>
                         <i class="fa fa-user-circle-o usericon" aria-hidden="true"></i>
                         <ul class="changePannel" style="display: none;">

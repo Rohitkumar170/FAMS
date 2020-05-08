@@ -1399,3 +1399,10 @@ button i {
 .ui-datepicker td span, .ui-datepicker td a {
     padding: .1em !important;
 }
+tfoot {
+display:block}
+    tfoot tr {
+        border-top: 2px solid #0a2e40;
+    }
+    tfoot tr td {
+    font-size:13px; font-weight:bolder}

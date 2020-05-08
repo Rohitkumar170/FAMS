@@ -83,7 +83,7 @@
 
                         </div>
 
-                        <div class="col-md-2 pull-left mt-2">
+                       <%-- <div class="col-md-2 pull-left mt-2">
                             <div class="searchDropdown">
                                 <div class="row">
                                     <label class=" col-md-8 showLebel">Show Records :</label>
@@ -99,8 +99,8 @@
                                 </div>
 
                             </div>
-                        </div>
-                        <div class="col-md-2 pull-right mt-2 ">
+                        </div>--%>
+                       <%-- <div class="col-md-2 pull-right mt-2 ">
 
 
                             <div class="searchbox col-md-12 col-sm-12 col-xs-12 p-0">
@@ -113,7 +113,15 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </div>--%>
+                        <div class="btncon col-md-4 col-sm-4 col-xs-12 pt-2">
+                            <div class="pull-right">
+                             <button type="button" class="btn btn-sm btnconinsideBtn"> Yesterday</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn"> Last Week</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn"> Last 2 Weeks</button>
+                                </div>
+                        
+                    </div>
                     </div>
                     <div id="reportGrid">
                         <table class="bankmasterTable">
