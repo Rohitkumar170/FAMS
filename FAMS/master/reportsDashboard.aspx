@@ -65,7 +65,7 @@
                      
                     </div>
                     </a>
-                     <a href="#">
+                     <a href="../Reports/cashEquivalent.aspx">
                     <div class="portalBox" >
                         <img src="../Assets/image/cash_icon.png" />
                         <h5>Cash Equivalent</h5>
