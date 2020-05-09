@@ -1,4 +1,16 @@
-﻿.formlogin .fa-envelope-o {
+﻿
+body {
+    font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
+}
+.price {
+text-align:right !important}
+.profit {
+    color: #249e33
+}
+.loss {
+    color: #f31313
+}
+.formlogin .fa-envelope-o {
     position: absolute;
     top: 1px;
     font-size: 34px !important;
@@ -15,7 +27,8 @@
 .showrecords {
     padding: 0px;
 }
-
+.bodypartnav {
+padding: 15px 12px !important}
 .faiconsarch {
     position: absolute;
     top: 4px;
@@ -165,8 +178,8 @@ select {
 .cardbody {
     /*border: 2px solid #c5c5c5;*/
     width: 100%;
-    height: 528px;
-    margin: 18px 0px 0px 1px;
+    height: 550px;
+    /*margin: 18px 0px 0px 1px;*/
     overflow: hidden;
     box-shadow: 0px 0px 3px 1px #c5c5c5;
 }
@@ -177,14 +190,14 @@ select {
     background: linear-gradient(to right, #1c2c37, #395f71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /*background-color: #0a2e40;*/
     width: 100%;
-    height: 57px;
+    height: 45px;
     border-bottom: 1px solid #60747d;
 }
 
 .headernav {
     /*background-color: #0a2e40;*/
     width: 100%;
-    height: 57px;
+    height: 45px;
     background: #16222A; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #3A6073, #16222A); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -296,7 +309,7 @@ position:fixed; width:100%; bottom:0px}
 .loginavtar .fa-user-circle-o {
     color: #fff;
     position: absolute;
-    top: 16px;
+    top: 10px;
     right: 17px;
     font-size: 24px;
     cursor: pointer;
@@ -311,7 +324,7 @@ position:fixed; width:100%; bottom:0px}
     border: 1px solid #c5c5c5;
     position: absolute;
     top: 44px;
-    right: 22px;
+    right: 1px;
     width: 17%;
     background-color: Transparent;
 }
@@ -389,7 +402,7 @@ position:fixed; width:100%; bottom:0px}
     font-size: 19px;
     color: #0a2e40;
     font-weight: bold;
-    padding: 9px 3px 4px 13px;
+    padding: 5px 3px 4px 10px;
     display: block;
 }
 
@@ -399,7 +412,7 @@ label {
 }
 
 .cardinside {
-    margin-top: 10px;
+    padding: 10px;
 }
 
 .codetext {
@@ -797,7 +810,7 @@ span.utiltycheckbox:last-child {
 }
 
 .bankmasterTable {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
     border-collapse: collapse;
     width: 100%;
     border: 1px solid #ddd;
@@ -808,6 +821,7 @@ span.utiltycheckbox:last-child {
         padding: 3px;
         font-size: 11px;
         padding-left: 11px;
+        font-weight:600
     }
 
     .bankmasterTable th {
@@ -816,9 +830,9 @@ span.utiltycheckbox:last-child {
         padding-left: 11px;
     }
 
-    .bankmasterTable tr:nth-child(even) {
+    /*.bankmasterTable tr:nth-child(even) {
         background-color: #dae2e6;
-    }
+    }*/
 
     .bankmasterTable tr:hover {
         background-color: #b2bec3;
@@ -1406,3 +1420,32 @@ display:block}
     }
     tfoot tr td {
     font-size:13px; font-weight:bolder}
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Light"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Semilight"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf) format("truetype");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Bold"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Semibold"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf) format("truetype");
+    font-weight: 700;
+}
