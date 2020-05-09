@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="trialBalanceReport.aspx.cs" Inherits="FAMS.Reports.trialBalanceReport" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="PSMtrialBalanceReport.aspx.cs" Inherits="FAMS.Reports.PSMtrialBalanceReport" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <link href="../Assets/css/jquery-ui.min.css" rel="stylesheet" />
     <style>
@@ -14,7 +14,7 @@
             width: 109.5%;
         }
         #trialBalanceGrid .bankmasterTable tbody {
-            max-height: 50vh !important;
+            max-height: 41vh !important;
         }
         #trialBalanceGrid thead th {text-align:center
         }
@@ -66,28 +66,79 @@
 
                 <div class="cardinside col-md-12 col-sm-12 col-xs-12">
                     <div class="col-md-12 col-sm-12 col-xs-12 detailBox">
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
-                                    <label class="col-md-3 col-xs-12 col-sm-3 p-0">From Date:</label>
-
-                                    <input type="text" id="fromdate" name="" class="col-md-7 col-xs-12 col-sm-7" placeholder=" " />
-
-                                </div>
-                                <div class="col-md-4 col-xs-12 col-sm-4">
-                                    <label class="col-md-3 col-xs-12 col-sm-3 p-0">To Date:</label>
-
-                                    <input type="text" id="todate" class="col-md-7 col-xs-12 col-sm-7" placeholder=" " />
-                                </div>
-                                <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
-                                    <button type="button" id="btnsearch" class="btn btn-sm btnconinsideBtn">Search</button>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
+                                
+                              <div class="form-group">
+          <div class="row">
+              <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">Customer Name:</label>
+  <div class="col-md-7 col-xs-12 col-sm-7 p-0 d-inline-block">
+            <select class="dropdown col-md-12 col-xs-12 col-sm-12">
+                <option>Select</option>
+                <option>Customer 1</option>
+                <option>Customer 2</option>
+                <option>Customer 3</option>
+                <option>Customer 4</option>
+                <option>Customer 5</option>
+                <option>Customer 6</option>
+            </select>
+      </div>
+               
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-4">
+         <label class="col-md-4 col-xs-12 col-sm-4 p-0">Accounts:</label>
+  <div class="col-md-7 col-xs-12 col-sm-7 p-0 d-inline-block">
+            <select class="dropdown col-md-12 col-xs-12 col-sm-12">
+                <option>Select</option>
+                <option>Assets</option>
+                <option>Expense</option>
+                <option>Income</option>
+                <option>Laibilities</option>
+                <option>All</option>
+            </select>
+      </div>
+        </div>
+              <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
+         <label class="col-md-4 col-xs-12 col-sm-4 p-0">Accounts Sub Level:</label>
+  <div class="col-md-7 col-xs-12 col-sm-7 p-0 d-inline-block">
+            <select class="dropdown col-md-12 col-xs-12 col-sm-12">
+                <option>Select</option>
+                <option>Current Assets</option>
+                <option>Investment</option>
+                <option>All</option>
+            </select>
+      </div>
+        </div>
+       
+        </div>
+         </div>  
+                           <div class="form-group">
+          <div class="row">
+               <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
+         <label class="col-md-4 col-xs-12 col-sm-4 p-0">Account Type:</label>
+  <div class="col-md-7 col-xs-12 col-sm-7 p-0 d-inline-block">
+            <select class="dropdown col-md-12 col-xs-12 col-sm-12">
+                <option>Select</option>
+            </select>
+      </div>
+        </div>
+              <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
+        <label class="col-md-4 col-xs-12 col-sm-4 p-0">From Date:</label>
+    <div class="col-md-7 col-xs-12 col-sm-7 p-0 d-inline-block">
+            <input type="text" id="fromdate" name="" class="col-md-12 col-xs-12 col-sm-12" placeholder=" " />
+              </div> 
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-4">
+         <label class="col-md-4 col-xs-12 col-sm-4 p-0">To Date:</label>
+  <div class="col-md-7 col-xs-12 col-sm-7 p-0 d-inline-block">
+            <input type="text" id="todate" name="" class="col-md-12 col-xs-12 col-sm-12" placeholder=" " />
+              </div> 
+        </div>
+             
+       
+        </div>
+         </div>  
+                            <button type="button" id="btnseach" class="pull-right btn btn-sm btnconinsideBtn">Search</button>
+                          </div>
                     
                     <div class="row boxrow">
                        <%-- <div class="col-md-12 col-sm-12 col-xs-12">

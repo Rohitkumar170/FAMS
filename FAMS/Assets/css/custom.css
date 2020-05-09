@@ -1275,6 +1275,7 @@ input[type="file"] {
 
 .bankmasterTable tbody {
     overflow: auto;
+    overflow-x: hidden;
     display: block;
     max-height: 31vh;
     width: 100%;

@@ -148,6 +148,7 @@
     <Content Include="master\TBStructure.aspx" />
     <Content Include="Reports\cashEquivalent.aspx" />
     <Content Include="Reports\holdingReport.aspx" />
+    <Content Include="Reports\PSMtrialBalanceReport.aspx" />
     <Content Include="Reports\summaryReport.aspx" />
     <Content Include="Reports\transactionStatement.aspx" />
     <Content Include="Reports\trialBalanceReport.aspx" />
@@ -2307,6 +2308,13 @@
     </Compile>
     <Compile Include="Reports\holdingReport.aspx.designer.cs">
       <DependentUpon>holdingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PSMtrialBalanceReport.aspx.cs">
+      <DependentUpon>PSMtrialBalanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PSMtrialBalanceReport.aspx.designer.cs">
+      <DependentUpon>PSMtrialBalanceReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reports\summaryReport.aspx.cs">
       <DependentUpon>summaryReport.aspx</DependentUpon>

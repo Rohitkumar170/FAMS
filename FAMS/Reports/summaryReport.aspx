@@ -32,7 +32,7 @@
                     </div>
                     <div class="btncon col-md-9 col-sm-9 col-xs-12">
                         <div class="btnpannel">
-                            <%-- <button type="button" class="btn btn-sm btnconinsideBtn" id="btnBack"><i class="fa fa fa-undo" aria-hidden="true"></i> Back</button>--%>
+                             <button type="button" class="btn btn-sm btnconinsideBtn" id="btnBack"><i class="fa fa fa-home" aria-hidden="true"></i> Home</button>
                         </div>
                     </div>
                 </div>
@@ -213,6 +213,31 @@
                                     <td style="width: 500px">0.00
                                     </td>
                                 </tr>
+                                   <tr>
+                                    <td style="width: 300px">Accrued Income
+                                    </td>
+                                    <td style="width: 500px">0.00
+                                    </td>
+                                </tr>
+                                   <tr>
+                                    <td style="width: 300px">Market Value as of 30/06/2014
+                                    </td>
+                                    <td style="width: 500px">40,072,824.81
+                                    </td>
+                                </tr>
+                                   <tr>
+                                    <td style="width: 300px">Closing NAV as of 30/06/2014
+                                    </td>
+                                    <td style="width: 500px">17.4230
+                                    </td>
+                                </tr>
+                                   <tr>
+                                    <td style="width: 300px">Closing Outstanding Units as of 30/06/2014
+                                    </td>
+                                    <td style="width: 500px">2,300,000.000
+                                    </td>
+                                </tr>
+                                  
                             </tbody>
                         </table>
 
