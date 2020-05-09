@@ -1,4 +1,21 @@
-﻿.formlogin .fa-envelope-o {
+﻿
+body {
+    font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
+}
+
+.price {
+    text-align: right !important
+}
+
+.profit {
+    color: #249e33
+}
+
+.loss {
+    color: #f31313
+}
+
+.formlogin .fa-envelope-o {
     position: absolute;
     top: 1px;
     font-size: 34px !important;
@@ -9,11 +26,17 @@
     border-right: 1px solid blue;
     color: #0a2e40;
 }
+
 .form-group {
     margin-bottom: 0px !important;
 }
+
 .showrecords {
     padding: 0px;
+}
+
+.bodypartnav {
+    padding: 15px 12px !important
 }
 
 .faiconsarch {
@@ -23,15 +46,17 @@
     font-size: 12px;
     color: #21343f;
 }
+
 .pdfexport {
     padding: 5px 0;
 }
- 
+
 .round {
     border-radius: 10px;
     padding: 12px;
     font-size: 12px;
 }
+
 .pdfbtns {
     font-size: 16px;
     line-height: 20px;
@@ -39,18 +64,23 @@
     color: #213642;
     border: 1px solid #bdc1c3;
 }
+
 .searchbox input:focus {
- 
     outline-offset: 0px !important;
     outline: -webkit-focus-ring-color auto 0px !important;
 }
+
 .searchbox input::placeholder {
-color:#999}
-.searchDropdown {
-margin-top:2px}
-.searchDropdown .showLebel {
-    text-align: right
+    color: #999
 }
+
+.searchDropdown {
+    margin-top: 2px
+}
+
+    .searchDropdown .showLebel {
+        text-align: right
+    }
 
 .btn-default:hover {
     background-color: #2e4b5b !important;
@@ -60,19 +90,23 @@ margin-top:2px}
 select {
     font-size: 12px;
 }
-.k-dropdown-wrap {
-    height:22px;
-}
-.k-state-default {
-    height:22px;
 
+.k-dropdown-wrap {
+    height: 22px;
 }
+
+.k-state-default {
+    height: 22px;
+}
+
 .k-widget {
-    width:100%!important;
+    width: 100% !important;
 }
+
 .k-dropdown {
-    width: 100% ! important;
+    width: 100% !important;
 }
+
 .k-header {
     width: 100% !important;
 }
@@ -165,8 +199,8 @@ select {
 .cardbody {
     /*border: 2px solid #c5c5c5;*/
     width: 100%;
-    height: 528px;
-    margin: 18px 0px 0px 1px;
+    height: 550px;
+    /*margin: 18px 0px 0px 1px;*/
     overflow: hidden;
     box-shadow: 0px 0px 3px 1px #c5c5c5;
 }
@@ -177,14 +211,14 @@ select {
     background: linear-gradient(to right, #1c2c37, #395f71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /*background-color: #0a2e40;*/
     width: 100%;
-    height: 57px;
+    height: 45px;
     border-bottom: 1px solid #60747d;
 }
 
 .headernav {
     /*background-color: #0a2e40;*/
     width: 100%;
-    height: 57px;
+    height: 45px;
     background: #16222A; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #3A6073, #16222A); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -199,8 +233,13 @@ select {
     height: 598px;
     border-right: 1px solid #fff;
 }
+
 footer {
-position:fixed; width:100%; bottom:0px}
+    position: fixed;
+    width: 100%;
+    bottom: 0px
+}
+
 .footerbar {
     background: #16222A; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #3A6073, #16222A); /* Chrome 10-25, Safari 5.1-6 */
@@ -241,10 +280,10 @@ position:fixed; width:100%; bottom:0px}
             padding: 7px 5px 7px 10px;
             display: block;
         }
-        /*.sidenavlist > ul > li> :hover{
+/*.sidenavlist > ul > li> :hover{
             background-color:#16222A;
         }*/
-      
+
 .Htmlpages {
     display: block;
     list-style: none;
@@ -260,16 +299,16 @@ position:fixed; width:100%; bottom:0px}
 }
 
 .sidenavlist > ul > li > ul {
+    list-style: none
+}
 
-    list-style:none
-}
-.sidenavlist > ul > li > ul > li > a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 12px;
-    display:block;
-    padding:7px;
-}
+    .sidenavlist > ul > li > ul > li > a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        display: block;
+        padding: 7px;
+    }
 
 .menudropdown .fa {
     color: #fff;
@@ -296,7 +335,7 @@ position:fixed; width:100%; bottom:0px}
 .loginavtar .fa-user-circle-o {
     color: #fff;
     position: absolute;
-    top: 16px;
+    top: 10px;
     right: 17px;
     font-size: 24px;
     cursor: pointer;
@@ -311,7 +350,7 @@ position:fixed; width:100%; bottom:0px}
     border: 1px solid #c5c5c5;
     position: absolute;
     top: 44px;
-    right: 22px;
+    right: 1px;
     width: 17%;
     background-color: Transparent;
 }
@@ -330,7 +369,6 @@ position:fixed; width:100%; bottom:0px}
             color: #fff;
             text-decoration: none;
             font-size: 12px;
-
         }
 
 .loginavtar .fa-key {
@@ -389,7 +427,7 @@ position:fixed; width:100%; bottom:0px}
     font-size: 19px;
     color: #0a2e40;
     font-weight: bold;
-    padding: 9px 3px 4px 13px;
+    padding: 5px 3px 4px 10px;
     display: block;
 }
 
@@ -399,7 +437,7 @@ label {
 }
 
 .cardinside {
-    margin-top: 10px;
+    padding: 10px;
 }
 
 .codetext {
@@ -414,6 +452,7 @@ label {
     max-height: 238px;
     overflow-x: hidden;
 }
+
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     background-color: #F5F5F5;
@@ -610,12 +649,14 @@ input[type="checkbox"] {
     right: 3%;
     top: 26%;
 }
+
 input[type=text], input[type="password"] {
     height: 22px;
     border: none;
     background: transparent;
     border: 1px solid #77848a;
 }
+
 .dropdown {
     height: 22px;
     background: transparent;
@@ -638,16 +679,16 @@ input[type=date] {
     background: transparent;
     border: 1px solid #77848a;
     padding: 2px;
-    height:24px
+    height: 24px
 }
 
 
 ::placeholder {
     color: #000;
-   
     font-size: 10px;
-    padding-left:0px;
+    padding-left: 0px;
 }
+
 input[type="text"], input[type="password"], input[type="date"] {
     background: transparent;
     border: none;
@@ -661,6 +702,7 @@ input[type="text"], input[type="password"], input[type="date"] {
     font-size: 11px;
     border-radius: 3px;*/
 }
+
 .k-dropdown-wrap {
     width: 100% !important;
     padding: 0px;
@@ -668,6 +710,7 @@ input[type="text"], input[type="password"], input[type="date"] {
     border: none;
     background: #fff !important;
 }
+
 .k-state-default {
     width: 100% !important;
     padding: 0px !important;
@@ -675,12 +718,15 @@ input[type="text"], input[type="password"], input[type="date"] {
     border: none !important;
     background: #fff !important;
 }
+
 .kendobox {
     border-bottom: 1px solid #77848a !important;
 }
+
 input:focus {
     outline: none;
 }
+
 .searchbox input[type="text"] {
     border: 1px solid #77848a;
     border-radius: 10px;
@@ -786,6 +832,7 @@ span.utiltycheckbox:last-child {
     font-weight: bold;
     border-radius: 2px !important;
 }
+
 .btnconinsideBtn {
     background-color: #0a2e40;
     color: #fff;
@@ -797,7 +844,7 @@ span.utiltycheckbox:last-child {
 }
 
 .bankmasterTable {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
     border-collapse: collapse;
     width: 100%;
     border: 1px solid #ddd;
@@ -808,6 +855,7 @@ span.utiltycheckbox:last-child {
         padding: 3px;
         font-size: 11px;
         padding-left: 11px;
+        font-weight: 600
     }
 
     .bankmasterTable th {
@@ -816,9 +864,9 @@ span.utiltycheckbox:last-child {
         padding-left: 11px;
     }
 
-    .bankmasterTable tr:nth-child(even) {
+    /*.bankmasterTable tr:nth-child(even) {
         background-color: #dae2e6;
-    }
+    }*/
 
     .bankmasterTable tr:hover {
         background-color: #b2bec3;
@@ -829,9 +877,11 @@ span.utiltycheckbox:last-child {
         background-color: #0a2e40;
         color: white;
     }
+
 input[type="file"] {
     font-size: 12px;
 }
+
 .keytermscondition {
     font-size: 11px;
 }
@@ -1284,8 +1334,11 @@ input[type="file"] {
     background-color: #335566;
     color: #fff;
 }
+
 .ui-state-default {
-text-align:center !important}
+    text-align: center !important
+}
+
 .ui-datepicker-header {
     background-color: #335566;
     color: #fff;
@@ -1297,20 +1350,24 @@ text-align:center !important}
 }
 
 .ui-helper-clearfix {
-    background-color: #335566; color: #fff;
+    background-color: #335566;
+    color: #fff;
 }
 
 .ui-corner-all {
     background-color: #335566;
     color: #fff;
 }
-    .ui-state-hover {
-        background-color: #77848a !important;
-    }
+
+.ui-state-hover {
+    background-color: #77848a !important;
+}
+
 .ui-datepicker-calendar {
     background-color: #ced4d8;
     color: #356;
 }
+
     .ui-datepicker-calendar thead tr {
         border: 1px solid #fff;
     }
@@ -1327,6 +1384,7 @@ text-align:center !important}
     color: #c33131;
     font-size: 16px !important;
 }
+
 .detailBox {
     background: #e9ecec;
     padding: 10px 15px;
@@ -1334,38 +1392,49 @@ text-align:center !important}
     border-radius: 3px;
     margin-bottom: 5px;
 }
+
 .tableScroll {
-overflow-x:scroll}
+    overflow-x: scroll
+}
+
 #createPMSProvider .modal-dialog, #createCustomers .modal-dialog {
     max-width: 80%;
     margin-top: 3rem;
 }
+
 #custodianDetail .modal-dialog, #tbstructureDetailPopup .modal-dialog, #securitiesDetailPopup .modal-dialog, #pmsCustomerDetail .modal-dialog, #pmsEmployeesDetail .modal-dialog {
     max-width: 70%;
 }
+
 #customerDetail .modal-dialog {
     max-width: 60%;
 }
+
 .detailsBox h6 {
     padding: 12px !important
 }
+
 .sidenavlist {
     max-height: 568px;
     overflow: auto;
 }
+
 button i {
     padding-right: 3px;
 }
+
 .panel-default > .panel-heading {
     color: #2e2e2e !important;
     background: rgb(218, 219, 220) !important;
     border-color: #ddd;
     position: relative;
 }
+
 .panel-title {
     margin-top: 0;
     font-size: 14px !important;
 }
+
     .panel-title > a {
         display: block !important;
         padding: 6px 15px 10px !important;
@@ -1373,18 +1442,22 @@ button i {
         color: #2e2e2e !important;
         font-weight: bold;
     }
+
 .panel-group {
     padding: 10px 15px;
 }
+
 .filterBox {
     position: absolute;
     right: 5px;
     top: 4px;
 }
-.filterBox label {
+
+    .filterBox label {
         margin: 0 !important;
         font-size: 11px;
     }
+
 .filterDropdown {
     border: 1px solid #cacbcc;
     padding: 1px 5px 1px 0px !important;
@@ -1393,16 +1466,54 @@ button i {
     background: #f3f5f5;
     font-size: 11px;
 }
+
 .ui-datepicker th {
     padding: .4em .3em !important;
 }
+
 .ui-datepicker td span, .ui-datepicker td a {
     padding: .1em !important;
 }
+
 tfoot {
-display:block}
+    display: block
+}
+
     tfoot tr {
         border-top: 2px solid #0a2e40;
     }
-    tfoot tr td {
-    font-size:13px; font-weight:bolder}
+
+        tfoot tr td {
+            font-size: 13px;
+            font-weight: bolder
+        }
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Light"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Semilight"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf) format("truetype");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Bold"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: local("Segoe UI Semibold"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf) format("truetype");
+    font-weight: 700;
+}
