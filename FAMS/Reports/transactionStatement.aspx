@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="transactionStatement.aspx.cs" Inherits="FAMS.Reports.transactionStatement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
       <link href="../Assets/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="../JavaScript/TransactionStatement.js"></script>
     <style>
         .bodypartnav {
             max-width: 100%
@@ -116,15 +117,15 @@
                         </div>--%>
                         <div class="btncon col-md-4 col-sm-4 col-xs-12 pt-2">
                             <div class="pull-right">
-                             <button type="button" class="btn btn-sm btnconinsideBtn"> Yesterday</button>
-                            <button type="button" class="btn btn-sm btnconinsideBtn"> Last Week</button>
-                            <button type="button" class="btn btn-sm btnconinsideBtn"> Last 2 Weeks</button>
+                             <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday"> Yesterday</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek"> Last Week</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks"> Last 2 Weeks</button>
                                 </div>
                         
                     </div>
                     </div>
                     <div id="transStatementGrid">
-                        <table class="bankmasterTable">
+                        <table class="bankmasterTable" id="transStatementTable">
                             <thead>
                                 <tr>
 
@@ -141,7 +142,7 @@
                                 </tr>
                             </thead>
                             <tbody class="scrollbar">
-                                <tr>
+                               <%-- <tr>
                                     <td style="width: 150px">Sell
                                     </td>
                                     <td style="width: 150px">2/04/2014
@@ -162,30 +163,8 @@
                                     </td>
                                     <td style="width: 150px">559,292.44
                                     </td>
-                                </tr>
-                              <tr>
-                                    <td style="width: 150px">Sell
-                                    </td>
-                                    <td style="width: 150px">2/04/2014
-                                    </td>
-                                     <td style="width: 150px">2/04/2014     
-                                    </td>
-                                    <td style="width: 250px">Birla SL Cash Plus -G
-                                    </td>
-                                    <td style="width: 150px">NSE
-                                    </td>
-                                    <td style="width: 150px">2,716.311
-                                    </td>
-                                    <td style="width: 150px">205.9015
-                                    </td>
-                                    <td style="width: 150px">0.00
-                                    </td>
-                                    <td style="width: 150px">0.00
-                                    </td>
-                                    <td style="width: 150px">559,292.44
-                                    </td>
-                                </tr>
-                                <tr>
+                                </tr>--%>
+                            <%--  <tr>
                                     <td style="width: 150px">Sell
                                     </td>
                                     <td style="width: 150px">2/04/2014
@@ -295,6 +274,28 @@
                                     <td style="width: 150px">559,292.44
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td style="width: 150px">Sell
+                                    </td>
+                                    <td style="width: 150px">2/04/2014
+                                    </td>
+                                     <td style="width: 150px">2/04/2014     
+                                    </td>
+                                    <td style="width: 250px">Birla SL Cash Plus -G
+                                    </td>
+                                    <td style="width: 150px">NSE
+                                    </td>
+                                    <td style="width: 150px">2,716.311
+                                    </td>
+                                    <td style="width: 150px">205.9015
+                                    </td>
+                                    <td style="width: 150px">0.00
+                                    </td>
+                                    <td style="width: 150px">0.00
+                                    </td>
+                                    <td style="width: 150px">559,292.44
+                                    </td>
+                                </tr>--%>
                             </tbody>
                         </table>
 
