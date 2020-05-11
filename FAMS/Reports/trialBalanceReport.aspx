@@ -14,7 +14,7 @@
             width: 108%;
         }
         #trialBalanceGrid .bankmasterTable tbody {
-            max-height: 45vh !important;
+            max-height: 43vh !important;
         }
         #trialBalanceGrid thead th {text-align:center
         }
