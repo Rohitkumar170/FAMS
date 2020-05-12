@@ -16,7 +16,7 @@ $(document).ready(function () {
     $('#btnBack').click(function () {
 
         window.location.href = '../master/reportsDashboard.aspx';
-    }); 
+    });  
 
     $('#btnsearch').click(function () {
 
