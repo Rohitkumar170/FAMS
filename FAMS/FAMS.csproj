@@ -126,6 +126,8 @@
     <Content Include="JavaScript\Customer.js" />
     <Content Include="JavaScript\Entity.js" />
     <Content Include="JavaScript\GetReport.js" />
+    <Content Include="JavaScript\HoldingReport.js" />
+    <Content Include="JavaScript\SummaryReport.js" />
     <Content Include="JavaScript\TransactionStatement.js" />
     <Content Include="master\allCustomers.aspx" />
     <Content Include="master\cityMaster.aspx" />
@@ -2057,6 +2059,8 @@
     <Content Include="Web.config" />
     <Content Include="WebServices\Customer.asmx" />
     <Content Include="WebServices\GetReport.asmx" />
+    <Content Include="WebServices\HoldingReport.asmx" />
+    <Content Include="WebServices\SummaryReport.asmx" />
     <Content Include="WebServices\TransactionStatement.asmx" />
   </ItemGroup>
   <ItemGroup>
@@ -2293,6 +2297,8 @@
     <Compile Include="Models\GETCOA\Customer.cs" />
     <Compile Include="Models\GETCOA\GetReportData.cs" />
     <Compile Include="Models\LoginClasss\Logindetails.cs" />
+    <Compile Include="Models\ReportsClasses\HoldingReport.cs" />
+    <Compile Include="Models\ReportsClasses\SummaryReport.cs" />
     <Compile Include="Models\ReportsClasses\TransactionStatement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\cashEquivalent.aspx.cs">
@@ -2343,6 +2349,14 @@
     </Compile>
     <Compile Include="WebServices\GetReport.asmx.cs">
       <DependentUpon>GetReport.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\HoldingReport.asmx.cs">
+      <DependentUpon>HoldingReport.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\SummaryReport.asmx.cs">
+      <DependentUpon>SummaryReport.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\TransactionStatement.asmx.cs">
