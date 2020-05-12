@@ -18,13 +18,7 @@
         #holdingreportGrid .bankmasterTable tbody {
             max-height: 52vh !important;
         }
-
-        #holdingreportGrid {
-            overflow: hidden;
-            overflow-x: auto;
-            border-right: 1px solid #ddd;
-            border-left: 1px solid #ddd;
-            border-bottom: 1px solid #ddd
+        #holdingreportGrid { overflow:hidden; overflow-x: scroll; border-right:1px solid #ddd; border-left:1px solid #ddd  
         }
 
             #holdingreportGrid table {
@@ -144,284 +138,198 @@
 
                                 <tr>
 
-                                    <th style="width: 320px">Security</th>
-                                    <th style="width: 100px">Quantity</th>
-                                    <th style="width: 150px" class="price">Unit Cost</th>
-                                    <th style="width: 150px" class="price">Cost</th>
-                                    <th style="width: 150px" class="price">Price</th>
-                                    <th style="width: 150px" class="price">Market Value </th>
-                                    <th style="width: 100px">Gain / Loss (+/-)</th>
-                                    <th style="width: 100px">% G/L</th>
-                                    <th style="width: 100px">% Assets</th>
+                                    <th style="width: 300px">Security</th>
+                                    <th style="width: 150px">Quantity</th>
+                                    <th style="width: 150px">Unit Cost</th>
+                                     <th style="width: 150px">Cost</th>
+                                    <th style="width: 150px">Price</th>
+                                    <th style="width: 150px">Market Value </th>
+                                    <th style="width: 150px">Gain / Loss (+/-)</th>
+                                    <th style="width: 150px">% G/L</th>
+                                    <th style="width: 150px">% Assets</th>
                                 </tr>
                             </thead>
                             <tbody class="scrollbar">
                                 <tr>
-                                    <td colspan="9"><strong>Equity
-                                    </strong>
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td style="width: 320px">SOLAR INDUSTRIES INDIA LTD
-                                                    </td>
-                                                    <td style="width: 100px">1,804
-                                                    </td>
-                                                    <td style="width: 150px" class="price">1,484.93      
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,678,809.966
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,657.15
-                                                    </td>
-                                                    <td style="width: 150px" class="price">4,793,498.60
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">2,114,689
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">78.94%
-                                                    </td>
-                                                    <td style="width: 100px">9.57%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 320px">SOLAR INDUSTRIES INDIA LTD
-                                                    </td>
-                                                    <td style="width: 100px">1,804
-                                                    </td>
-                                                    <td style="width: 150px" class="price">1,484.93      
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,678,809.966
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,657.15
-                                                    </td>
-                                                    <td style="width: 150px" class="price">4,793,498.60
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">2,114,689
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">78.94%
-                                                    </td>
-                                                    <td style="width: 100px">9.57%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 320px">SOLAR INDUSTRIES INDIA LTD
-                                                    </td>
-                                                    <td style="width: 100px">1,804
-                                                    </td>
-                                                    <td style="width: 150px" class="price">1,484.93      
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,678,809.966
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,657.15
-                                                    </td>
-                                                    <td style="width: 150px" class="price">4,793,498.60
-                                                    </td>
-                                                    <td style="width: 100px" class="loss">-2,114,689
-                                                    </td>
-                                                    <td style="width: 100px" class="loss">-78.94%
-                                                    </td>
-                                                    <td style="width: 100px">9.57%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 320px">SOLAR INDUSTRIES INDIA LTD
-                                                    </td>
-                                                    <td style="width: 100px">1,804
-                                                    </td>
-                                                    <td style="width: 150px" class="price">1,484.93      
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,678,809.966
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,657.15
-                                                    </td>
-                                                    <td style="width: 150px" class="price">4,793,498.60
-                                                    </td>
-                                                    <td style="width: 100px" class="loss">-2,114,689
-                                                    </td>
-                                                    <td style="width: 100px" class="loss">-78.94%
-                                                    </td>
-                                                    <td style="width: 100px">9.57%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 320px">SOLAR INDUSTRIES INDIA LTD
-                                                    </td>
-                                                    <td style="width: 100px">1,804
-                                                    </td>
-                                                    <td style="width: 150px" class="price">1,484.93      
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,678,809.966
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,657.15
-                                                    </td>
-                                                    <td style="width: 150px" class="price">4,793,498.60
-                                                    </td>
-                                                    <td style="width: 100px" class="loss">-2,114,689
-                                                    </td>
-                                                    <td style="width: 100px" class="loss">-78.94%
-                                                    </td>
-                                                    <td style="width: 100px">9.57%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 320px">SOLAR INDUSTRIES INDIA LTD
-                                                    </td>
-                                                    <td style="width: 100px">1,804
-                                                    </td>
-                                                    <td style="width: 150px" class="price">1,484.93      
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,678,809.966
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,657.15
-                                                    </td>
-                                                    <td style="width: 150px" class="price">4,793,498.60
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">2,114,689
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">78.94%
-                                                    </td>
-                                                    <td style="width: 100px">9.57%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 320px">SOLAR INDUSTRIES INDIA LTD
-                                                    </td>
-                                                    <td style="width: 100px">1,804
-                                                    </td>
-                                                    <td style="width: 150px" class="price">1,484.93      
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,678,809.966
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,657.15
-                                                    </td>
-                                                    <td style="width: 150px" class="price">4,793,498.60
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">2,114,689
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">78.94%
-                                                    </td>
-                                                    <td style="width: 100px">9.57%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 320px">SOLAR INDUSTRIES INDIA LTD
-                                                    </td>
-                                                    <td style="width: 100px">1,804
-                                                    </td>
-                                                    <td style="width: 150px" class="price">1,484.93      
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,678,809.966
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,657.15
-                                                    </td>
-                                                    <td style="width: 150px" class="price">4,793,498.60
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">2,114,689
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">78.94%
-                                                    </td>
-                                                    <td style="width: 100px">9.57%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 320px">SOLAR INDUSTRIES INDIA LTD
-                                                    </td>
-                                                    <td style="width: 100px">1,804
-                                                    </td>
-                                                    <td style="width: 150px" class="price">1,484.93      
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,678,809.966
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,657.15
-                                                    </td>
-                                                    <td style="width: 150px" class="price">4,793,498.60
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">2,114,689
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">78.94%
-                                                    </td>
-                                                    <td style="width: 100px">9.57%
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td style="width: 320px">Total</td>
-                                                <td style="width: 100px"></td>
-                                                <td style="width: 150px" class="price"></td>
-                                                <td style="width: 150px" class="price">28,968,151.508</td>
-                                                <td style="width: 150px" class="price"></td>
-                                                <td style="width: 150px" class="price">47,267,111.90</td>
-                                                <td style="width: 100px" class="profit">18,298,960</td>
-                                                <td style="width: 100px" class="profit">63.17%</td>
-                                                <td style="width: 100px">94.39%</td>
-
-                                            </tr>
-
-                                        </tfoot>
-                        </table>
-                        </td>
-                                   
+                                    <td style="width: 300px">SOLAR INDUSTRIES INDIA LTD
+                                    </td>
+                                    <td style="width: 150px">1,804
+                                    </td>
+                                     <td style="width: 150px">1,484.93      
+                                    </td>
+                                    <td style="width: 150px">2,678,809.966
+                                    </td>
+                                    <td style="width: 150px">2,657.15
+                                    </td>
+                                    <td style="width: 150px">4,793,498.60
+                                    </td>
+                                    <td style="width: 150px">2,114,689
+                                    </td>
+                                    <td style="width: 150px">78.94%
+                                    </td>
+                                    <td style="width: 150px">9.57%
+                                    </td>
                                 </tr>
-                           
+                           <tr>
+                                    <td style="width: 300px">SOLAR INDUSTRIES INDIA LTD
+                                    </td>
+                                    <td style="width: 150px">1,804
+                                    </td>
+                                     <td style="width: 150px">1,484.93      
+                                    </td>
+                                    <td style="width: 150px">2,678,809.966
+                                    </td>
+                                    <td style="width: 150px">2,657.15
+                                    </td>
+                                    <td style="width: 150px">4,793,498.60
+                                    </td>
+                                    <td style="width: 150px">2,114,689
+                                    </td>
+                                    <td style="width: 150px">78.94%
+                                    </td>
+                                    <td style="width: 150px">9.57%
+                                    </td>
+                                </tr>
                                 <tr>
-                                    <td colspan="9"><strong>Cash and Equivalent
-                                    </strong>
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td style="width: 320px">Cash
-                                                    </td>
-                                                    <td style="width: 100px">1,804
-                                                    </td>
-                                                    <td style="width: 150px" class="price">1,484.93      
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,678,809.966
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,657.15
-                                                    </td>
-                                                    <td style="width: 150px" class="price">4,793,498.60
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">2,114,689
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">78.94%
-                                                    </td>
-                                                    <td style="width: 100px">9.57%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 320px">Birla SL Cash Plus -G
-                                                    </td>
-                                                    <td style="width: 100px">1,804
-                                                    </td>
-                                                    <td style="width: 150px" class="price">1,484.93      
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,678,809.966
-                                                    </td>
-                                                    <td style="width: 150px" class="price">2,657.15
-                                                    </td>
-                                                    <td style="width: 150px" class="price">4,793,498.60
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">2,114,689
-                                                    </td>
-                                                    <td style="width: 100px" class="profit">78.94%
-                                                    </td>
-                                                    <td style="width: 100px">9.57%
-                                                    </td>
-                                                </tr>
-                                           
-                                            </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td style="width: 320px">Total</td>
-                                                <td style="width: 100px"></td>
-                                                <td style="width: 150px" class="price"></td>
-                                                <td style="width: 150px" class="price">28,968,151.508</td>
-                                                <td style="width: 150px" class="price"></td>
-                                                <td style="width: 150px" class="price">47,267,111.90</td>
-                                                <td style="width: 100px" class="profit">18,298,960</td>
-                                                <td style="width: 100px" class="profit">63.17%</td>
-                                                <td style="width: 100px">94.39%</td>
-
-                                            </tr>
+                                    <td style="width: 300px">SOLAR INDUSTRIES INDIA LTD
+                                    </td>
+                                    <td style="width: 150px">1,804
+                                    </td>
+                                     <td style="width: 150px">1,484.93      
+                                    </td>
+                                    <td style="width: 150px">2,678,809.966
+                                    </td>
+                                    <td style="width: 150px">2,657.15
+                                    </td>
+                                    <td style="width: 150px">4,793,498.60
+                                    </td>
+                                    <td style="width: 150px">2,114,689
+                                    </td>
+                                    <td style="width: 150px">78.94%
+                                    </td>
+                                    <td style="width: 150px">9.57%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 300px">SOLAR INDUSTRIES INDIA LTD
+                                    </td>
+                                    <td style="width: 150px">1,804
+                                    </td>
+                                     <td style="width: 150px">1,484.93      
+                                    </td>
+                                    <td style="width: 150px">2,678,809.966
+                                    </td>
+                                    <td style="width: 150px">2,657.15
+                                    </td>
+                                    <td style="width: 150px">4,793,498.60
+                                    </td>
+                                    <td style="width: 150px">2,114,689
+                                    </td>
+                                    <td style="width: 150px">78.94%
+                                    </td>
+                                    <td style="width: 150px">9.57%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 300px">SOLAR INDUSTRIES INDIA LTD
+                                    </td>
+                                    <td style="width: 150px">1,804
+                                    </td>
+                                     <td style="width: 150px">1,484.93      
+                                    </td>
+                                    <td style="width: 150px">2,678,809.966
+                                    </td>
+                                    <td style="width: 150px">2,657.15
+                                    </td>
+                                    <td style="width: 150px">4,793,498.60
+                                    </td>
+                                    <td style="width: 150px">2,114,689
+                                    </td>
+                                    <td style="width: 150px">78.94%
+                                    </td>
+                                    <td style="width: 150px">9.57%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 300px">SOLAR INDUSTRIES INDIA LTD
+                                    </td>
+                                    <td style="width: 150px">1,804
+                                    </td>
+                                     <td style="width: 150px">1,484.93      
+                                    </td>
+                                    <td style="width: 150px">2,678,809.966
+                                    </td>
+                                    <td style="width: 150px">2,657.15
+                                    </td>
+                                    <td style="width: 150px">4,793,498.60
+                                    </td>
+                                    <td style="width: 150px">2,114,689
+                                    </td>
+                                    <td style="width: 150px">78.94%
+                                    </td>
+                                    <td style="width: 150px">9.57%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 300px">SOLAR INDUSTRIES INDIA LTD
+                                    </td>
+                                    <td style="width: 150px">1,804
+                                    </td>
+                                     <td style="width: 150px">1,484.93      
+                                    </td>
+                                    <td style="width: 150px">2,678,809.966
+                                    </td>
+                                    <td style="width: 150px">2,657.15
+                                    </td>
+                                    <td style="width: 150px">4,793,498.60
+                                    </td>
+                                    <td style="width: 150px">2,114,689
+                                    </td>
+                                    <td style="width: 150px">78.94%
+                                    </td>
+                                    <td style="width: 150px">9.57%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 300px">SOLAR INDUSTRIES INDIA LTD
+                                    </td>
+                                    <td style="width: 150px">1,804
+                                    </td>
+                                     <td style="width: 150px">1,484.93      
+                                    </td>
+                                    <td style="width: 150px">2,678,809.966
+                                    </td>
+                                    <td style="width: 150px">2,657.15
+                                    </td>
+                                    <td style="width: 150px">4,793,498.60
+                                    </td>
+                                    <td style="width: 150px">2,114,689
+                                    </td>
+                                    <td style="width: 150px">78.94%
+                                    </td>
+                                    <td style="width: 150px">9.57%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 300px">SOLAR INDUSTRIES INDIA LTD
+                                    </td>
+                                    <td style="width: 150px">1,804
+                                    </td>
+                                     <td style="width: 150px">1,484.93      
+                                    </td>
+                                    <td style="width: 150px">2,678,809.966
+                                    </td>
+                                    <td style="width: 150px">2,657.15
+                                    </td>
+                                    <td style="width: 150px">4,793,498.60
+                                    </td>
+                                    <td style="width: 150px">2,114,689
+                                    </td>
+                                    <td style="width: 150px">78.94%
+                                    </td>
+                                    <td style="width: 150px">9.57%
+                                    </td>
+                                </tr>
 
                                         </tfoot>
                         </table>
@@ -430,17 +338,17 @@
                                 </tr>
                                 
                             </tbody>
-                             <tfoot>
-                                 <tr>
-                                     <td style="width: 410px">Total</td>
-                                     <td style="width: 100px"></td>
-                                     <td style="width: 150px" class="price"></td>
-                                     <td style="width: 150px" class="price">28,968,151.508</td>
-                                     <td style="width: 180px" class="price"></td>
-                                     <td style="width: 150px" class="price">47,267,111.90</td>
-                                     <td style="width: 100px" class="profit">18,298,960</td>
-                                     <td style="width: 100px" class="profit">63.17%</td>
-                                     <td style="width: 100px">94.39%</td>
+                             <tfoot >
+                                <tr>
+                                     <td style="width: 300px">Total</td>
+                                    <td style="width: 150px"></td>
+                                    <td style="width: 150px"></td>
+                                     <td style="width: 150px">28,968,151.508</td>
+                                    <td style="width: 150px"></td>
+                                    <td style="width: 150px">47,267,111.90</td>
+                                    <td style="width: 150px">18,298,960</td>
+                                    <td style="width: 150px">63.17%</td>
+                                    <td style="width: 150px">94.39%</td>
 
                                  </tr>
 
