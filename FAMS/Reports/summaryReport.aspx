@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../Assets/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="../JavaScript/SummaryReport.js"></script>
     <style>
         .bodypartnav {
             max-width: 100%
@@ -21,6 +22,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="cardbody">
         <div class="row">
             <div class="allHtmlCode col-md-12 col-sm-12 col-xs-12">
@@ -73,9 +75,13 @@
                                 <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
                                     <i class="fa fa-file-excel-o"></i>
                                 </button>
-                                <button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
-                                    <i class="fa fa-file-pdf-o"></i>
-                                </button>
+                                <form runat="server">
+                                 <asp:Button ID = "btnPd" Text="PDF" class="btn  pdfbtns fa fa-file-pdf-o" title="PDF" runat="server" OnClick ="btnPdf_Click" />
+                                </form>
+                                
+                               <%-- <button type="button" id="btnPdf"  runat="server" class="btn  pdfbtns" title="PDF" OnClick ="btnPdf_Click">
+                                   <i class="fa fa-file-pdf-o"></i>
+                                </button>--%>
 
 
                             </div>
@@ -116,15 +122,15 @@
                         </div>--%>
                         <div class="btncon col-md-4 col-sm-4 col-xs-12 pt-2">
                             <div class="pull-right">
-                             <button type="button" class="btn btn-sm btnconinsideBtn"> Yesterday</button>
-                            <button type="button" class="btn btn-sm btnconinsideBtn"> Last Week</button>
-                            <button type="button" class="btn btn-sm btnconinsideBtn"> Last 2 Weeks</button>
+                             <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday"> Yesterday</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek"> Last Week</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks"> Last 2 Weeks</button>
                                 </div>
                         
                     </div>
                     </div>
                     <div id="reportGrid">
-                        <table class="bankmasterTable">
+                        <table class="bankmasterTable" id="reportTable">
                             <thead>
                                 <tr>
 
@@ -137,25 +143,25 @@
                                 <tr>
 
 
-                                    <td style="width: 300px">Market Value as of 01/04/2014
+                                    <td style="width: 300px" id="OpenMarValTH">Market Value as of 01/04/2014
                                     </td>
-                                    <td style="width: 500px">32,604,127.40
-                                    </td>
-                                </tr>
-                                <tr>
-
-
-                                    <td style="width: 300px">Opening NAV as of 01/04/2014
-                                    </td>
-                                    <td style="width: 500px">14.1757
+                                    <td style="width: 500px" id="OpenMarValTD">32,604,127.40
                                     </td>
                                 </tr>
                                 <tr>
 
 
-                                    <td style="width: 300px">Opening Outstanding Units as of 01/04/2014
+                                    <td style="width: 300px" id="OpenNAVValTH">Opening NAV as of 01/04/2014
                                     </td>
-                                    <td style="width: 500px">2,300,000.000
+                                    <td style="width: 500px" id="OpenNAVValTD">14.1757
+                                    </td>
+                                </tr>
+                                <tr>
+
+
+                                    <td style="width: 300px" id="OpenOutValTH">Opening Outstanding Units as of 01/04/2014
+                                    </td>
+                                    <td style="width: 500px" id="OpenOutValTD">2,300,000.000
                                     </td>
                                 </tr>
 
@@ -164,7 +170,7 @@
 
                                     <td style="width: 300px">Capital In(+)/Out(-)
                                     </td>
-                                    <td style="width: 500px">0.00
+                                    <td style="width: 500px" id="CapitalTD">0.00
                                     </td>
                                 </tr>
 
@@ -174,7 +180,7 @@
 
                                     <td style="width: 300px">Realized Gain
                                     </td>
-                                    <td style="width: 500px">58,242.77
+                                    <td style="width: 500px" id="RelaizedTD">58,242.77
                                     </td>
                                 </tr>
                                 <tr>
@@ -182,7 +188,7 @@
 
                                     <td style="width: 300px">Unrealized Gain
                                     </td>
-                                    <td style="width: 500px">7,392,785.99
+                                    <td style="width: 500px" id="UnrelaizedTD">7,392,785.99
                                     </td>
                                 </tr>
 
@@ -191,50 +197,50 @@
 
                                     <td style="width: 300px">Gain Prior to Take-over
                                     </td>
-                                    <td style="width: 500px">0.00
+                                    <td style="width: 500px" id="GainPriorTD">0.00
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="width: 300px">Income
                                     </td>
-                                    <td style="width: 500px">144,572.90
+                                    <td style="width: 500px" id="IncomeTD">144,572.90
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="width: 300px">Fees
                                     </td>
-                                    <td style="width: 500px">126,904.25
+                                    <td style="width: 500px" id="FeesTD">126,904.25
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td style="width: 300px">Expenses
                                     </td>
-                                    <td style="width: 500px">0.00
+                                    <td style="width: 500px" id="ExpensesTD">0.00
                                     </td>
                                 </tr>
                                    <tr>
                                     <td style="width: 300px">Accrued Income
                                     </td>
-                                    <td style="width: 500px">0.00
+                                    <td style="width: 500px" id="AccuredTD">0.00
                                     </td>
                                 </tr>
                                    <tr>
-                                    <td style="width: 300px">Market Value as of 30/06/2014
+                                    <td style="width: 300px" id="CloseMarValTH">Market Value as of 30/06/2014
                                     </td>
-                                    <td style="width: 500px">40,072,824.81
-                                    </td>
-                                </tr>
-                                   <tr>
-                                    <td style="width: 300px">Closing NAV as of 30/06/2014
-                                    </td>
-                                    <td style="width: 500px">17.4230
+                                    <td style="width: 500px" id="CloseMarValTD">40,072,824.81
                                     </td>
                                 </tr>
                                    <tr>
-                                    <td style="width: 300px">Closing Outstanding Units as of 30/06/2014
+                                    <td style="width: 300px" id="CloseNAVValTH">Closing NAV as of 30/06/2014
                                     </td>
-                                    <td style="width: 500px">2,300,000.000
+                                    <td style="width: 500px" id="CloseNAVValTD">17.4230
+                                    </td>
+                                </tr>
+                                   <tr>
+                                    <td style="width: 300px" id="CloseOutValTH">Closing Outstanding Units as of 30/06/2014
+                                    </td>
+                                    <td style="width: 500px" id="CloseOutValTD">2,300,000.000
                                     </td>
                                 </tr>
                                   
