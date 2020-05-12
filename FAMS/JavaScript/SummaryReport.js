@@ -22,7 +22,7 @@ $(document).ready(function () {
 
         BindGrid();
     });
-
+     
 
     $('#btnYesterday').click(function () {
         var fullDate = new window.Date();
