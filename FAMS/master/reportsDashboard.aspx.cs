@@ -11,7 +11,14 @@ namespace FAMS.master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["AccountNo"].ToString() == "Cust_000134")
+            {
+                anchorID.Attributes["href"] = "../Reports/PSMtrialBalanceReport.aspx";
+            }
+            else
+            {
+                anchorID.Attributes["href"] = "../Reports/trialBalanceReport.aspx";
+            }
         }
     }
 }
