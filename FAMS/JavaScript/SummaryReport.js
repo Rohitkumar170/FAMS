@@ -16,13 +16,17 @@ $(document).ready(function () {
     $('#btnBack').click(function () {
 
         window.location.href = '../master/reportsDashboard.aspx';
-    });  
-
+    }); 
+    
     $('#btnsearch').click(function () {
-
+       
+       // alert(FromDate);
         BindGrid();
     });
-     
+    $('#btnExport').click(function () {
+        GetDataForExcelAndPDF();
+    });
+
 
     $('#btnYesterday').click(function () {
         var fullDate = new window.Date();
@@ -91,7 +95,12 @@ function BindGrid() {
 
     var TxtFromDate = $('#fromdate').val();
     var TxtToDate = $('#todate').val();
-    var CustomerAccount = $('#SPAccountNo').text();
+    $('#ContentPlaceHolder1_hdnFromDate').val(TxtFromDate);
+    $('#ContentPlaceHolder1_hdnToDate').val(TxtToDate);
+
+    //$('#ContentPlaceHolder1_lblFromDate').text($('#fromdate').val());
+    //$('#ContentPlaceHolder1_lblToDate').text($('#fromdate').val());
+    var CustomerAccount = "";
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
@@ -126,4 +135,37 @@ function BindGrid() {
 
 
 
+}
+
+
+function GetDataForExcelAndPDF() {
+
+    var TxtFromDate = $('#fromdate').val();
+    var TxtToDate = $('#todate').val();
+    var CustomerAccount = "";
+    $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        url: "../WebServices/SummaryReport.asmx/GetDataForExcelAndPDF",
+        data: "{'fromdate':'" + TxtFromDate + "','Todate':'" + TxtToDate + "','CustomerAccount':'" + CustomerAccount + "'}",
+        dataType: "json",
+        async: false,
+        success: function (result) {
+            jsonData = eval(result.d);
+
+           
+            var csvData = this.ConvertToCSV(JSON.stringify(jsonData.Table[0]));
+                var a = document.createElement("a");
+                a.setAttribute('style', 'display:none;');
+                document.body.appendChild(a);
+                var blob = new Blob([csvData], { type: 'text/csv' });
+                var url = window.URL.createObjectURL(blob);
+                a.href = url;
+                a.download = 'User_Results.csv';/* your file name*/
+                a.click();
+                return 'success';
+            
+           
+        }
+    });
 }

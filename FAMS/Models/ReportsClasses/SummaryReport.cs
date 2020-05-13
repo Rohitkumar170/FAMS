@@ -7,22 +7,22 @@ namespace FAMS.Models.ReportsClasses
 {
     public class SummaryReports
     {
-        public decimal OpeningMarketValue { get; set; }
-        public decimal OpeningNAV { get; set; }
-        public decimal OpeningOutstandingUnits { get; set; }
-        public decimal CapitalInOut { get; set; }
-        public decimal RealizedGain { get; set; }
-        public decimal UnrealizedGain { get; set; }
-        public decimal GainPrior { get; set; }
-        public decimal Income { get; set; }
-        public decimal Fees { get; set; }
-        public decimal Expenses { get; set; }
-        public decimal AccruedIncome { get; set; }
-        public decimal ClosingMarketValue { get; set; }
-        public decimal ClosingNAV { get; set; }
-        public decimal ClosingOutstanding { get; set; }
-        public string FromDate { get; set; }
-        public string ToDate { get; set; }
+        public Nullable<decimal> OpeningMarketValue { get; set; }
+        public Nullable<decimal> OpeningNAV { get; set; }
+        public Nullable<decimal> OpeningOutstandingUnits { get; set; }
+        public Nullable<decimal> CapitalInOut { get; set; }
+        public Nullable<decimal> RealizedGain { get; set; }
+        public Nullable<decimal> UnrealizedGain { get; set; }
+        public Nullable<decimal> GainPrior { get; set; }
+        public Nullable<decimal> Income { get; set; }
+        public Nullable<decimal> Fees { get; set; }
+        public Nullable<decimal> Expenses { get; set; }
+        public Nullable<decimal> AccruedIncome { get; set; }
+        public Nullable<decimal> ClosingMarketValue { get; set; }
+        public Nullable<decimal> ClosingNAV { get; set; }
+        public Nullable<decimal> ClosingOutstanding { get; set; }
+       // public string FromDate { get; set; }
+       // public string ToDate { get; set; }
 
     }
 }

@@ -37,5 +37,22 @@ namespace FAMS.WebServices
                 throw ex;
             }
         }
+        [WebMethod]
+        public Dictionary<string, object> GetDataForExcelAndPDF(string fromdate, string Todate, string CustomerAccount)
+        {
+            try
+            {
+
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<SummaryReports>()
+                          .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetSummaryReportData", CustomerAccount, fromdate, Todate));
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
