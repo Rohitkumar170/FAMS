@@ -184,7 +184,7 @@ namespace FAMS.Reports
                     if (i == 1)
                         {
                         DataRow dr1 = dtTemp.NewRow();
-                        dr1[colName] = "Account : ";
+                        dr1[colName] = "Account : Cust_000134 ABC ";
                         dtTemp.Rows.Add(dr1.ItemArray);
                     }
                     if (i == 2)
@@ -307,6 +307,7 @@ namespace FAMS.Reports
                 var values = new object[Props.Length];
                 for (int i = 0; i < Props.Length; i++)
                 {
+
 
                     values[i] = Props[i].GetValue(item, null);
                 }
