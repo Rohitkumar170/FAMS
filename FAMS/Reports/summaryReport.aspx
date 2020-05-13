@@ -22,7 +22,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    
     <div class="cardbody">
         <div class="row">
             <div class="allHtmlCode col-md-12 col-sm-12 col-xs-12">
@@ -50,7 +50,8 @@
                                     <label class="col-md-3 col-xs-12 col-sm-3 p-0">From Date:</label>
 
                                     <input type="text" id="fromdate" name="" class="col-md-7 col-xs-12 col-sm-7" placeholder=" " />
-
+                                    <input type="hidden" id="hdnFromDate" runat="server" />
+    <input type="hidden" id="hdnToDate" runat="server" />
                                 </div>
                                 <div class="col-md-4 col-xs-12 col-sm-4">
                                     <label class="col-md-3 col-xs-12 col-sm-3 p-0">To Date:</label>
@@ -72,10 +73,14 @@
                         </div>--%>
                         <div class="col-md-8 pull-left">
                             <div class="pdfexport">
-                                <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
+                                <%--<button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
                                     <i class="fa fa-file-excel-o"></i>
-                                </button>
-                                <form runat="server">
+                                </button>--%>
+                                 <form runat="server">
+                                 <asp:Button ID = "Button1" Text="Download Excel" class="btn  pdfbtns fa fa-file-pdf-o" title="Excel" runat="server" OnClick ="btnDowloadExcel_Click" />
+
+
+                               
                                  <asp:Button ID = "btnPd" Text="PDF" class="btn  pdfbtns fa fa-file-pdf-o" title="PDF" runat="server" OnClick ="btnPdf_Click" />
                                 </form>
                                 
