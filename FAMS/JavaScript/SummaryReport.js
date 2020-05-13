@@ -16,13 +16,13 @@ $(document).ready(function () {
     $('#btnBack').click(function () {
 
         window.location.href = '../master/reportsDashboard.aspx';
-    }); 
+    });  
 
     $('#btnsearch').click(function () {
 
         BindGrid();
     });
-
+     
 
     $('#btnYesterday').click(function () {
         var fullDate = new window.Date();
@@ -91,7 +91,7 @@ function BindGrid() {
 
     var TxtFromDate = $('#fromdate').val();
     var TxtToDate = $('#todate').val();
-    var CustomerAccount = "";
+    var CustomerAccount = $('#SPAccountNo').text();
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
