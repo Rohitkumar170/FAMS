@@ -28,7 +28,7 @@ namespace FAMS.WebServices
             {
 
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<SummaryReports>()
-                          .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetSummaryReportData", Session["AccountNo"].ToString(), fromdate, Todate));
+                          .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetSummaryReportData", CustomerAccount, fromdate, Todate));
                 return results;
 
             }
