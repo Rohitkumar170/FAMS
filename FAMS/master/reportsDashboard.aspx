@@ -39,7 +39,7 @@
           <div class="row">
                         <div class="col-sm-12 col-md-12 mt-3">
                            <div class=" col-md-12 col-sm-12 col-xs-12" >
-             <a href="../Reports/trialBalanceReport.aspx">
+             <a id="anchorID"  runat="server" href="../Reports/trialBalanceReport.aspx">
                     <div class=" portalBox" >
                         <img src="../Assets/image/trial_icon.png" />
                         <h5>Trial Balance Report</h5>
