@@ -123,7 +123,7 @@ namespace FAMS.Reports
                 fromdate = hdnFromDate.Value;
                 todate = hdnToDate.Value;
                 var results =context.MultipleResults("[dbo].[Sp_DemoReport]").With<SummaryReports>()
-                        .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetSummaryReportDataExcel", "", fromdate, todate);
+                        .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetSummaryReportDataExcel", Session["UserName"].ToString(), fromdate, todate);
 
                 foreach (var data in results)
                 {
