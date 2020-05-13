@@ -142,11 +142,10 @@ namespace FAMS
                                         Session["UserName"] = Convert.ToString(cust.FirstOrDefault().UserName);
                                         Session["WareHouseId"] = Convert.ToString(cust.FirstOrDefault().WareHouseId);
                                         Session["AccountNo"] = Convert.ToString(cust.FirstOrDefault().AccountNo);
-
                                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Only alert Message');", true);
                                         txtpassword.Value = "";
                                         txtUserName.Value = "";
-                                        Response.Redirect("\\master\\Dashboard.aspx");
+                                        Response.Redirect("\\master\\reportsDashboard.aspx");
                                     }
                                     else
                                     {

@@ -11,7 +11,8 @@ namespace FAMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SPUserName.InnerText = Session["UserName"].ToString();
+            SPAccountNo.InnerText = Session["AccountNo"].ToString();
         }
     }
 }

@@ -10,7 +10,7 @@ $(document).ready(function () {
     FromDate = currentDate;
     ToDate = currentDate;
     $('#fromdate').val(FromDate);
-    $('#todate').val(ToDate);
+    $('#todate').val(ToDate); tblholdingreport
     //BindGrid();
 
     $('#btnBack').click(function () {
@@ -91,7 +91,7 @@ function BindGrid() {
 
     var TxtFromDate = $('#fromdate').val();
     var TxtToDate = $('#todate').val();
-    var CustomerAccount = "";
+    var CustomerAccount = $('#SPAccountNo').text();
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
@@ -133,11 +133,11 @@ function BindGrid() {
                 }
                 i++;
             });
-            var FootMarkup = "<tr><td style='width: 320px'>Total</td> <td style='width: 100px' ></td><td style='width: 100px' class='price'></td><td style='width: 100px'class='price'>" + TotalCost + "</td><td style='width: 150px' class='price'></td><td style='width: 150px' class='price'>" + TotalMarketValue + "</td><td style='width: 100px' class='profit'>" + TotalGainLoss + "</td><td style='width: 100px' class='profit'>" + TotalGLPerc + "%</td><td style='width: 100px'>" + TotalAssets + "%</td> </tr >";
+            var FootMarkup = "<tr><td style='width: 275px'>Total</td> <td style='width: 78px' ></td><td style='width: 170px' class='price'></td><td style='width: 135px'class='price'>" + TotalCost + "</td><td style='width: 145px' class='price'></td><td style='width: 140px' class='price'>" + TotalMarketValue + "</td><td style='width: 92px' class='profit'>" + TotalGainLoss + "</td><td style='width: 93px' class='profit'>" + TotalGLPerc + "%</td><td style='width: 94px'>" + TotalAssets + "%</td> </tr >";
             $("#tblholdingreport  tfoot").append(FootMarkup);
-            var FootCashMarkup = "<tr><td style='width: 320px'>Total</td> <td style='width: 100px' ></td><td style='width: 100px' class='price'></td><td style='width: 100px'class='price'>" + CashTotalCost + "</td><td style='width: 150px' class='price'></td><td style='width: 150px' class='price'>" + CashTotalMarketValue + "</td><td style='width: 100px' class='profit'>" + CashTotalGainLoss + "</td><td style='width: 100px' class='profit'>" + CashTotalGLPerc + "%</td><td style='width: 100px'>" + CashTotalAssets + "%</td> </tr >";
+            var FootCashMarkup = "<tr><td style='width: 257px'>Total</td> <td style='width: 78px' ></td><td style='width: 194px' class='price'></td><td style='width: 135px'class='price'>" + CashTotalCost + "</td><td style='width: 145px' class='price'></td><td style='width: 140px' class='price'>" + CashTotalMarketValue + "</td><td style='width: 92px' class='profit'>" + CashTotalGainLoss + "</td><td style='width: 93px' class='profit'>" + CashTotalGLPerc + "%</td><td style='width: 94px'>" + CashTotalAssets + "%</td> </tr >";
             $("#tblCash  tfoot").append(FootCashMarkup);
-            $('#holdingreportGridTable #MaintblTfoot').append("<tr><td style='width: 320px'>Total</td> <td style='width: 100px' ></td><td style='width: 100px' class='price'></td><td style='width: 100px'class='price'>" + (TotalCost + CashTotalCost) + "</td><td style='width: 150px' class='price'></td><td style='width: 150px' class='price'>" + (TotalMarketValue + CashTotalMarketValue) + "</td><td style='width: 100px' class='profit'>" + (TotalGainLoss + CashTotalGainLoss) + "</td><td style='width: 100px' class='profit'>" + (TotalGLPerc + CashTotalGLPerc) + "%</td><td style='width: 100px'>" + (TotalAssets+CashTotalAssets) + "%</td> </tr >")
+            $('#holdingreportGridTable #MaintblTfoot').append("<tr><td style='width: 320px'>Total</td> <td style='width: 100px' ></td><td style='width: 163px' class='price'></td><td style='width: 100px'class='price'>" + (TotalCost + CashTotalCost) + "</td><td style='width: 150px' class='price'></td><td style='width: 195px' class='price'>" + (TotalMarketValue + CashTotalMarketValue) + "</td><td style='width: 60px' class='profit'>" + (TotalGainLoss + CashTotalGainLoss) + "</td><td style='width: 93px;text-align: right;' class='profit'>" + (TotalGLPerc + CashTotalGLPerc) + "%</td><td style='width: 100px'>" + (TotalAssets+CashTotalAssets) + "%</td> </tr >")
         }
     });
 
