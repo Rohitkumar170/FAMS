@@ -91,7 +91,7 @@ function BindGrid() {
 
     var TxtFromDate = $('#fromdate').val();
     var TxtToDate = $('#todate').val();
-    var CustomerAccount = "";
+    var CustomerAccount = $('#SPAccountNo').text();
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
