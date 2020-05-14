@@ -67,6 +67,27 @@
                 .noteBox ul li {
                     font-size: 13px;
                 }
+
+        .attachmentBtn {
+            position: absolute;
+            right: 13px;
+            top: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #33789e;
+            cursor: pointer;
+        }
+
+            .attachmentBtn:hover {
+                text-decoration: underline;
+                color: #294856;
+            }
+
+            .attachmentBtn i {
+                font-size: 15px;
+                font-weight: 600;
+                padding-right:4px;
+            }
     </style>
 
 </asp:Content>
@@ -90,7 +111,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 mt-3">
                 <div class=" col-md-12 col-sm-12 col-xs-12">
-                    <a href="../Reports/trialBalanceReport.aspx">
+                    <a id="anchorID" runat="server" href="../Reports/trialBalanceReport.aspx">
                         <div class=" portalBox">
                             <img src="../Assets/image/trial_icon.png" />
                             <h5>Trial Balance Report</h5>
@@ -134,6 +155,7 @@
         <div class="col-sm-12 col-md-12">
             <div class=" col-md-12 col-sm-12 col-xs-12 noteBox">
                 <h5>Important Notes:</h5>
+                <span class="attachmentBtn"><i class="fa fa-paperclip" aria-hidden="true"></i>Click here for attachment</span>
                 <ul>
                     <li>1. Trial Balance Report</li>
                     <li>2. Portfolio Performance Summary Report</li>
