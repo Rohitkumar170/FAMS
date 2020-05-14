@@ -77,7 +77,7 @@
                                     <i class="fa fa-file-excel-o"></i>
                                 </button>--%>
                                  <form runat="server">
-                                 <asp:Button ID = "Button1" Text="Download Excel" class="btn  pdfbtns fa fa-file-pdf-o" title="Excel" runat="server" OnClick ="btnDowloadExcel_Click" />
+                                 <asp:Button ID = "Button1" Text="Download Excel" class="btn  pdfbtns fa fa-file-pdf-o" title="Excel" runat="server" OnClick ="btnDowloadExcel_Click" autopostback="false" />
 
 
                                

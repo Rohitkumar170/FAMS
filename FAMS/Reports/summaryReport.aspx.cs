@@ -117,17 +117,17 @@ namespace FAMS.Reports
         protected void btnDowloadExcel_Click(object sender, EventArgs e)
         {
             FAMSEntities context = new FAMSEntities();
-            List<SummaryReports> dataList = new List<SummaryReports>();
+            List<SummaryReportExcel> dataList = new List<SummaryReportExcel>();
             try
             {
                 fromdate = hdnFromDate.Value;
                 todate = hdnToDate.Value;
-                var results =context.MultipleResults("[dbo].[Sp_DemoReport]").With<SummaryReports>()
+                var results =context.MultipleResults("[dbo].[Sp_DemoReport]").With<SummaryReportExcel>()
                         .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetSummaryReportDataExcel", Session["UserName"].ToString(), fromdate, todate);
 
                 foreach (var data in results)
                 {
-                    dataList = data.Cast<SummaryReports>().ToList();
+                    dataList = data.Cast<SummaryReportExcel>().ToList();
                 }
                 DataTable dt = ToDataTable(dataList);
 
@@ -216,27 +216,27 @@ namespace FAMS.Reports
                         DataRow dr1 = dtTemp.NewRow();
                         if (dc.ColumnName.ToString() == "OpeningMarketValue")
                         {
-                            dr1[colName] = "OpeningMarketValue as of" + fromdate;
+                            dr1[colName] = "Opening Market Value as of " + fromdate;
                         }
                         else if(dc.ColumnName.ToString() == "OpeningNAV")
                         {
-                            dr1[colName] = "OpeningNAV as of" + fromdate;
+                            dr1[colName] = "Opening NAV as of " + fromdate;
                         }
                         else if (dc.ColumnName.ToString() == "OpeningOutstandingUnits")
                         {
-                            dr1[colName] = "OpeningOutstandingUnits as of" + fromdate;
+                            dr1[colName] = "Opening Outstanding Units as of " + fromdate;
                         }
                         else if (dc.ColumnName.ToString() == "ClosingMarketValue")
                         {
-                            dr1[colName] = "ClosingMarketValue as of" + todate;
+                            dr1[colName] = "Closing Market Value as of " + todate;
                         }
                         else if (dc.ColumnName.ToString() == "ClosingNAV")
                         {
-                            dr1[colName] = "ClosingNAV as of" + todate;
+                            dr1[colName] = "Closing NAV as of " + todate;
                         }
                         else if (dc.ColumnName.ToString() == "ClosingOutstanding")
                         {
-                            dr1[colName] = "ClosingOutstanding as of" + todate;
+                            dr1[colName] = "Closing Outstanding as of " + todate;
                         }
                         else
                         {

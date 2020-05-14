@@ -100,7 +100,7 @@ function BindGrid() {
 
     //$('#ContentPlaceHolder1_lblFromDate').text($('#fromdate').val());
     //$('#ContentPlaceHolder1_lblToDate').text($('#fromdate').val());
-    var CustomerAccount = "";
+    var CustomerAccount = $('#SPAccountNo').text();
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
