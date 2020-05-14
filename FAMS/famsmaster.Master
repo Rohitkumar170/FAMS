@@ -157,7 +157,8 @@
                         <i class="fa fa-user-circle-o usericon" aria-hidden="true"></i>
                         <ul class="changePannel" style="display: none;">
                             <li class="text-center"> <span class="user-info">Welcome</span>
-                             <span class="user-name" id="SPUserName">User 1</span>
+                             <span class="user-name" id="SPUserName" runat="server"></span>
+                                 <span class="user-name" id="SPAccountNo" runat="server" style="display:none"></span>
                             </li>
                             <li><i class="fa fa-key" aria-hidden="true"></i><a href="#" data-toggle="modal" data-target="#changepasswordpop"> Change Password</a></li>
                             <li id="btnlogout"><i class="fa fa-sign-out"></i><a href="../login.aspx"> Logout</a></li>

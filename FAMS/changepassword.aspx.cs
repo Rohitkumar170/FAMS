@@ -7,12 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace FAMS
 {
-    public partial class famsmaster : System.Web.UI.MasterPage
+    public partial class changepassword : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SPUserName.InnerText = Session["UserName"].ToString();
-            SPAccountNo.InnerText = Session["AccountNo"].ToString();
+
         }
     }
 }

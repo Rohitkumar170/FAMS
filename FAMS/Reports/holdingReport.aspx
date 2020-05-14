@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../Assets/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="../JavaScript/HoldingReport.js"></script>
+
     <style>
         .bodypartnav {
             max-width: 100%
@@ -18,13 +20,7 @@
         #holdingreportGrid .bankmasterTable tbody {
             max-height: 52vh !important;
         }
-
-        #holdingreportGrid {
-            overflow: hidden;
-            overflow-x: auto;
-            border-right: 1px solid #ddd;
-            border-left: 1px solid #ddd;
-            border-bottom: 1px solid #ddd
+        #holdingreportGrid { overflow:hidden; overflow-x: scroll; border-right:1px solid #ddd; border-left:1px solid #ddd  
         }
 
             #holdingreportGrid table {
@@ -131,15 +127,15 @@
                         </div>--%>
                         <div class="btncon col-md-4 col-sm-4 col-xs-12 pt-2">
                             <div class="pull-right">
-                                <button type="button" class="btn btn-sm btnconinsideBtn">Yesterday</button>
-                                <button type="button" class="btn btn-sm btnconinsideBtn">Last Week</button>
-                                <button type="button" class="btn btn-sm btnconinsideBtn">Last 2 Weeks</button>
+                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday">Yesterday</button>
+                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek">Last Week</button>
+                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks">Last 2 Weeks</button>
                             </div>
 
                         </div>
                     </div>
                     <div id="holdingreportGrid">
-                        <table class="bankmasterTable">
+                         <table class="bankmasterTable" id="holdingreportGridTable">
                             <thead>
 
                                 <tr>
@@ -159,9 +155,9 @@
                                 <tr>
                                     <td colspan="9"><strong>Equity
                                     </strong>
-                                        <table>
+                                        <table  id="tblholdingreport">
                                             <tbody>
-                                                <tr>
+                                              <%--  <tr>
                                                     <td style="width: 320px">SOLAR INDUSTRIES INDIA LTD
                                                     </td>
                                                     <td style="width: 100px">1,804
@@ -340,10 +336,10 @@
                                                     </td>
                                                     <td style="width: 100px">9.57%
                                                     </td>
-                                                </tr>
+                                                </tr>--%>
                                             </tbody>
                                         <tfoot>
-                                            <tr>
+                                          <%--  <tr>
                                                 <td style="width: 320px">Total</td>
                                                 <td style="width: 100px"></td>
                                                 <td style="width: 150px" class="price"></td>
@@ -354,7 +350,7 @@
                                                 <td style="width: 100px" class="profit">63.17%</td>
                                                 <td style="width: 100px">94.39%</td>
 
-                                            </tr>
+                                            </tr>--%>
 
                                         </tfoot>
                         </table>
@@ -365,9 +361,9 @@
                                 <tr>
                                     <td colspan="9"><strong>Cash and Equivalent
                                     </strong>
-                                        <table>
+                                        <table id="tblCash">
                                             <tbody>
-                                                <tr>
+                                               <%-- <tr>
                                                     <td style="width: 320px">Cash
                                                     </td>
                                                     <td style="width: 100px">1,804
@@ -406,11 +402,11 @@
                                                     </td>
                                                     <td style="width: 100px">9.57%
                                                     </td>
-                                                </tr>
+                                                </tr>--%>
                                            
                                             </tbody>
                                         <tfoot>
-                                            <tr>
+                                            <%--<tr>
                                                 <td style="width: 320px">Total</td>
                                                 <td style="width: 100px"></td>
                                                 <td style="width: 150px" class="price"></td>
@@ -421,7 +417,7 @@
                                                 <td style="width: 100px" class="profit">63.17%</td>
                                                 <td style="width: 100px">94.39%</td>
 
-                                            </tr>
+                                            </tr>--%>
 
                                         </tfoot>
                         </table>
@@ -430,8 +426,8 @@
                                 </tr>
                                 
                             </tbody>
-                             <tfoot>
-                                 <tr>
+                             <tfoot id="MaintblTfoot">
+                               <%--  <tr>
                                      <td style="width: 410px">Total</td>
                                      <td style="width: 100px"></td>
                                      <td style="width: 150px" class="price"></td>
@@ -442,7 +438,7 @@
                                      <td style="width: 100px" class="profit">63.17%</td>
                                      <td style="width: 100px">94.39%</td>
 
-                                 </tr>
+                                 </tr>--%>
 
                              </tfoot>
                         </table>

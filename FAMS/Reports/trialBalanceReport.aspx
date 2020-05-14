@@ -14,7 +14,7 @@
             width: 109.5%;
         }
         #trialBalanceGrid .bankmasterTable tbody {
-            max-height: 50vh !important;
+            max-height: 45vh !important;
         }
         #trialBalanceGrid thead th {text-align:center
         }
@@ -183,22 +183,22 @@
                                             <tbody>
                                             <tr>
                                     <td width="300px">Receivable-KOTAK-Shares-Listed</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtOBRecievable">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtOBRecievable">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtTDRecievable">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtTDRecievable">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="DebtCBRecievable">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtCBRecievable">0.00</td>
 
                                             </tr>
                                                 <tr>
                                     <td width="300px">Bank balance-DUMMY-100345</td>
-                                    <td class="text-center" style="width: 150px">333,372.14</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtOBDUMMY">333,372.14</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtOBDUMMY">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtTDDUMMY">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtTDDUMMY">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtCBDUMMY">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtCBDUMMY">0.00</td>
 
                                             </tr>
                                             </tbody>
@@ -214,22 +214,22 @@
                                             <tbody>
                                             <tr>
                                     <td width="300px">Receivable-KOTAK-Shares-Listed</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtOBRecievableInv">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtOBReceivableInv">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtTDReceivableInv">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtTDReceivableInv">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="DebtCBReceivableInv">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtCBReceivableInv">0.00</td>
 
                                             </tr>
                                                 <tr>
                                     <td width="300px">Bank balance-DUMMY-100345</td>
-                                    <td class="text-center" style="width: 150px">333,372.14</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtOBDUMMYInv">333,372.14</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtOBDUMMYInv">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtTDDUMMYInv">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtTDDUMMYInv">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtCBDUMMYInv">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtCBDUMMYInv">0.00</td>
 
                                             </tr>
                                             </tbody>
@@ -258,22 +258,22 @@
                                             <tbody>
                                             <tr>
                                     <td width="300px">Management Fees</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtOBMngmt">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtOBMngmt">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtTDMngmt">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtTDMngmt">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="DebtCBMngmt">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtCBMngmt">0.00</td>
 
                                             </tr>
                                                 <tr>
                                     <td width="300px">STT</td>
-                                    <td class="text-center" style="width: 150px">333,372.14</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtOBSTT">333,372.14</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtOBSTT">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtTDSTT">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtTDSTT">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="DebtCBSTT">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px" id="CrdtCBSTT">0.00</td>
 
                                             </tr>
                                             </tbody>
@@ -303,12 +303,12 @@
                                             <tbody>
                                             <tr>
                                     <td width="300px">Dividend-Shares Listed</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
 
                                             </tr>
                                               
@@ -325,22 +325,22 @@
                                             <tbody>
                                             <tr>
                                     <td width="300px">Shares-Listed</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
 
                                             </tr>
                                                 <tr>
                                     <td width="300px">Mutual Funds-Liquid Fund</td>
-                                    <td class="text-center" style="width: 150px">333,372.14</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">333,372.14</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
 
                                             </tr>
                                             </tbody>
@@ -370,12 +370,12 @@
                                             <tbody>
                                             <tr>
                                     <td width="300px">Corpus</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
 
                                             </tr>
                                               
@@ -392,32 +392,32 @@
                                             <tbody>
                                             <tr>
                                     <td width="300px">Payable-KOTAK-Shares-Listed</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
 
                                             </tr>
                                                 <tr>
                                     <td width="300px">Management Fees</td>
-                                    <td class="text-center" style="width: 150px">333,372.14</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">333,372.14</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
 
                                             </tr>
                                                  <tr>
                                     <td width="300px">Sec. Tran. Tax</td>
-                                    <td class="text-center" style="width: 150px">333,372.14</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">333,372.14</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
 
                                             </tr>
                                             </tbody>
@@ -433,22 +433,22 @@
                                             <tbody>
                                             <tr>
                                     <td width="300px">Shares-Listed</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">8,365,964.22</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">8,365,964.22</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
 
                                             </tr>
                                                 <tr>
                                     <td width="300px">Mutual Funds-Liquid Fund</td>
-                                    <td class="text-center" style="width: 150px">333,372.14</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">333,372.14</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
 
                                             </tr>
                                         
@@ -479,12 +479,12 @@
                                            
                                                 <tr style="border:0px">
                                     <td width="300px">Total</td>
-                                    <td class="text-center" style="width: 150px">333,372.14</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,359,850.62</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
-                                    <td class="text-center" style="width: 150px">1,693,222.76</td>
-                                    <td class="text-center" style="width: 150px">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">333,372.14</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">1,359,850.62</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
+                                    <td class="text-center" style="width: 150px" id="">1,693,222.76</td>
+                                    <td class="text-center" style="width: 150px" id="">0.00</td>
 
                                             </tr>
                                             </tbody>

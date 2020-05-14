@@ -142,7 +142,30 @@ namespace FAMS
                                         Session["UserName"] = Convert.ToString(cust.FirstOrDefault().UserName);
                                         Session["WareHouseId"] = Convert.ToString(cust.FirstOrDefault().WareHouseId);
                                         Session["AccountNo"] = Convert.ToString(cust.FirstOrDefault().AccountNo);
-
+                                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Only alert Message');", true);
+                                        txtpassword.Value = "";
+                                        txtUserName.Value = "";
+                                        Response.Redirect("\\master\\reportsDashboard.aspx");
+                                    }
+                                    else if (Convert.ToString(cust.FirstOrDefault().UserType) == "2")
+                                    {
+                                        Session["UserId"] = Convert.ToString(cust.FirstOrDefault().UserId);
+                                        Session["EmailId"] = Convert.ToString(cust.FirstOrDefault().EmailId);
+                                        Session["UserName"] = Convert.ToString(cust.FirstOrDefault().UserName);
+                                        Session["WareHouseId"] = Convert.ToString(cust.FirstOrDefault().WareHouseId);
+                                        Session["AccountNo"] = Convert.ToString(cust.FirstOrDefault().AccountNo);
+                                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Only alert Message');", true);
+                                        txtpassword.Value = "";
+                                        txtUserName.Value = "";
+                                        Response.Redirect("\\master\\reportsDashboard.aspx");
+                                    }
+                                   else if (Convert.ToString(cust.FirstOrDefault().UserType) == "3")
+                                    {
+                                        Session["UserId"] = Convert.ToString(cust.FirstOrDefault().UserId);
+                                        Session["EmailId"] = Convert.ToString(cust.FirstOrDefault().EmailId);
+                                        Session["UserName"] = Convert.ToString(cust.FirstOrDefault().UserName);
+                                        Session["WareHouseId"] = Convert.ToString(cust.FirstOrDefault().WareHouseId);
+                                        Session["AccountNo"] = Convert.ToString(cust.FirstOrDefault().AccountNo);
                                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Only alert Message');", true);
                                         txtpassword.Value = "";
                                         txtUserName.Value = "";
@@ -162,6 +185,7 @@ namespace FAMS
                             lblDispMessage.Style.Add("color", "red");
                             lblDispMessage.Visible = true;
                         }
+
 
                     }
 

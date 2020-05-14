@@ -50,7 +50,7 @@
     </Reference>
     <Reference Include="Encryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\YOEKI-10\Desktop\dll\Encryption.dll</HintPath>
+      <HintPath>C:\Users\AMYDEV02\Desktop\DLL\Encryption.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
@@ -58,8 +58,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp">
-      <HintPath>C:\Users\YOEKI-10\Downloads\itextsharp.dll</HintPath>
+    <Reference Include="itextsharp, Version=4.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\AMYDEV02\Desktop\DLL\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -111,6 +112,7 @@
     <Content Include="Assets\js\date-pickers.min.js" />
     <Content Include="Assets\js\jquery-ui.min.js" />
     <Content Include="Assets\js\jquery.min.js" />
+    <Content Include="changepassword.aspx" />
     <Content Include="Entity\FAMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FAMS.edmx</DependentUpon>
@@ -126,6 +128,8 @@
     <Content Include="JavaScript\Customer.js" />
     <Content Include="JavaScript\Entity.js" />
     <Content Include="JavaScript\GetReport.js" />
+    <Content Include="JavaScript\HoldingReport.js" />
+    <Content Include="JavaScript\SummaryReport.js" />
     <Content Include="JavaScript\TransactionStatement.js" />
     <Content Include="master\allCustomers.aspx" />
     <Content Include="master\cityMaster.aspx" />
@@ -2058,9 +2062,18 @@
     <Content Include="Web.config" />
     <Content Include="WebServices\Customer.asmx" />
     <Content Include="WebServices\GetReport.asmx" />
+    <Content Include="WebServices\HoldingReport.asmx" />
+    <Content Include="WebServices\SummaryReport.asmx" />
     <Content Include="WebServices\TransactionStatement.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="changepassword.aspx.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="changepassword.aspx.designer.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Entity\BINDACCOUNTS_Result.cs">
       <DependentUpon>FAMS.tt</DependentUpon>
     </Compile>
@@ -2301,6 +2314,9 @@
     <Compile Include="Models\GETCOA\Customer.cs" />
     <Compile Include="Models\GETCOA\GetReportData.cs" />
     <Compile Include="Models\LoginClasss\Logindetails.cs" />
+    <Compile Include="Models\ReportsClasses\CSVUtilityClass.cs" />
+    <Compile Include="Models\ReportsClasses\HoldingReport.cs" />
+    <Compile Include="Models\ReportsClasses\SummaryReport.cs" />
     <Compile Include="Models\ReportsClasses\TransactionStatement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\cashEquivalent.aspx.cs">
@@ -2351,6 +2367,14 @@
     </Compile>
     <Compile Include="WebServices\GetReport.asmx.cs">
       <DependentUpon>GetReport.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\HoldingReport.asmx.cs">
+      <DependentUpon>HoldingReport.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\SummaryReport.asmx.cs">
+      <DependentUpon>SummaryReport.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\TransactionStatement.asmx.cs">
