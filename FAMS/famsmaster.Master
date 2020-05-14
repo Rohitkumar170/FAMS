@@ -154,6 +154,7 @@
                     <div class="userwelcominfo">
                
                 </div>
+                      <span></span>
                         <i class="fa fa-user-circle-o usericon" aria-hidden="true"></i>
                         <ul class="changePannel" style="display: none;">
                             <li class="text-center"> <span class="user-info">Welcome</span>
@@ -162,7 +163,6 @@
                             </li>
                             <li><i class="fa fa-key" aria-hidden="true"></i><a href="#" data-toggle="modal" data-target="#changepasswordpop"> Change Password</a></li>
                             <li id="btnlogout"><i class="fa fa-sign-out"></i><a href="../login.aspx"> Logout</a></li>
-                            <li><i class="fa fa-envelope" aria-hidden="true" style="color: #fff;  font-size: 14px; padding-right:4px"></i><a href="#">  Important Notes</a></li>
                            
                         </ul>
                     </div>

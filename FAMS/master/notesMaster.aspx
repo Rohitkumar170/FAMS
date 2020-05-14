@@ -93,10 +93,10 @@
                                             1
                                         </td>
                                         <td style="width:100px">
-                                           Subject 1
+                                           Trial Report
                                         </td>
                                         <td style="width:250px">
-                                            Notes 1
+                                            Trial Balance Report
                                         </td>
                                         
                                     </tr>
@@ -108,10 +108,10 @@
                                             2
                                         </td>
                                         <td style="width:100px">
-                                           Subject 2
+                                           Summary Report
                                         </td>
                                         <td style="width:250px">
-                                            Notes 2
+                                            Portfolio Performance Summary Report
                                         </td>
                                         
                                     </tr>
@@ -123,10 +123,10 @@
                                             3
                                         </td>
                                        <td style="width:100px">
-                                           Subject 3
+                                           Holding Report
                                         </td>
                                         <td style="width:250px">
-                                            Notes 3
+                                            Portfolio Appraisal Report
                                         </td>
                                         
                                     </tr>
@@ -138,10 +138,10 @@
                                             4
                                         </td>
                                        <td style="width:100px">
-                                           Subject 4
+                                           Transaction Report
                                         </td>
                                         <td style="width:250px">
-                                            Notes 4
+                                           Transaction Statement Report
                                         </td>
                                         
                                     </tr>
@@ -153,10 +153,10 @@
                                             5
                                         </td>
                                         <td style="width:100px">
-                                           Subject 5
+                                           Cash Report
                                         </td>
                                         <td style="width:250px">
-                                            Notes 5
+                                            Cash Equivalent Report
                                         </td>
                                     </tr>
 
