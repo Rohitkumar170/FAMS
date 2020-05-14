@@ -161,6 +161,8 @@
                             </li>
                             <li><i class="fa fa-key" aria-hidden="true"></i><a href="#" data-toggle="modal" data-target="#changepasswordpop"> Change Password</a></li>
                             <li id="btnlogout"><i class="fa fa-sign-out"></i><a href="../login.aspx"> Logout</a></li>
+                            <li><i class="fa fa-envelope" aria-hidden="true" style="color: #fff;  font-size: 14px; padding-right:4px"></i><a href="#">  Important Notes</a></li>
+                           
                         </ul>
                     </div>
                 </div>
@@ -209,7 +211,7 @@
                                 <li><a href="../master/PMSCustomers.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Customers List</a></li>
                                 <li><a href="../master/PMSEmployees.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Employees</a></li>
                <li><a href="../master/allCustomers.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> All Customers</a></li>
-              
+              <li><a href="../master/notesMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Notes Master</a></li>
               
               
             </ul>

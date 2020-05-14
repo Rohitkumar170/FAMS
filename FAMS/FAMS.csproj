@@ -137,6 +137,7 @@
     <Content Include="login.aspx" />
     <Content Include="master\customer.aspx" />
     <Content Include="master\Entity.aspx" />
+    <Content Include="master\notesMaster.aspx" />
     <Content Include="master\reportsDashboard.aspx" />
     <Content Include="master\PMSCustomers.aspx" />
     <Content Include="master\PMSEmployees.aspx" />
@@ -2212,6 +2213,13 @@
     </Compile>
     <Compile Include="master\Entity.aspx.designer.cs">
       <DependentUpon>Entity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\notesMaster.aspx.cs">
+      <DependentUpon>notesMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\notesMaster.aspx.designer.cs">
+      <DependentUpon>notesMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="master\reportsDashboard.aspx.cs">
       <DependentUpon>reportsDashboard.aspx</DependentUpon>
