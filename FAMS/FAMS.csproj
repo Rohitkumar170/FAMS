@@ -112,6 +112,7 @@
     <Content Include="Assets\js\date-pickers.min.js" />
     <Content Include="Assets\js\jquery-ui.min.js" />
     <Content Include="Assets\js\jquery.min.js" />
+    <Content Include="changepassword.aspx" />
     <Content Include="Entity\FAMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FAMS.edmx</DependentUpon>
@@ -2065,6 +2066,13 @@
     <Content Include="WebServices\TransactionStatement.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="changepassword.aspx.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="changepassword.aspx.designer.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Entity\BINDACCOUNTS_Result.cs">
       <DependentUpon>FAMS.tt</DependentUpon>
     </Compile>
@@ -2298,6 +2306,7 @@
     <Compile Include="Models\GETCOA\Customer.cs" />
     <Compile Include="Models\GETCOA\GetReportData.cs" />
     <Compile Include="Models\LoginClasss\Logindetails.cs" />
+    <Compile Include="Models\ReportsClasses\CSVUtilityClass.cs" />
     <Compile Include="Models\ReportsClasses\HoldingReport.cs" />
     <Compile Include="Models\ReportsClasses\SummaryReport.cs" />
     <Compile Include="Models\ReportsClasses\TransactionStatement.cs" />

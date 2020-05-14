@@ -1,13 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="forgetpassword.aspx.cs" Inherits="FAMS.forgetpassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="changepassword.aspx.cs" Inherits="FAMS.changepassword" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   <title>FAMS(Fund Account Managment System)</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../Assets/css/bootstrap.min.css" rel="stylesheet" />
-        <style>
+    <title>FAMS(Fund Account Management System)</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../Assets/css/bootstrap.min.css" rel="stylesheet"   type="text/css" />
+    <script src="Assets/js/jquery.min.js"></script>
+       <style>
         body
         {
             font-family: sans-serif !important;
@@ -15,6 +16,10 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
+           .lbltxt {
+               color:#fff;
+               font-weight:bold;
+           }
         .loginCon
         {
             width: 400px;
@@ -68,7 +73,7 @@
         }
         .btnSubmit
         {
-            width: 50%;
+            width: 32%;
             border-radius: 1rem;
             padding: 1.5%;
             border: none;
@@ -132,41 +137,43 @@
             }
         }
     </style>
-
-
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container login-container">
+
+
+ <div class="container login-container">
         <div class="row mainlogidiv">
             <div class="loginCon">
                 <div class="text-center mb-2">
-                <span class="txtfams">Fund Accounting Managment System</span>
+                <span class="txtfams">Fund Accounting Management System</span>
                </div>
                 <div class="login-form-1">
                     <h3>
-                    Password Reset
+                       Change Password
                     </h3>
                     
                     <div class="form-group">
-                    <input name="txtUsername" type="text" runat="server" id="txtEmail" class="form-control" placeholder="Your Email *">
-                       
+                        <label for="Password" class="lbltxt">
+                        Password</label>
+                           <input type="password" id="e" class="form-control" placeholder="Password " value="" />
                     </div>
-                 <%--   <div class="form-group">
-                    <input name="txtpassword" type="password" id="txtpassword" class="form-control" placeholder="Password">
-                       
-                             
-                  
+                    <div class="form-group">
+                           <label for= "ConfirmPassword" class="lbltxt">
+                       Confirm  Password</label>
+                      <input type="password" id="" class="form-control" placeholder="Confirm Password " value="" />
+                    </div>
+                    <div class="form-group" style="margin-top:20px;">
+                           <input type="submit" class="btnSubmit" id="btnSubmit"   value="Done"/>
+                              </div>
+                     <div class="form-group">
+                           
+                                              </div>
+                    <div class="form-group">
+                    </div>
+                  <%--  <div class="form-group">
+                        <a href="forgetpassword.aspx" class="ForgetPwd">Forgot Password?</a>
                     </div>--%>
-                    <div class="form-group">
-                      <input type="submit" name="btnLogin" value="Submit"  id="btnLogin" class="btnSubmit">
-                        
-                    </div>
-                    <div class="form-group">
-                    </div>
-                    <div class="form-group">
-                        <a href="login.aspx" class="ForgetPwd">Back To Login</a>
-                    </div>
                     
                 </div>
             </div>
