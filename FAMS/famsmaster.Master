@@ -23,15 +23,173 @@
 
 
 
+
             $("#crossbtn").click(function () {
                 $(".sidenav").css('display', 'none');
             });
+  $(".shownotification").click(function(){
+    $("#notificationDiv").toggle(200);
+  });
+
 
         })
     
     </script>
          
       <style>
+          .newnotificationdiv {
+              padding:6px;
+          }
+          #notificationDiv {
+                    display: block;
+    position: absolute;
+    right: 85px;
+    font-size: 12px;
+    background-color: #91a4ad;
+    z-index: 9999;
+    width: 23%;
+    color: #fff;
+    top: 46px;
+
+          }
+          .newnotificationdiv {
+              border-bottom: 1px solid #fff;
+
+          }
+            .shownotification
+        {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+                left: 92%;
+                top: -3px;
+
+        }
+        .bellicon
+        {
+            font-size: 17px;
+            color: #fff;
+            margin-top: 20px;
+            margin-right: 11px;
+        }
+        .notificationcircle
+        {
+            background-color: #ff9000;
+            width: 17px;
+            height: 17px;
+            border-radius: 14px;
+            position: absolute;
+            top: 9px;
+            left: 11px;
+        }
+        .notificationcircle p
+        {
+            color: #fff;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 0px;
+            padding-left: 0px;
+        }
+        #guide
+        {
+            display: contents;
+        }
+        /*#notificationDiv  
+    {
+     background-color: #fafcfd;
+    border: 1px solid #6581a5;
+    width: 23%;
+    position: absolute;
+    right: 5%;
+    top: 121%;
+    z-index: 9999 !important;
+    height: 305px;
+    max-height: 348px;
+   }*/
+        #notificationDiv ul
+        {
+            list-style: none;
+            margin: 0px;
+        }
+        
+        .textinsidebox
+        {
+            overflow: hidden;
+            color: #4977b1;
+            border: 1px solid #cdcd;
+            margin-top: 3px;
+            padding: 11px;
+            height: 38px;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: #eff3f5;
+        }
+        .notificationHeader
+        {
+            background: #1f497d;
+            width: 100%;
+            height: 28px;
+            position: absolute;
+            top: 0px;
+        }
+        #notificationlbl
+        {
+            font-size: 12px;
+            color: #fff;
+            padding: 5px;
+            font-weight: bold;
+        }
+        
+        .notificationarrow
+        {
+            position: absolute;
+            top: -25px;
+            color: #1f497d;
+            font-size: 42px;
+            z-index: 9999 !important;
+            right: 275px;
+            clear: both;
+            text-align: center;
+            transform: rotate(180deg);
+        }
+        
+        .notificationclose
+        {
+            color: #c5c5c5;
+            font-size: 18px;
+            font-weight: bold;
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .notificationread
+        {
+            margin-top: 0px !important;
+        }
+        .notificationunread
+        {
+            margin-top: 0px !important;
+        }
+        .ultopmrg
+        {
+            margin-top: 9% !important;
+        }
+        .notificationoverlay
+        {
+            background: #fff;
+            clear: both;
+            overflow: hidden;
+            display: block;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            position: fixed;
+            transition: opacity 500ms;
+            margin-left: -1%;
+        }
           #crossbtn {
                   right: 6px;
     position: absolute;
@@ -148,6 +306,57 @@
                     
                     </div>
                     
+
+
+           <div class="shownotification"><i class="fa fa-bell bellicon" aria-hidden="true"></i>
+                               <%-- <div id="divnotificationcircle" class="notificationcircle">
+                                    <p id="lblcountnotification">
+                                    </p>
+                                </div>--%>
+                   </div>
+
+                               <%-- <div class="newnotificationclass" id="noNewNotification" style="display: none">
+                                    <i class="fa fa-bell-slash" aria-hidden="true"></i>No New Notifications!</div>--%>
+                              
+                               <div id="notificationDiv" style="display: none">
+             <div class="newnotificationclass " id="newnotificationdiv" >
+                                    <div class="newnotificationdiv">
+    
+    <span class="newnotificationspan"><i class="fa fa-envelope envelopeicons" aria-hidden="true"></i>
+        <label>Note 1</label></span>
+    <span class="clocknewnotificationspan pull-right"><i class="fa fa-clock-o clockicons" aria-hidden="true"></i>10:02 AM</span>
+   
+   
+    </div>
+                                    <div class="newnotificationdiv notificationunread">
+     
+    <span class="newnotificationspan"><i class="fa fa-envelope envelopeicons" aria-hidden="true"></i> <label>Note 2</label></span>
+    <span class="clocknewnotificationspan pull-right"><i class="fa fa-clock-o clockicons" aria-hidden="true"></i>10:02 AM</span>
+   
+    </div>
+    <div class="newnotificationdiv">
+    
+    <span class="newnotificationspan "><i class="fa fa-envelope envelopeicons" aria-hidden="true"></i> <label>Note 3</label></span>
+    <span class="clocknewnotificationspan pull-right"><i class="fa fa-clock-o clockicons" aria-hidden="true"></i>10:02 AM</span>
+   
+    </div>
+    <div class="newnotificationdiv">
+   
+    <span class="newnotificationspan "><i class="fa fa-envelope envelopeicons" aria-hidden="true"></i> <label>Note 4</label></span>
+    <span class="clocknewnotificationspan pull-right"><i class="fa fa-clock-o clockicons " aria-hidden="true"></i>10:02 AM</span>
+   
+    </div>
+                                </div>
+        </div>
+                        
+
+
+
+
+
+
+
+
                     
 
                   <div class="loginavtar">
