@@ -1,5 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="reportsDashboard.aspx.cs" Inherits="FAMS.master.mainDashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <link href="../Assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Assets/css/custom.css" rel="stylesheet" />
+    <link href="../Assets/css/fontfamily.css" rel="stylesheet" />
+    <link href="../Assets/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="../js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script>        var jquery_1_11_3_min_p = jQuery.noConflict();</script>
+    <script src="../js/jquery_ui_1.12.1.js" type="text/javascript"></script>
+    <script>        var jquery_1_12_1 = jQuery.noConflict();</script>
+    <script src="../Assets/js/jquery.min.js"></script>
+    <script src="../Assets/js/bootstrap.min.js"></script>
     <style>
         .bodypartnav {
         max-width:100%}
@@ -17,6 +28,18 @@
     padding-top: 10px;}
     
     </style>
+    <script type="text/javascript">
+        //function openModal() {
+        //$('#changepasswordpop').modal('show');
+        //}
+        $(document).ready(function () {
+            var IsDefaultPswdChange = jquery_1_11_3_min_p("#ContentPlaceHolder1_lblIsDefaultPswdChange").html();
+            if (IsDefaultPswdChange == "False")
+            {
+                $("#changepasswordpop").modal('show');
+            }
+        });  
+    </script>
   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -79,5 +102,5 @@
                         
                     </div>
          </div>
-       
+       <asp:Label ID="lblIsDefaultPswdChange" runat="server" Style="display: none"></asp:Label>
 </asp:Content>

@@ -15,5 +15,6 @@ namespace FAMS.Models.LoginClasss
         public string PasswordKey { get; set; }
         public Int64 WareHouseId { get; set; }
         public string AccountNo { get; set; }
+        public Boolean IsDefaultPswdChange { get; set; }// Added by Bibhu
     }
 }

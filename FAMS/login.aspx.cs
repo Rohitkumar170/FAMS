@@ -135,6 +135,7 @@ namespace FAMS
                                 }
                                 else
                                 {
+                                   
                                     if (Convert.ToString(cust.FirstOrDefault().UserType) == "1")
                                     {
                                         Session["UserId"] = Convert.ToString(cust.FirstOrDefault().UserId);
@@ -142,10 +143,18 @@ namespace FAMS
                                         Session["UserName"] = Convert.ToString(cust.FirstOrDefault().UserName);
                                         Session["WareHouseId"] = Convert.ToString(cust.FirstOrDefault().WareHouseId);
                                         Session["AccountNo"] = Convert.ToString(cust.FirstOrDefault().AccountNo);
+
+                                        Session["IsDefaultPswdChange"] = Convert.ToString(cust.FirstOrDefault().IsDefaultPswdChange); // Added by Bibhu on 16May2020
                                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Only alert Message');", true);
                                         txtpassword.Value = "";
                                         txtUserName.Value = "";
                                         Response.Redirect("\\master\\reportsDashboard.aspx");
+                                        ////Added by Bibhu on 15May2020 start
+                                        //if (cust.FirstOrDefault().IsDefaultPswdChange == false)
+                                        //{
+                                        //    ScriptManager.RegisterStartupScript(this, typeof(Page), "msg", "$('#changepasswordpop').modal('show');", true);
+                                        //}
+                                        ////Added by Bibhu on 15May2020 end
                                     }
                                     else if (Convert.ToString(cust.FirstOrDefault().UserType) == "2")
                                     {
@@ -158,8 +167,14 @@ namespace FAMS
                                         txtpassword.Value = "";
                                         txtUserName.Value = "";
                                         Response.Redirect("\\master\\reportsDashboard.aspx");
+                                        ////Added by Bibhu on 15May2020 start
+                                        //if (cust.FirstOrDefault().IsDefaultPswdChange == false)
+                                        //{
+                                        //    ScriptManager.RegisterStartupScript(this, typeof(Page), "msg", "$('#changepasswordpop').modal('show');", true);
+                                        //}
+                                        ////Added by Bibhu on 15May2020 end
                                     }
-                                   else if (Convert.ToString(cust.FirstOrDefault().UserType) == "3")
+                                    else if (Convert.ToString(cust.FirstOrDefault().UserType) == "3")
                                     {
                                         Session["UserId"] = Convert.ToString(cust.FirstOrDefault().UserId);
                                         Session["EmailId"] = Convert.ToString(cust.FirstOrDefault().EmailId);
@@ -170,6 +185,12 @@ namespace FAMS
                                         txtpassword.Value = "";
                                         txtUserName.Value = "";
                                         Response.Redirect("\\master\\Dashboard.aspx");
+                                        ////Added by Bibhu on 15May2020 start
+                                        //if (cust.FirstOrDefault().IsDefaultPswdChange == false)
+                                        //{
+                                        //    ScriptManager.RegisterStartupScript(this, typeof(Page), "msg", "$('#changepasswordpop').modal('show');", true);
+                                        //}
+                                        ////Added by Bibhu on 15May2020 end
                                     }
                                     else
                                     {

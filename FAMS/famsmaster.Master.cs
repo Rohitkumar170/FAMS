@@ -13,6 +13,14 @@ namespace FAMS
         {
             SPUserName.InnerText = Session["UserName"].ToString();
             SPAccountNo.InnerText = Session["AccountNo"].ToString();
+            if (!Page.IsPostBack)
+            {
+                if (System.Web.HttpContext.Current.Session["UserId"] != null)
+                {
+                    lblUserid.Text = Convert.ToString(System.Web.HttpContext.Current.Session["UserId"]);
+
+                }
+            }
         }
     }
 }

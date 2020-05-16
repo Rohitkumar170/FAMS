@@ -1,13 +1,104 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/famsmaster.Master" AutoEventWireup="true" CodeBehind="allCustomers.aspx.cs" Inherits="FAMS.master.allCustomers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="../js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script> var jquery_1_11_3_min_p = jQuery.noConflict();</script>
     <link href="../Assets/css/jquery-ui.min.css" rel="stylesheet" />
-     <script type="text/javascript">
-      
-    $(function () {
-        $("table tr").dblclick(function () {
-            $("#customerDetail").modal("show");
+    <script src="../js/jquery_ui_1.12.1.js" type="text/javascript"></script>
+    <script>        var jquery_1_12_1 = jQuery.noConflict();</script>
+    <script src="../js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script>        var jquery_1_11_3_min = jQuery.noConflict();</script>
+    <script type="text/javascript">
+    jquery_1_11_3_min_p(document).ready(function () {
+        BindGrid();
+
+          jquery_1_11_3_min_p('#btnCreateCustomerPopUp').click(function () {
+            var UserId = jquery_1_11_3_min_p('#lblUserid').text(); 
+	        //var activityNo = jquery_1_11_3_min_p('#lblActivityCancelShowPopup').text();
+              var UserName = jquery_1_11_3_min_p('#txtUserName').val();
+              var UserEmail = jquery_1_11_3_min_p('#txtUserEmail').val();
+              var UserAccount=jquery_1_11_3_min_p('#txtUserAccount').val();
+              if (UserName == "") {
+                  alert('Please fill User Name');
+                  return false;
+              }else  if (UserEmail == "") {
+                  alert('Please fill User Email');
+                  return false;
+              }else  if (UserAccount == "") {
+                  alert('Please fill User Account');
+                  return false;
+              }
+
+	        jquery_1_11_3_min_p.ajax({
+		        type: "POST",
+		        contentType: "application/json; charset=utf-8",
+		        url: "../WebServices/Customer.asmx/CreateUser",
+		        data: "{'UserName':'" + UserName + "','UserEmail':'" + UserEmail + "','UserAccount':'" + UserAccount + "','UserId':'" + UserId + "'}",
+		        dataType: "json",
+		        async: false,
+		        success: function (result) {
+                    var jsonData = eval(result.d);
+                    if (result.d != -1) {
+                        alert('User create successfully !');
+                       // jquery_1_12_1("#changepasswordpop").dialog("close");
+                        $("#createCustomers").modal('hide');
+                        BindGrid();
+                    }
+                    else {
+                        alert('User already exists !');
+                    }
+                   
+		        },
+		        error: function (result) {}
+	        });
+          });
+        
+        jquery_1_11_3_min_p('#btnNew').click(function () {   
+            //jquery_1_12_1("#changepasswordpop").dialog("close");
+            $("#createCustomers").modal('show');
         });
+        jquery_1_11_3_min_p('#btnCancelCustomerPopUp').click(function () {   
+            //jquery_1_12_1("#changepasswordpop").dialog("close");
+            $("#createCustomers").modal('hide');
+        });
+        });
+
+    
+        
+   
+       
+    function BindGrid() {
+     jquery_1_11_3_min_p("#tblUserMaster tbody").html("");
+    jquery_1_11_3_min_p.ajax({
+        url: "../WebServices/Customer.asmx/BindGrid",
+        contentType: "application/json; charset=utf-8",
+        datatype: "json",
+        async: false,
+        data: "{}",
+        type: "POST",
+        success: function (result) {
+            var i = 0;
+            var jsonData = eval(result.d);
+            var Query = "";
+            for (i = 0; i < jsonData.Table.length; i++) {
+                Query = Query + "<tr>";
+                Query = Query +"<td width='10%'>" + jsonData.Table[i].Sno + "</td>";
+                Query = Query + "<td width='50%'>" + jsonData.Table[i].UserName + "</td>";
+                Query = Query + "<td width='50%'>" + jsonData.Table[i].AccountNo + "</td>";
+                Query = Query + "<td width='50%'>" + jsonData.Table[i].EmailId + "</td>";
+                Query = Query+ "<td width='10%'>" + jsonData.Table[i].Active + "</td>";
+                Query = Query + "</tr>";
+            }
+            jquery_1_11_3_min_p("#tblUserMaster tbody").append(Query);
+        },
+        error: function (result) {
+        }
     });
+}
+$(function () {
+    $("table tr").dblclick(function () {
+        $("#customerDetail").modal("show");
+    });
+});
 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -21,7 +112,8 @@
                     All Customers</div>
                     <div class="btncon col-md-9 col-sm-9 col-xs-12">
                     <div class="btnpannel">
-                       <button type="button" class="btn btn-sm btnconinsideBtn" id="btnNew" data-toggle="modal" data-target="#createCustomers"><i class="fa fa-plus-square" aria-hidden="true"></i> New</button> 
+                       <%--<button type="button" class="btn btn-sm btnconinsideBtn" id="btnNew" data-toggle="modal" data-target="#createCustomers"><i class="fa fa-plus-square" aria-hidden="true"></i> New</button> --%>
+                        <button type="button" class="btn btn-sm btnconinsideBtn" id="btnNew" data-toggle="modal"><i class="fa fa-plus-square" aria-hidden="true"></i> New</button> 
                       <button type="button" class="btn btn-sm btnconinsideBtn" id="btnEdit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button> 
                     <button type="button" class="btn btn-sm btnconinsideBtn" id="btnBack" style="display:none"><i class="fa fa fa-undo" aria-hidden="true" style="padding-right:2px"></i>Back</button> 
                    
@@ -77,7 +169,34 @@
 </div>
 </div>
                      <div class="tableScroll" style="border-left: 1px solid #ddd; border-right: 1px solid #ddd;">
-                      <table class="bankmasterTable" >
+                                <table class="bankmasterTable" id="tblUserMaster">
+                                <thead>
+                                    <tr>
+                                      
+                                       <th style="width:10px">
+                                             Sr No.
+                                        </th>
+                                         <th style="width:50px">
+                                             Customer Account
+                                        </th>                                       
+                                        <th style="width:50px">
+                                             User Name
+                                        </th>
+                                        <th style="width:50px">
+                                           User Email
+                                        </th>
+                                        <th style="width:10px">
+                                            Active
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="scrollbar" >
+                                     
+                                       
+                                    </tbody>
+                                </table>
+                        
+                     <%-- <table class="bankmasterTable" >
                                 <thead>
                                     <tr>
                                       <th style="width:60px">
@@ -275,7 +394,7 @@
                                         </td>
                                     </tr>
                                     </tbody>
-                                </table>
+                                </table>--%>
 
                     </div>
 
@@ -500,7 +619,7 @@
         <label class="col-md-12 col-xs-12 col-sm-12 p-0">Customer Acc:</label>
         </div>
         <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-            <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
+            <input type="text" class="col-md-12 col-xs-12 col-sm-12" id="txtUserAccount" />
     
         </div>
             </div>
@@ -541,7 +660,7 @@
         <label class="col-md-12 col-xs-12 col-sm-12 p-0">Customer Name:</label>
         </div>
         <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-            <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
+            <input type="text" class="col-md-12 col-xs-12 col-sm-12"  />
     
         </div>
             </div>
@@ -803,7 +922,7 @@
         <label class="col-md-12 col-xs-12 col-sm-12 p-0">User Name:</label>
         </div>
         <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-              <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
+              <input type="text" class="col-md-12 col-xs-12 col-sm-12" id="txtUserName" />
     
         </div>
             </div>
@@ -812,7 +931,7 @@
         <label class="col-md-12 col-xs-12 col-sm-12 p-0">User Email:</label>
         </div>
         <div class="col-md-7 col-xs-12 col-sm-7 d-inline-block p-0">
-              <input type="text" class="col-md-12 col-xs-12 col-sm-12" />
+              <input type="text" class="col-md-12 col-xs-12 col-sm-12" id="txtUserEmail" />
     
         </div>
             </div>
@@ -889,8 +1008,12 @@
             
 
          <div class="pull-right mt-1">
-    <button type="button" class="btn btn-default mr-1" >Create</button>
-            <button type="button" class="btn btn-default " >Cancel</button>
+    <%--<button type="button" class="btn btn-default mr-1" >Create</button>
+             <button type="button" class="btn btn-default " >Cancel</button>--%>
+          <%--    <input type="submit" class="btnSubmit" id="btnSubmit"   value="Done"/>
+               <input type="submit" class="btnSubmit" id="btnSubmit"   value="Done"/>--%>
+            <input type="button" class="btn btn-default mr-1"  value="Create" id="btnCreateCustomerPopUp"  />
+            <input type="button" class="btn btn-default" value="Cancel" id="btnCancelCustomerPopUp" />
         </div>
    
       </div> 

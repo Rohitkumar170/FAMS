@@ -75,7 +75,7 @@ namespace BusinessLibrary
                     catch (Exception ex) { throw ex; }
                     finally
                     {
-                        connection.Close();
+                       connection.Close(); 
                     }
 
                     return results;

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1a004dfbb48a4c7bb7f3fe4585211d7b" Name="Diagram1" ZoomLevel="85">
+      <Diagram DiagramId="1a004dfbb48a4c7bb7f3fe4585211d7b" Name="Diagram1" ZoomLevel="54">
         <EntityTypeShape EntityType="FAMSModel.tblAccountType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FAMSModel.tblBankCustomer" Width="1.875" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FAMSModel.tblCustomer" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />

@@ -6,6 +6,7 @@
 <head runat="server">
    <title>FAMS(Fund Account Managment System)</title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.11.3.min.js"></script>
     <link href="../Assets/css/bootstrap.min.css" rel="stylesheet" />
         <style>
         body
@@ -132,6 +133,33 @@
             }
         }
     </style>
+      <script type="text/javascript" language="javascript">
+        function Emailvalidation() {
+            var re = /\S+@\S+\.\S+/;
+            if (jquery_1_11_3_min("#txtRecoverEmail").val() == '') {
+                alert('Please enter your email address');
+
+                jquery_1_11_3_min("#txtRecoverEmail").focus();
+                return false;
+            }
+            else if (!re.test(jquery_1_11_3_min("#txtRecoverEmail").val())) {
+                alert('Please enter valid email address');
+                jquery_1_11_3_min("#txtRecoverEmail").val('');
+                return false;
+            }
+            else {
+                //   alert('Mail send successfully');
+                //   document.getElementById("txtEmail").value = '';
+                return true;
+            }
+        }
+
+
+        function SetDefaultValue() {
+            //  sessionStorage.setItem('CheckStatus', -1);
+            // alert(sessionStorage.getItem('CheckStatus'));    
+        }
+    </script>
 
 
 </head>
@@ -149,7 +177,8 @@
                     </h3>
                     
                     <div class="form-group">
-                    <input name="txtUsername" type="text" runat="server" id="txtEmail" class="form-control" placeholder="Your Email *">
+                   <%-- <input name="txtUsername" type="text" runat="server" id="txtEmail" class="form-control" placeholder="Your Email *">--%>
+             <asp:TextBox ID="txtRecoverEmail" runat="server" class="form-control" placeholder="Email" onkeypress="Removemsg();"></asp:TextBox>
                        
                     </div>
                  <%--   <div class="form-group">
@@ -159,7 +188,8 @@
                   
                     </div>--%>
                     <div class="form-group">
-                      <input type="submit" name="btnLogin" value="Submit"  id="btnLogin" class="btnSubmit">
+                      <%--<input type="submit" name="btnLogin" value="Submit"  id="btnLogin" class="btnSubmit">--%>
+     <asp:Button id="btnAgree" runat="server" Text="Agree" OnClientClick="Emailvalidation();" OnClick="btnAgree_Click"/>
                         
                     </div>
                     <div class="form-group">

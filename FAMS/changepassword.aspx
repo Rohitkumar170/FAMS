@@ -156,15 +156,18 @@
                     <div class="form-group">
                         <label for="Password" class="lbltxt">
                         Password</label>
-                           <input type="password" id="e" class="form-control" placeholder="Password " value="" />
+                           <%--<input type="password" id="e" class="form-control" placeholder="Password " value="" />--%>
+                          <asp:TextBox ID="txtPassword"  runat="server" class="form-control" placeholder="Password" ></asp:TextBox>
                     </div>
                     <div class="form-group">
                            <label for= "ConfirmPassword" class="lbltxt">
                        Confirm  Password</label>
-                      <input type="password" id="" class="form-control" placeholder="Confirm Password " value="" />
+                      <%--<input type="password" id="" class="form-control" placeholder="Confirm Password " value="" />--%>
+                        <asp:TextBox ID="txtConfirmPassword"  runat="server" class="form-control" placeholder="Password" ></asp:TextBox>
                     </div>
                     <div class="form-group" style="margin-top:20px;">
-                           <input type="submit" class="btnSubmit" id="btnSubmit"   value="Done"/>
+                           <%--<input type="submit" class="btnSubmit" id="btnSubmit"   value="Done"/>--%>
+                             <asp:Button id="btnChangePassword" runat="server" Text="Done" OnClick="btnChangePassword_Click"/>
                               </div>
                      <div class="form-group">
                            
