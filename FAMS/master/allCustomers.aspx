@@ -9,7 +9,7 @@
     <script>        var jquery_1_11_3_min = jQuery.noConflict();</script>
     <script type="text/javascript">
     jquery_1_11_3_min_p(document).ready(function () {
-        BindGrid();
+          BindGrid();
           jquery_1_11_3_min_p('#btnCreateCustomerPopUp').click(function () {
             var UserId = jquery_1_11_3_min_p('#lblUserid').text(); 
 	        //var activityNo = jquery_1_11_3_min_p('#lblActivityCancelShowPopup').text();
