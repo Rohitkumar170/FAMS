@@ -238,7 +238,7 @@ $(document).ready(function(){
                                              Subject
                                         </th>
                                         <th style="width:250px">
-                                            Notes
+                                            Date of Submission
                                         </th>
                                        
                                     </tr>
@@ -255,7 +255,7 @@ $(document).ready(function(){
                                            Trial Report
                                         </td>
                                         <td style="width:250px">
-                                            Trial Balance Report
+                                            20th May 11:00AM
                                         </td>
                                         
                                     </tr>
@@ -270,7 +270,7 @@ $(document).ready(function(){
                                            Summary Report
                                         </td>
                                         <td style="width:250px">
-                                            Portfolio Performance Summary Report
+                                           20th May 11:00AM
                                         </td>
                                         
                                     </tr>
@@ -285,7 +285,7 @@ $(document).ready(function(){
                                            Holding Report
                                         </td>
                                         <td style="width:250px">
-                                            Portfolio Appraisal Report
+                                           20th May 11:00AM
                                         </td>
                                         
                                     </tr>
@@ -300,7 +300,7 @@ $(document).ready(function(){
                                            Transaction Report
                                         </td>
                                         <td style="width:250px">
-                                           Transaction Statement Report
+                                           20th May 11:00AM
                                         </td>
                                         
                                     </tr>
@@ -315,7 +315,7 @@ $(document).ready(function(){
                                            Cash Report
                                         </td>
                                         <td style="width:250px">
-                                            Cash Equivalent Report
+                                            20th May 11:00AM
                                         </td>
                                     </tr>
 
@@ -364,17 +364,15 @@ $(document).ready(function(){
                  </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12 p-0">
-                    <textarea rows="500" cols="149">
-
-</textarea>
+                    <textarea rows="500" cols="149"> </textarea>
                     
                     </div>
                     <div class="row">
                  
                          <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="btnlink">
-                            <button type="button" class="btn btn-sm btnconinsideBtn" id="" ><i class="fa fa-paperclip"></i> Attachment </button>
-                          <input type="file"  id="attachment"/>
+                            <button type="button" class="btn btn-sm btnconinsideBtn"><i class="fa fa-paperclip"></i> Attachment </button>
+                          <input type="file"  id="attachment" />
                           <button type="button" class="btn btn-sm btnconinsideBtn pull-right" id=""> Cancel</button> 
                        <button type="button" class="btn btn-sm btnconinsideBtn pull-right mr-2" id="" > Save </button> 
                       
