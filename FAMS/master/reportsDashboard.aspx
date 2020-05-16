@@ -178,7 +178,7 @@
         <div class="col-sm-12 col-md-12">
             <div class=" col-md-12 col-sm-12 col-xs-12 noteBox">
                 <h5>Important Notes:</h5>
-                <span class="attachmentBtn"><i class="fa fa-paperclip" aria-hidden="true"></i>Click here for attachment</span>
+                <span class="attachmentBtn"><i class="fa fa-paperclip" aria-hidden="true"></i>Download Attachment</span>
                 <ul>
                     <li>1. Trial Balance Report</li>
                     <li>2. Portfolio Performance Summary Report</li>
