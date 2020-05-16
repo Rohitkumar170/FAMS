@@ -72,7 +72,7 @@ $(document).ready(function () {
         const today = new window.Date()
         const yesterday = new window.Date(today)
 
-        yesterday.setDate(yesterday.getDate() - 13)
+        yesterday.setDate(yesterday.getDate() - 29)
         var YesttwoDigitMonth = ((yesterday.getMonth().length + 1) === 1) ? (yesterday.getMonth() + 1) : '0' + (yesterday.getMonth() + 1);
         var YesttwoDigitDate = ((yesterday.getDate()) >= 10) ? (yesterday.getDate()) : '0' + (yesterday.getDate());
         var LastDate = YesttwoDigitMonth + "/" + YesttwoDigitDate + "/" + yesterday.getFullYear();

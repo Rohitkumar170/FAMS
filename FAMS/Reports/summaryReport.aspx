@@ -127,9 +127,9 @@
                         </div>--%>
                         <div class="btncon col-md-4 col-sm-4 col-xs-12 pt-2">
                             <div class="pull-right">
-                             <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday"> Yesterday</button>
-                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek"> Last Week</button>
-                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks"> Last 2 Weeks</button>
+                             <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday">Previous Day</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek"> Last One Week</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks">One Month</button>
                                 </div>
                         
                     </div>
