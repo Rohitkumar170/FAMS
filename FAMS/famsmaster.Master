@@ -41,167 +41,203 @@
 
 
 
+
             $("#crossbtn").click(function () {
                 $(".sidenav").css('display', 'none');
             });
+  $(".shownotification").click(function(){
+    $("#notificationDiv").toggle(200);
+  });
+
 
         })
 
     </script>
-    <script type="text/javascript">
+         
+      <style>
+          .newnotificationdiv {
+              padding:6px;
+          }
+          #notificationDiv {
+                    display: block;
+    position: absolute;
+    right: 85px;
+    font-size: 12px;
+    background-color: #91a4ad;
+    z-index: 9999;
+    width: 23%;
+    color: #fff;
+    top: 46px;
 
-        function changePwd() {
-            // debugger;
-            //alert('hello');
-            if (ValiChangePassword() == false) {
-            }
-            else {
-                //debugger;
-                var OldPassword = jquery_1_11_3_min_p("#txtOldPassword").val();
-                var NewPassword = jquery_1_11_3_min_p("#txtNewPassword").val();
-                var ConfmPassword = jquery_1_11_3_min_p("#txtCnfmPassword").val();
-                var UserId = jquery_1_11_3_min_p("#lblUserid").html();
-                // var UserId = 3;
-                console.log(UserId);
-                if (NewPassword == ConfmPassword) {
-                    if (NewPassword.length >= 6) {
-                        jquery_1_11_3_min_p.ajax({
-                            type: "POST",
-                            url: "../WebServices/Customer.asmx/ChangePassword",
-                            contentType: "application/json; charset=utf-8",
-                            data: "{'OldPassword':'" + OldPassword + "','NewPassword':'" + NewPassword + "','ConfmPassword':'" + ConfmPassword + "','UserId':'" + UserId + "'}",
-                            dataType: "json",
-                            async: false,
-                            success: ChangePasswordSucceed,
-                            error: ChangePasswordFailed
-                        });
+          }
+          .newnotificationdiv {
+              border-bottom: 1px solid #fff;
 
-                        function ChangePasswordSucceed(result) {
-                            debugger;
-                            var i = eval(result.d);
-                            if (i >= 0) {
-                                alert("Password Updated Successfuly !!");
-                                // jquery_1_11_3_min_p("#lblbmessage").text('Password Updated Successfuly !!');
-                                //  passSuccDiv();
-                                jquery_1_11_3_min_p("#txtOldPassword").val('');
-                                jquery_1_11_3_min_p("#txtNewPassword").val('');
-                                jquery_1_11_3_min_p("#txtCnfmPassword").val('');
-                                // jquery_1_11_3_min_p("#changepasswordpop").dialog("close");
-                                //if (i == 0) {
-                                //    jquery_1_11_3_min_p("#lblbmessage").text('Password Updated Successfuly!!, Please Re-Login with New Credentials');
-                                //   // passSuccDiv();
-                                //}
-                                //window.location = "Login.aspx";
-                                window.location = '../login.aspx'
-
-                            }
-
-                            else {
-                                jquery_1_11_3_min_p("#lblChangePWmsg").text("Old Password is wrong  !!");
-                                jquery_1_11_3_min_p("#txtOldPassword").val('');
-                            }
-                        }
-                        function ChangePasswordFailed(result) {
-                            alert("Error...");
-                        }
-
-                    }
-                    else {
-
-                        jquery_1_11_3_min_p("#lblChangePWmsg").text("Minimum Length Of Password Is 6 !!");
-                        jquery_1_11_3_min_p("#txtCnfmPassword").val('');
-                        jquery_1_11_3_min_p("#txtNewPassword").val('');
-
-                    }
-                }
-                else {
-
-                    jquery_1_11_3_min_p("#lblChangePWmsg").text("New Password Doesn't Match To Confirm Password !!");
-                    jquery_1_11_3_min_p("#txtCnfmPassword").val('');
-                    jquery_1_11_3_min_p("#txtNewPassword").val('');
-                }
-            }
+          }
+            .shownotification
+        {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+                left: 92%;
+                top: -3px;
 
         }
-
-        function ValiChangePassword() {
-            var OldPassword = jquery_1_11_3_min_p("#txtOldPassword").val();
-            var NewPassword = jquery_1_11_3_min_p("#txtNewPassword").val();
-            var ConfmPassword = jquery_1_11_3_min_p("#txtCnfmPassword").val();
-            if (OldPassword == '') {
-                jquery_1_11_3_min_p("#lblChangePWmsg").text("Enter the Old Password ...");
-                jquery_1_11_3_min_p("#txtOldPassword").focus();
-                return false;
-            }
-            else if (NewPassword == '') {
-                jquery_1_11_3_min_p("#lblChangePWmsg").text("Enter the New Password ...");
-                jquery_1_11_3_min_p("#txtNewPassword").focus();
-                return false;
-            }
-            else if (ConfmPassword == '') {
-                jquery_1_11_3_min_p("#lblChangePWmsg").text("Enter the Confirm Password ...");
-                jquery_1_11_3_min_p("#ConfmPassword").focus();
-                return false;
-            }
-            else {
-                return true;
-            }
+        .bellicon
+        {
+            font-size: 17px;
+            color: #fff;
+            margin-top: 20px;
+            margin-right: 11px;
         }
-
-        function ChangeTxt() {
-            jquery_1_11_3_min_p("#lblChangePWmsg").text("");
-        }
-        function ConfirmPW() {
-            if (jquery_1_11_3_min_p("#txtNewPassword").val().trim() != jquery_1_11_3_min_p("#txtCnfmPassword").val().trim()) {
-
-                jquery_1_11_3_min_p("#lblChangePWmsg").text("New Password Doesn't Match To Confirm Password !!");
-                jquery_1_11_3_min_p("#txtCnfmPassword").val('');
-                jquery_1_11_3_min_p("#txtNewPassword").val('');
-            }
-        }
-
-
-    </script>
-    <style>
-        #crossbtn {
-            right: 6px;
+        .notificationcircle
+        {
+            background-color: #ff9000;
+            width: 17px;
+            height: 17px;
+            border-radius: 14px;
             position: absolute;
-            z-index: 9999;
-            color: #fff;
-            font-size: 20px;
-            font-weight: normal;
-            top: 4px;
-            display: none;
+            top: 9px;
+            left: 11px;
         }
-
-        .user-info, .user-name {
-            font-size: 14px;
+        .notificationcircle p
+        {
             color: #fff;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 0px;
+            padding-left: 0px;
+        }
+        #guide
+        {
+            display: contents;
+        }
+        /*#notificationDiv  
+    {
+     background-color: #fafcfd;
+    border: 1px solid #6581a5;
+    width: 23%;
+    position: absolute;
+    right: 5%;
+    top: 121%;
+    z-index: 9999 !important;
+    height: 305px;
+    max-height: 348px;
+   }*/
+        #notificationDiv ul
+        {
+            list-style: none;
+            margin: 0px;
+        }
+        
+        .textinsidebox
+        {
+            overflow: hidden;
+            color: #4977b1;
+            border: 1px solid #cdcd;
+            margin-top: 3px;
+            padding: 11px;
+            height: 38px;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: #eff3f5;
+        }
+        .notificationHeader
+        {
+            background: #1f497d;
+            width: 100%;
+            height: 28px;
+            position: absolute;
+            top: 0px;
+        }
+        #notificationlbl
+        {
+            font-size: 12px;
+            color: #fff;
+            padding: 5px;
             font-weight: bold;
         }
-
-        .loginavtar {
-            width: 22%;
-            float: right;
-            margin-top: 16px;
-        }
-
-        .userwelcominfo {
-            float: right;
-            margin-right: 34px;
-        }
-
-        .bankingname {
+        
+        .notificationarrow
+        {
             position: absolute;
-            top: 16px;
-            left: 11%;
+            top: -25px;
+            color: #1f497d;
+            font-size: 42px;
+            z-index: 9999 !important;
+            right: 275px;
+            clear: both;
+            text-align: center;
+            transform: rotate(180deg);
         }
-
-        .bank-nameInfo {
-            font-size: 15px;
-            color: #fff;
+        
+        .notificationclose
+        {
+            color: #c5c5c5;
+            font-size: 18px;
             font-weight: bold;
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            cursor: pointer;
         }
+        .notificationread
+        {
+            margin-top: 0px !important;
+        }
+        .notificationunread
+        {
+            margin-top: 0px !important;
+        }
+        .ultopmrg
+        {
+            margin-top: 9% !important;
+        }
+        .notificationoverlay
+        {
+            background: #fff;
+            clear: both;
+            overflow: hidden;
+            display: block;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            position: fixed;
+            transition: opacity 500ms;
+            margin-left: -1%;
+        }
+          #crossbtn {
+                  right: 6px;
+    position: absolute;
+    z-index: 9999;
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    top: 4px;
+    display:none;
+          }
+          .user-info, .user-name {
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+}
+          .loginavtar{width: 22%;
+    float: right;
+ margin-top: 16px;}
+          .userwelcominfo {
+              float: right;
+              margin-right: 34px;
+          }
+          .bankingname {
+              position: absolute;
+              top: 16px;
+              left: 11%;
+          }
+          .bank-nameInfo {font-size: 15px;
+    color: #fff;
+    font-weight: bold;}
 
         .preloader {
             text-align: center;
@@ -287,27 +323,81 @@
                             
                        </div>
 </div>--%>
-                        </div>
+                    
+                    </div>
+                    
+
+
+           <div class="shownotification"><i class="fa fa-bell bellicon" aria-hidden="true"></i>
+                               <%-- <div id="divnotificationcircle" class="notificationcircle">
+                                    <p id="lblcountnotification">
+                                    </p>
+                                </div>--%>
+                   </div>
+
+                               <%-- <div class="newnotificationclass" id="noNewNotification" style="display: none">
+                                    <i class="fa fa-bell-slash" aria-hidden="true"></i>No New Notifications!</div>--%>
+                              
+                               <div id="notificationDiv" style="display: none">
+             <div class="newnotificationclass " id="newnotificationdiv" >
+                                    <div class="newnotificationdiv">
+    
+    <span class="newnotificationspan"><i class="fa fa-envelope envelopeicons" aria-hidden="true"></i>
+        <label>Note 1</label></span>
+    <span class="clocknewnotificationspan pull-right"><i class="fa fa-clock-o clockicons" aria-hidden="true"></i>10:02 AM</span>
+   
+   
+    </div>
+                                    <div class="newnotificationdiv notificationunread">
+     
+    <span class="newnotificationspan"><i class="fa fa-envelope envelopeicons" aria-hidden="true"></i> <label>Note 2</label></span>
+    <span class="clocknewnotificationspan pull-right"><i class="fa fa-clock-o clockicons" aria-hidden="true"></i>10:02 AM</span>
+   
+    </div>
+    <div class="newnotificationdiv">
+    
+    <span class="newnotificationspan "><i class="fa fa-envelope envelopeicons" aria-hidden="true"></i> <label>Note 3</label></span>
+    <span class="clocknewnotificationspan pull-right"><i class="fa fa-clock-o clockicons" aria-hidden="true"></i>10:02 AM</span>
+   
+    </div>
+    <div class="newnotificationdiv">
+   
+    <span class="newnotificationspan "><i class="fa fa-envelope envelopeicons" aria-hidden="true"></i> <label>Note 4</label></span>
+    <span class="clocknewnotificationspan pull-right"><i class="fa fa-clock-o clockicons " aria-hidden="true"></i>10:02 AM</span>
+   
+    </div>
+                                </div>
+        </div>
+                        
 
 
 
-                        <div class="loginavtar">
-                            <div class="userwelcominfo">
-                            </div>
-                            <i class="fa fa-user-circle-o usericon" aria-hidden="true"></i>
-                            <ul class="changePannel" style="display: none;">
-                                <li class="text-center"><span class="user-info">Welcome</span>
-                                    <span class="user-name" id="SPUserName" runat="server"></span>
-                                    <span class="user-name" id="SPAccountNo" runat="server" style="display: none"></span>
-                                </li>
-                                <%--<li><i class="fa fa-key" aria-hidden="true"></i><a href="#" data-toggle="modal" data-target="#changepasswordpop"> Change Password</a></li>--%>
-                                <li id="lstChangePassword"><i class="fa fa-key" aria-hidden="true"></i><a href="#" data-toggle="modal">Change Password</a></li>
-                                <li id="btnlogout"><i class="fa fa-sign-out"></i><a href="../login.aspx">Logout</a></li>
-                            </ul>
-                        </div>
+
+
+
+
+
+                    
+
+                  <div class="loginavtar">
+                    <div class="userwelcominfo">
+               
+                </div>
+                      <span></span>
+                        <i class="fa fa-user-circle-o usericon" aria-hidden="true"></i>
+                        <ul class="changePannel" style="display: none;">
+                            <li class="text-center"> <span class="user-info">Welcome</span>
+                             <span class="user-name" id="SPUserName" runat="server"></span>
+                                 <span class="user-name" id="SPAccountNo" runat="server" style="display:none"></span>
+                            </li>
+                            <li><i class="fa fa-key" aria-hidden="true"></i><a href="#" data-toggle="modal" data-target="#changepasswordpop"> Change Password</a></li>
+                            <li id="btnlogout"><i class="fa fa-sign-out"></i><a href="../login.aspx"> Logout</a></li>
+                           
+                        </ul>
                     </div>
                 </div>
-
+            </div>
+        
                 <div class="row">
                     <div class="col-md-2 col-sm-2 col-xs-2 p-0 sidenav">
                         <i class="fa fa-times" aria-hidden="true" id="crossbtn"></i>
@@ -335,26 +425,26 @@
                                     </ul>
 
 
-                                </li>
-
-                                <li class="master"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Master </a>
-                                    <ul class="submenudropdowntwo">
-                                        <li><a href="../master/countryMaster.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Country</a></li>
-                                        <li><a href="../master/stateMaster.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>State</a></li>
-                                        <li><a href="../master/cityMaster.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>City</a></li>
-                                        <li><a href="../master/sectorsMaster.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Sector</a></li>
-                                        <li><a href="../master/designationMaster.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Designation</a></li>
-                                        <li><a href="../master/custodian.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Custodian</a></li>
-                                        <li><a href="../master/securities.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Securities</a></li>
-                                        <li><a href="../master/TBStructure.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>TB Structure</a></li>
-                                        <li><a href="../master/PMSProvider.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>PMS Provider</a></li>
-                                        <li><a href="../master/PMSCustomers.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>PMS Customers List</a></li>
-                                        <li><a href="../master/PMSEmployees.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>PMS Employees</a></li>
-                                        <li><a href="../master/allCustomers.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>All Customers</a></li>
-
-
-
-                                    </ul>
+                        </li>
+                    
+          <li class="master"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Master </a>
+                            <ul class="submenudropdowntwo">
+               <li><a href="../master/countryMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Country</a></li>
+            <li><a href="../master/stateMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> State</a></li>
+                                <li><a href="../master/cityMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> City</a></li>
+                                <li><a href="../master/sectorsMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Sector</a></li>
+                                <li><a href="../master/designationMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Designation</a></li>
+                                <li><a href="../master/custodian.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Custodian</a></li>
+              <li><a href="../master/securities.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Securities</a></li>
+                                <li><a href="../master/TBStructure.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> TB Structure</a></li>
+                                <li><a href="../master/PMSProvider.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Provider</a></li>
+                                <li><a href="../master/PMSCustomers.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Customers List</a></li>
+                                <li><a href="../master/PMSEmployees.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Employees</a></li>
+               <li><a href="../master/allCustomers.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> All Customers</a></li>
+              <li><a href="../master/notesMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Notes Master</a></li>
+              
+              
+            </ul>
 
 
                                 </li>
