@@ -38,7 +38,7 @@
 
                 <div class="row pl-3">
                     <div class="legal col-md-3 col-sm-3 col-xs-12">
-                        Portfolio Appraisal
+                        Holding Report
                     </div>
                     <div class="btncon col-md-9 col-sm-9 col-xs-12">
                         <div class="btnpannel">
@@ -56,12 +56,12 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
-                                    <label class="col-md-3 col-xs-12 col-sm-3 p-0">From Date:</label>
+                                    <label class="col-md-3 col-xs-12 col-sm-3 p-0">Select Date:</label>
 
                                     <input type="text" id="fromdate" name="" class="col-md-7 col-xs-12 col-sm-7" placeholder=" " />
 
                                 </div>
-                                <div class="col-md-4 col-xs-12 col-sm-4">
+                                <div class="col-md-4 col-xs-12 col-sm-4" style="display:none">
                                     <label class="col-md-3 col-xs-12 col-sm-3 p-0">To Date:</label>
 
                                     <input type="text" id="todate" class="col-md-7 col-xs-12 col-sm-7" placeholder=" " />
@@ -127,9 +127,9 @@
                         </div>--%>
                         <div class="btncon col-md-4 col-sm-4 col-xs-12 pt-2">
                             <div class="pull-right">
-                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday">Yesterday</button>
-                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek">Last Week</button>
-                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks">Last 2 Weeks</button>
+                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday" style="display:none">Previous Day</button>
+                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek" style="display:none">Last One Week</button>
+                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks" style="display:none">One Month</button>
                             </div>
 
                         </div>
