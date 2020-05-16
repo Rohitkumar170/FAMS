@@ -238,7 +238,6 @@ function Validation() {
     //if ($('#TxtFromDate').val() == undefined) {
     //    $('#TxtFromDate').addClass('validate');
     //    flag = 0;
-
     //}
     return flag;
 }
