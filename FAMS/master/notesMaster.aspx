@@ -364,9 +364,7 @@ $(document).ready(function(){
                  </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12 p-0">
-                    <textarea rows="500" cols="149">
-
-</textarea>
+                    <textarea rows="500" cols="149"> </textarea>
                     
                     </div>
                     <div class="row">
