@@ -80,18 +80,20 @@
 
                         </div>--%>
                         <div class="col-md-8 pull-left">
+                             <form runat="server">
                             <div class="pdfexport">
-                                <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
+                               <%-- <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">--%>
+                                 <asp:Button ID = "btnExport"  class="btn  pdfbtns" runat="server" OnClick ="btnDowloadExcel_Click" />
                                     <i class="fa fa-file-excel-o"></i>
-                                </button>
+                               <%-- </button>--%>
                                 <button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
                                     <i class="fa fa-file-pdf-o"></i>
                                 </button>
 
-
+                                    
                             </div>
 
-
+                              </form>
                         </div>
 
                         <%--                        <div class="col-md-2 pull-left mt-2">

@@ -128,6 +128,7 @@
     <Content Include="JavaScript\Entity.js" />
     <Content Include="JavaScript\GetReport.js" />
     <Content Include="JavaScript\HoldingReport.js" />
+    <Content Include="JavaScript\PSMtrialBalanceReport.js" />
     <Content Include="JavaScript\SummaryReport.js" />
     <Content Include="JavaScript\TransactionStatement.js" />
     <Content Include="master\allCustomers.aspx" />
@@ -2061,6 +2062,7 @@
     <Content Include="WebServices\Customer.asmx" />
     <Content Include="WebServices\GetReport.asmx" />
     <Content Include="WebServices\HoldingReport.asmx" />
+    <Content Include="WebServices\PSMtrialBalanceReport.asmx" />
     <Content Include="WebServices\SummaryReport.asmx" />
     <Content Include="WebServices\TransactionStatement.asmx" />
   </ItemGroup>
@@ -2298,6 +2300,7 @@
     <Compile Include="Models\GETCOA\Customer.cs" />
     <Compile Include="Models\GETCOA\GetReportData.cs" />
     <Compile Include="Models\LoginClasss\Logindetails.cs" />
+    <Compile Include="Models\PSMtrialBalanceReport\BindGridAllField.cs" />
     <Compile Include="Models\ReportsClasses\HoldingReport.cs" />
     <Compile Include="Models\ReportsClasses\SummaryReport.cs" />
     <Compile Include="Models\ReportsClasses\TransactionStatement.cs" />
@@ -2354,6 +2357,10 @@
     </Compile>
     <Compile Include="WebServices\HoldingReport.asmx.cs">
       <DependentUpon>HoldingReport.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\PSMtrialBalanceReport.asmx.cs">
+      <DependentUpon>PSMtrialBalanceReport.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\SummaryReport.asmx.cs">

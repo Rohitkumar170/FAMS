@@ -13,6 +13,8 @@ using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Reflection;
+using Newtonsoft.Json;
+using System.Web.Script.Serialization;
 
 namespace FAMS.Reports
 {
@@ -24,93 +26,263 @@ namespace FAMS.Reports
         {
 
         }
-        protected void btnPdf_Click(object sender, EventArgs e)
-        {
+        //protected void btnPdf_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        FAMSEntities context = new FAMSEntities();
+
+        //        var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<SummaryReports>()
+        //                 .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetSummaryReportData", "", "04/09/2020", "04/09/2020"));
+
+        //        //string customerJSON = Request.Form["CustomerJSON"];
+        //        //DataTable dataTable = JsonConvert.DeserializeObject<DataTable>(customerJSON);
+        //        //string Name = "AccountData";
+        //        //string[] columnNames = (from dc in dataTable.Columns.Cast<DataColumn>()
+        //        //                        select dc.ColumnName).ToArray();
+        //        //int Cell = 0;
+        //        //int count = columnNames.Length;
+        //        //object[] array = new object[count];
+
+        //        //dataTable.Rows.Add(array);
+
+        //        //Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+        //        //System.IO.MemoryStream mStream = new System.IO.MemoryStream();
+        //        //PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(pdfDoc, mStream);
+        //        //int cols = dataTable.Columns.Count;
+        //        //int rows = dataTable.Rows.Count;
+
+
+        //        //HeaderFooter header = new HeaderFooter(new Phrase(Name), false);
+
+        //        //// Remove the border that is set by default  
+        //        //header.Border = iTextSharp.text.Rectangle.TITLE;
+        //        //// Align the text: 0 is left, 1 center and 2 right.  
+        //        //header.Alignment = Element.ALIGN_CENTER;
+        //        //pdfDoc.Header = header;
+        //        //// Header.  
+        //        //pdfDoc.Open();
+        //        //iTextSharp.text.Table pdfTable = new iTextSharp.text.Table(cols, rows);
+        //        //pdfTable.BorderWidth = 0; pdfTable.Width = 80;
+        //        //pdfTable.Padding = 0; pdfTable.Spacing = 4;
+
+        //        ////creating table headers  
+        //        ////for (int i = 0; i < cols; i++)
+        //        ////{
+        //        ////    Cell cellCols = new Cell();
+        //        ////    Chunk chunkCols = new Chunk();
+        //        ////    cellCols.BackgroundColor = new iTextSharp.text.Color(System.Drawing.ColorTranslator.FromHtml("#548B54"));
+        //        ////    iTextSharp.text.Font ColFont = FontFactory.GetFont(FontFactory.HELVETICA, 12, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.WHITE);
+
+        //        ////    chunkCols = new Chunk(dataTable.Columns[i].ColumnName, ColFont);
+
+        //        ////    cellCols.Add(chunkCols);
+        //        ////    pdfTable.AddCell(cellCols);
+        //        ////}
+
+
+        //        //for (int k = 0; k < rows; k++)
+        //        //{
+        //        //    for (int j = 0; j < cols; j++)
+        //        //    {
+        //        //        Cell cellRows = new Cell();
+        //        //        //if (k % 2 == 0)
+        //        //        //{
+        //        //        //    cellRows.BackgroundColor = new iTextSharp.text.Color(System.Drawing.ColorTranslator.FromHtml("#cccccc")); ;
+        //        //        //}
+        //        //        //else { cellRows.BackgroundColor = new iTextSharp.text.Color(System.Drawing.ColorTranslator.FromHtml("#ffffff")); }
+        //        //        iTextSharp.text.Font RowFont = FontFactory.GetFont(FontFactory.HELVETICA, 10);
+        //        //        Chunk chunkRows = new Chunk(dataTable.Rows[k][j].ToString(), RowFont);
+        //        //        cellRows.Add(chunkRows);
+
+        //        //        pdfTable.AddCell(cellRows);
+        //        //    }
+        //        //}
+
+        //        //pdfDoc.Add(pdfTable);
+        //        //pdfDoc.Close();
+        //        //Response.ContentType = "application/octet-stream";
+        //        //Response.AddHeader("Content-Disposition", "attachment; filename=" + Name + "_" + DateTime.Now.ToString() + ".pdf");
+        //        //Response.Clear();
+        //        //Response.BinaryWrite(mStream.ToArray());
+        //        //Response.End();
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //}
+
+
+        protected void btnPdf_Click(object sender, EventArgs e) {
             try
             {
                 FAMSEntities context = new FAMSEntities();
+                List<SummaryReports> dataList = new List<SummaryReports>();
+                SummaryReports[] myArray = dataList.ToArray();
 
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<SummaryReports>()
-                         .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetSummaryReportData", "", "04/09/2020", "04/09/2020"));
+                 fromdate = hdnFromDate.Value;
+                todate = hdnToDate.Value;
+       
+                var results = context.MultipleResults("[dbo].[Sp_DemoReport]").With<SummaryReports>()
+                       .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetSummaryReportDataExcel", Session["UserName"].ToString(), fromdate, todate);
 
-                //string customerJSON = Request.Form["CustomerJSON"];
-                //DataTable dataTable = JsonConvert.DeserializeObject<DataTable>(customerJSON);
-                //string Name = "AccountData";
-                //string[] columnNames = (from dc in dataTable.Columns.Cast<DataColumn>()
-                //                        select dc.ColumnName).ToArray();
-                //int Cell = 0;
-                //int count = columnNames.Length;
-                //object[] array = new object[count];
+                foreach (var data in results)
+                {
+                    dataList = data.Cast<SummaryReports>().ToList();
+                    myArray = data.Cast<SummaryReports>().ToArray();
+                }
+                
+               
 
-                //dataTable.Rows.Add(array);
+                JavaScriptSerializer jss = new JavaScriptSerializer();
+                string output = jss.Serialize(dataList);
 
-                //Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
-                //System.IO.MemoryStream mStream = new System.IO.MemoryStream();
-                //PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(pdfDoc, mStream);
-                //int cols = dataTable.Columns.Count;
-                //int rows = dataTable.Rows.Count;
-
-
-                //HeaderFooter header = new HeaderFooter(new Phrase(Name), false);
-
-                //// Remove the border that is set by default  
-                //header.Border = iTextSharp.text.Rectangle.TITLE;
-                //// Align the text: 0 is left, 1 center and 2 right.  
-                //header.Alignment = Element.ALIGN_CENTER;
-                //pdfDoc.Header = header;
-                //// Header.  
-                //pdfDoc.Open();
-                //iTextSharp.text.Table pdfTable = new iTextSharp.text.Table(cols, rows);
-                //pdfTable.BorderWidth = 0; pdfTable.Width = 80;
-                //pdfTable.Padding = 0; pdfTable.Spacing = 4;
-
-                ////creating table headers  
-                ////for (int i = 0; i < cols; i++)
-                ////{
-                ////    Cell cellCols = new Cell();
-                ////    Chunk chunkCols = new Chunk();
-                ////    cellCols.BackgroundColor = new iTextSharp.text.Color(System.Drawing.ColorTranslator.FromHtml("#548B54"));
-                ////    iTextSharp.text.Font ColFont = FontFactory.GetFont(FontFactory.HELVETICA, 12, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.WHITE);
-
-                ////    chunkCols = new Chunk(dataTable.Columns[i].ColumnName, ColFont);
-
-                ////    cellCols.Add(chunkCols);
-                ////    pdfTable.AddCell(cellCols);
-                ////}
+                DataTable dataTable = JsonConvert.DeserializeObject<DataTable>(output);
+                System.Data.DataTable dtTemp = new System.Data.DataTable();
 
 
-                //for (int k = 0; k < rows; k++)
+                try
+                {
+                    
+                    string colName = "Portfolio Performance Summary";
+                    dtTemp.Columns.Add(colName, typeof(string));
+                    dtTemp.Columns.Add(" ", typeof(string));
+                    for (int i = 1; i <= 3; i++)
+                    {
+                        if (i == 1)
+                        {
+                            DataRow dr1 = dtTemp.NewRow();
+                            dr1[colName] = "Account : Cust_000134 ABC ";
+                            dtTemp.Rows.Add(dr1.ItemArray);
+                        }                                            
+                   }
+
+                    foreach (System.Data.DataColumn dc in dataTable.Columns)
+                    {
+                        try
+                        {
+                            // dtTemp.Columns.Add(dc.ColumnName.ToString(), string.Empty.GetType());
+                            DataRow dr1 = dtTemp.NewRow();
+                            if (dc.ColumnName.ToString() == "OpeningMarketValue")
+                            {
+                                dr1[colName] = "OpeningMarketValue as of " + fromdate;
+                            }
+                            else if (dc.ColumnName.ToString() == "OpeningNAV")
+                            {
+                                dr1[colName] = "OpeningNAV as of " + fromdate;
+                            }
+                            else if (dc.ColumnName.ToString() == "OpeningOutstandingUnits")
+                            {
+                                dr1[colName] = "OpeningOutstandingUnits as of " + fromdate;
+                            }
+                            else if (dc.ColumnName.ToString() == "ClosingMarketValue")
+                            {
+                                dr1[colName] = "ClosingMarketValue as of " + todate;
+                            }
+                            else if (dc.ColumnName.ToString() == "ClosingNAV")
+                            {
+                                dr1[colName] = "ClosingNAV as of " + todate;
+                            }
+                            else if (dc.ColumnName.ToString() == "ClosingOutstanding")
+                            {
+                                dr1[colName] = "ClosingOutstanding as of " + todate;
+                            }
+                            else
+                            {
+                                dr1[colName] = dc.ColumnName.ToString();
+                            }
+                            // dtTemp.Rows.Add(dr1.ItemArray);
+                            string Rowdata = dataTable.Rows[0][dc.ColumnName.ToString()].ToString();
+                            dr1[" "] = Rowdata;
+                            dtTemp.Rows.Add(dr1.ItemArray);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw ex;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+
+                int Cell = 0;
+                int count = myArray.Length;
+                object[] array = new object[count];
+
+                dtTemp.Rows.Add(array);
+
+                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                System.IO.MemoryStream mStream = new System.IO.MemoryStream();
+                PdfWriter writer = PdfWriter.GetInstance(pdfDoc, mStream);
+                int cols = dtTemp.Columns.Count;
+                int rows = dtTemp.Rows.Count;
+
+                HeaderFooter header = new HeaderFooter(new Phrase("Lighthouse Financials"), false);
+                               
+                // Remove the border that is set by default  
+                header.Border = iTextSharp.text.Rectangle.TITLE;
+                // Align the text: 0 is left, 1 center and 2 right.  
+                header.Alignment = Element.ALIGN_CENTER;
+                pdfDoc.Header = header;
+                // Header.  
+                pdfDoc.Open();
+                iTextSharp.text.Table pdfTable = new iTextSharp.text.Table(cols, rows);
+                pdfTable.BorderWidth = 1; pdfTable.Width = 100;
+                pdfTable.Padding = 1; pdfTable.Spacing = 4;
+
+                //creating table headers  
+                //for (int i = 0; i < cols; i++)
                 //{
-                //    for (int j = 0; j < cols; j++)
-                //    {
-                //        Cell cellRows = new Cell();
-                //        //if (k % 2 == 0)
-                //        //{
-                //        //    cellRows.BackgroundColor = new iTextSharp.text.Color(System.Drawing.ColorTranslator.FromHtml("#cccccc")); ;
-                //        //}
-                //        //else { cellRows.BackgroundColor = new iTextSharp.text.Color(System.Drawing.ColorTranslator.FromHtml("#ffffff")); }
-                //        iTextSharp.text.Font RowFont = FontFactory.GetFont(FontFactory.HELVETICA, 10);
-                //        Chunk chunkRows = new Chunk(dataTable.Rows[k][j].ToString(), RowFont);
-                //        cellRows.Add(chunkRows);
+                //    Cell cellCols = new Cell();
+                //    Chunk chunkCols = new Chunk();
+                //    cellCols.BackgroundColor = new iTextSharp.text.Color(System.Drawing.ColorTranslator.FromHtml("#ffffff"));
+                //    iTextSharp.text.Font ColFont = FontFactory.GetFont(FontFactory.HELVETICA, 14, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.WHITE);
 
-                //        pdfTable.AddCell(cellRows);
-                //    }
+                //    chunkCols = new Chunk(dtTemp.Columns[i].ColumnName, ColFont);
+
+                //    cellCols.Add(chunkCols);
+                //    pdfTable.AddCell(cellCols);
                 //}
+                //creating table data (actual result)   
 
-                //pdfDoc.Add(pdfTable);
-                //pdfDoc.Close();
-                //Response.ContentType = "application/octet-stream";
-                //Response.AddHeader("Content-Disposition", "attachment; filename=" + Name + "_" + DateTime.Now.ToString() + ".pdf");
-                //Response.Clear();
-                //Response.BinaryWrite(mStream.ToArray());
-                //Response.End();
+                for (int k = 1; k < rows; k++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        Cell cellRows = new Cell();
+                        if (k % 2 == 0)
+                        {
+                            cellRows.BackgroundColor = new iTextSharp.text.Color(System.Drawing.ColorTranslator.FromHtml("#ffffff")); ;
+                        }
+                        else { cellRows.BackgroundColor = new iTextSharp.text.Color(System.Drawing.ColorTranslator.FromHtml("#ffffff")); }
+                        iTextSharp.text.Font RowFont = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+                        Chunk chunkRows = new Chunk(dtTemp.Rows[k][j].ToString(), RowFont);
+                        cellRows.Add(chunkRows);
+
+                        pdfTable.AddCell(cellRows);
+                    }
+                }
+
+                pdfDoc.Add(pdfTable);
+                pdfDoc.Close();
+                Response.ContentType = "application/octet-stream";
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + "Pdf_file" + "_" + DateTime.Now.ToString() + ".pdf");
+                Response.Clear();
+                Response.BinaryWrite(mStream.ToArray());
+                Response.End();
 
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
         }
+
 
 
 
