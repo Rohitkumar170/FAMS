@@ -31,9 +31,7 @@ $(document).ready(function(){
      input[type=checkbox], input[type=radio] {
     margin: 6px 0 0;
 }
-          .btnlink {
-              float:right
-          }
+          
           .btnconinsideBtn {
               background-color: #0a2e40;
               color: #fff;
@@ -372,13 +370,14 @@ $(document).ready(function(){
                     
                     </div>
                     <div class="row">
-                        <div class="col-md-2"></div>
-                         <div class="col-md-10 col-sm-10 col-xs-10">
+                 
+                         <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="btnlink">
                             <button type="button" class="btn btn-sm btnconinsideBtn" id="" ><i class="fa fa-paperclip"></i> Attachment </button>
                           <input type="file"  id="attachment"/>
-                       <button type="button" class="btn btn-sm btnconinsideBtn" id="" > Save </button> 
-                      <button type="button" class="btn btn-sm btnconinsideBtn" id=""> Cancel</button> 
+                          <button type="button" class="btn btn-sm btnconinsideBtn pull-right" id=""> Cancel</button> 
+                       <button type="button" class="btn btn-sm btnconinsideBtn pull-right mr-2" id="" > Save </button> 
+                      
                    
                     </div>
                              </div>
