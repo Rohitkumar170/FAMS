@@ -41,7 +41,6 @@
 
 
 
-
             $("#crossbtn").click(function () {
                 $(".sidenav").css('display', 'none');
             });
@@ -51,6 +50,120 @@
 
 
         })
+
+    </script>
+    <script type="text/javascript">
+
+        function changePwd() {
+            // debugger;
+            //alert('hello');
+            if (ValiChangePassword() == false) {
+            }
+            else {
+                //debugger;
+                var OldPassword = jquery_1_11_3_min_p("#txtOldPassword").val();
+                var NewPassword = jquery_1_11_3_min_p("#txtNewPassword").val();
+                var ConfmPassword = jquery_1_11_3_min_p("#txtCnfmPassword").val();
+                var UserId = jquery_1_11_3_min_p("#lblUserid").html();
+                // var UserId = 3;
+                console.log(UserId);
+                if (NewPassword == ConfmPassword) {
+                    if (NewPassword.length >= 6) {
+                        jquery_1_11_3_min_p.ajax({
+                            type: "POST",
+                            url: "../WebServices/Customer.asmx/ChangePassword",
+                            contentType: "application/json; charset=utf-8",
+                            data: "{'OldPassword':'" + OldPassword + "','NewPassword':'" + NewPassword + "','ConfmPassword':'" + ConfmPassword + "','UserId':'" + UserId + "'}",
+                            dataType: "json",
+                            async: false,
+                            success: ChangePasswordSucceed,
+                            error: ChangePasswordFailed
+                        });
+
+                        function ChangePasswordSucceed(result) {
+                            debugger;
+                            var i = eval(result.d);
+                            if (i >= 0) {
+                                alert("Password Updated Successfuly !!");
+                                // jquery_1_11_3_min_p("#lblbmessage").text('Password Updated Successfuly !!');
+                                //  passSuccDiv();
+                                jquery_1_11_3_min_p("#txtOldPassword").val('');
+                                jquery_1_11_3_min_p("#txtNewPassword").val('');
+                                jquery_1_11_3_min_p("#txtCnfmPassword").val('');
+                                // jquery_1_11_3_min_p("#changepasswordpop").dialog("close");
+                                //if (i == 0) {
+                                //    jquery_1_11_3_min_p("#lblbmessage").text('Password Updated Successfuly!!, Please Re-Login with New Credentials');
+                                //   // passSuccDiv();
+                                //}
+                                //window.location = "Login.aspx";
+                                window.location = '../login.aspx'
+
+                            }
+
+                            else {
+                                jquery_1_11_3_min_p("#lblChangePWmsg").text("Old Password is wrong  !!");
+                                jquery_1_11_3_min_p("#txtOldPassword").val('');
+                            }
+                        }
+                        function ChangePasswordFailed(result) {
+                            alert("Error...");
+                        }
+
+                    }
+                    else {
+
+                        jquery_1_11_3_min_p("#lblChangePWmsg").text("Minimum Length Of Password Is 6 !!");
+                        jquery_1_11_3_min_p("#txtCnfmPassword").val('');
+                        jquery_1_11_3_min_p("#txtNewPassword").val('');
+
+                    }
+                }
+                else {
+
+                    jquery_1_11_3_min_p("#lblChangePWmsg").text("New Password Doesn't Match To Confirm Password !!");
+                    jquery_1_11_3_min_p("#txtCnfmPassword").val('');
+                    jquery_1_11_3_min_p("#txtNewPassword").val('');
+                }
+            }
+
+        }
+
+        function ValiChangePassword() {
+            var OldPassword = jquery_1_11_3_min_p("#txtOldPassword").val();
+            var NewPassword = jquery_1_11_3_min_p("#txtNewPassword").val();
+            var ConfmPassword = jquery_1_11_3_min_p("#txtCnfmPassword").val();
+            if (OldPassword == '') {
+                jquery_1_11_3_min_p("#lblChangePWmsg").text("Enter the Old Password ...");
+                jquery_1_11_3_min_p("#txtOldPassword").focus();
+                return false;
+            }
+            else if (NewPassword == '') {
+                jquery_1_11_3_min_p("#lblChangePWmsg").text("Enter the New Password ...");
+                jquery_1_11_3_min_p("#txtNewPassword").focus();
+                return false;
+            }
+            else if (ConfmPassword == '') {
+                jquery_1_11_3_min_p("#lblChangePWmsg").text("Enter the Confirm Password ...");
+                jquery_1_11_3_min_p("#ConfmPassword").focus();
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function ChangeTxt() {
+            jquery_1_11_3_min_p("#lblChangePWmsg").text("");
+        }
+        function ConfirmPW() {
+            if (jquery_1_11_3_min_p("#txtNewPassword").val().trim() != jquery_1_11_3_min_p("#txtCnfmPassword").val().trim()) {
+
+                jquery_1_11_3_min_p("#lblChangePWmsg").text("New Password Doesn't Match To Confirm Password !!");
+                jquery_1_11_3_min_p("#txtCnfmPassword").val('');
+                jquery_1_11_3_min_p("#txtNewPassword").val('');
+            }
+        }
+
 
     </script>
          
@@ -392,7 +505,8 @@
                              <span class="user-name" id="SPUserName" runat="server"></span>
                                  <span class="user-name" id="SPAccountNo" runat="server" style="display:none"></span>
                             </li>
-                            <li><i class="fa fa-key" aria-hidden="true"></i><a href="#" data-toggle="modal" data-target="#changepasswordpop"> Change Password</a></li>
+                           <%-- <li><i class="fa fa-key" aria-hidden="true"></i><a href="#" data-toggle="modal" data-target="#changepasswordpop"> Change Password</a></li>--%>
+  <li id="lstChangePassword"><i class="fa fa-key" aria-hidden="true"></i><a href="#" data-toggle="modal">Change Password</a></li>
                             <li id="btnlogout"><i class="fa fa-sign-out"></i><a href="../login.aspx"> Logout</a></li>
                            
                         </ul>
