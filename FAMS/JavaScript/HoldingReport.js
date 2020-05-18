@@ -138,6 +138,9 @@ function BindGrid() {
             var FootCashMarkup = "<tr><td style='width: 257px'>Total</td> <td style='width: 78px' ></td><td style='width: 194px' class='price'></td><td style='width: 135px'class='price'>" + CashTotalCost + "</td><td style='width: 145px' class='price'></td><td style='width: 140px' class='price'>" + CashTotalMarketValue + "</td><td style='width: 92px' class='profit'>" + CashTotalGainLoss + "</td><td style='width: 93px' class='profit'>" + CashTotalGLPerc + "%</td><td style='width: 94px'>" + CashTotalAssets + "%</td> </tr >";
             $("#tblCash  tfoot").append(FootCashMarkup);
             $('#holdingreportGridTable #MaintblTfoot').append("<tr><td style='width: 320px'>Total</td> <td style='width: 100px' ></td><td style='width: 163px' class='price'></td><td style='width: 100px'class='price'>" + (TotalCost + CashTotalCost) + "</td><td style='width: 150px' class='price'></td><td style='width: 195px' class='price'>" + (TotalMarketValue + CashTotalMarketValue) + "</td><td style='width: 60px' class='profit'>" + (TotalGainLoss + CashTotalGainLoss) + "</td><td style='width: 93px;text-align: right;' class='profit'>" + (TotalGLPerc + CashTotalGLPerc) + "%</td><td style='width: 100px'>" + (TotalAssets+CashTotalAssets) + "%</td> </tr >")
+            $('#Equity').css("display", "block")
+            $('#Cash').css("display", "block")
+
         }
     });
 

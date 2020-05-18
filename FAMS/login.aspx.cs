@@ -163,6 +163,8 @@ namespace FAMS
                                         Session["UserName"] = Convert.ToString(cust.FirstOrDefault().UserName);
                                         Session["WareHouseId"] = Convert.ToString(cust.FirstOrDefault().WareHouseId);
                                         Session["AccountNo"] = Convert.ToString(cust.FirstOrDefault().AccountNo);
+                                        Session["IsDefaultPswdChange"] = Convert.ToString(cust.FirstOrDefault().IsDefaultPswdChange); // Added by Bibhu on 16May2020
+
                                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Only alert Message');", true);
                                         txtpassword.Value = "";
                                         txtUserName.Value = "";
@@ -181,6 +183,8 @@ namespace FAMS
                                         Session["UserName"] = Convert.ToString(cust.FirstOrDefault().UserName);
                                         Session["WareHouseId"] = Convert.ToString(cust.FirstOrDefault().WareHouseId);
                                         Session["AccountNo"] = Convert.ToString(cust.FirstOrDefault().AccountNo);
+                                        Session["IsDefaultPswdChange"] = Convert.ToString(cust.FirstOrDefault().IsDefaultPswdChange); // Added by Bibhu on 16May2020
+
                                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Only alert Message');", true);
                                         txtpassword.Value = "";
                                         txtUserName.Value = "";

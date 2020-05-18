@@ -81,12 +81,12 @@
                         </div>--%>
                         <div class="col-md-8 pull-left">
                             <div class="pdfexport">
-                                <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
+                               <a href="../ExcelReports/Holding Report.csv"> <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
                                     <i class="fa fa-file-excel-o"></i>
-                                </button>
-                                <button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
+                                </button></a>
+                                <a href="../ExcelReports/Holding Report.pdf"><button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
                                     <i class="fa fa-file-pdf-o"></i>
-                                </button>
+                                </button></a>
 
 
                             </div>
@@ -125,14 +125,22 @@
 
                             </div>
                         </div>--%>
-                        <div class="btncon col-md-4 col-sm-4 col-xs-12 pt-2">
+                     <%--   <div class="btncon col-md-4 col-sm-4 col-xs-12 pt-2">
                             <div class="pull-right">
                                 <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday" style="display:none">Previous Day</button>
                                 <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek" style="display:none">Last One Week</button>
                                 <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks" style="display:none">One Month</button>
                             </div>
 
-                        </div>
+                        </div>--%>
+                         <div class="btncon col-md-4 col-sm-4 col-xs-12 pt-2">
+                            <div class="pull-right">
+                             <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday"> Previous day</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek"> Last one week</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks"> One month</button>
+                                </div>
+                        
+                    </div>
                     </div>
                     <div id="holdingreportGrid">
                          <table class="bankmasterTable" id="holdingreportGridTable">
@@ -153,7 +161,7 @@
                             </thead>
                             <tbody class="scrollbar">
                                 <tr>
-                                    <td colspan="9"><strong>Equity
+                                    <td colspan="9" id="Equity" style="display:none"><strong>Equity
                                     </strong>
                                         <table  id="tblholdingreport">
                                             <tbody>
@@ -359,7 +367,7 @@
                                 </tr>
                            
                                 <tr>
-                                    <td colspan="9"><strong>Cash and Equivalent
+                                    <td colspan="9" id="Cash" style="display:none"><strong>Cash and Equivalent
                                     </strong>
                                         <table id="tblCash">
                                             <tbody>

@@ -130,6 +130,7 @@ function BindGrid() {
             $('#CloseNAVValTD').text(jsonData.Table[0].ClosingNAV);
             $('#CloseOutValTH').text('Closing Outstanding Units as of ' + jsonData.Table[0].ToDate);
             $('#CloseOutValTD').text(jsonData.Table[0].ClosingOutstanding);
+                $('#reportTable').css("display", "block")
         }
     });
 
