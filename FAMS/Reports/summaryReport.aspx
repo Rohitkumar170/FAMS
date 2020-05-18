@@ -72,10 +72,10 @@
 
                         </div>--%>
                         <div class="col-md-8 pull-left">
-                            <div class="pdfexport">
-                                <%--<button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
+                            <%--<div class="pdfexport">
+                                <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
                                     <i class="fa fa-file-excel-o"></i>
-                                </button>--%>
+                                </button>
                                  <form runat="server">
                                  <asp:Button ID = "Button1" Text="Download Excel" class="btn  pdfbtns fa fa-file-pdf-o" title="Excel" runat="server" OnClick ="btnDowloadExcel_Click" autopostback="false" />
 
@@ -84,13 +84,22 @@
                                  <asp:Button ID = "btnPd" Text="PDF" class="btn  pdfbtns fa fa-file-pdf-o" title="PDF" runat="server" OnClick ="btnPdf_Click" />
                                 </form>
                                 
-                               <%-- <button type="button" id="btnPdf"  runat="server" class="btn  pdfbtns" title="PDF" OnClick ="btnPdf_Click">
+                                <button type="button" id="btnPdf"  runat="server" class="btn  pdfbtns" title="PDF" OnClick ="btnPdf_Click">
                                    <i class="fa fa-file-pdf-o"></i>
-                                </button>--%>
+                                </button>
+
+
+                            </div>--%>
+                              <div class="pdfexport">
+                               <a href="../ExcelReports/Summary_Report.csv"> <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
+                                    <i class="fa fa-file-excel-o"></i>
+                                </button></a>
+                                 <a href="../ExcelReports/Summary_Report.pdf"><button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
+                                    <i class="fa fa-file-pdf-o"></i>
+                                </button></a>
 
 
                             </div>
-
 
                         </div>
 
@@ -135,7 +144,7 @@
                     </div>
                     </div>
                     <div id="reportGrid">
-                        <table class="bankmasterTable" id="reportTable">
+                        <table class="bankmasterTable" id="reportTable" style="display:none">
                             <thead>
                                 <tr>
 

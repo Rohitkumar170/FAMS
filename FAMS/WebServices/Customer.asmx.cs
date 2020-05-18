@@ -138,7 +138,7 @@ namespace FAMS.WebServices
                             smtpClient.EnableSsl = Convert.ToBoolean(SMTPEnableSsl);
                             smtpClient.UseDefaultCredentials = true;
                             smtpClient.Credentials = new System.Net.NetworkCredential(UserId_Mail, MailPassword);
-                            smtpClient.Send(mailmsg);
+                           //smtpClient.Send(mailmsg);
                             //  CommonManger.FillDatasetWithParam("Sp_SendEmail", "@QueryType", "@MandateId", "@EmailCount", "@SmsCount", "SendMail", Convert.ToString(0), "1", "0");
 
                         }

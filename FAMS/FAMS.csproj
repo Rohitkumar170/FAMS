@@ -129,8 +129,10 @@
     <Content Include="JavaScript\Entity.js" />
     <Content Include="JavaScript\GetReport.js" />
     <Content Include="JavaScript\HoldingReport.js" />
+    <Content Include="JavaScript\PSMtrialBalanceReport.js" />
     <Content Include="JavaScript\SummaryReport.js" />
     <Content Include="JavaScript\TransactionStatement.js" />
+    <Content Include="JavaScript\TrialBalance.js" />
     <Content Include="js\jquery-1.11.3.min.js" />
     <Content Include="js\jquery_ui_1.12.1.js" />
     <Content Include="master\allCustomers.aspx" />
@@ -2065,6 +2067,7 @@
     <Content Include="WebServices\Customer.asmx" />
     <Content Include="WebServices\GetReport.asmx" />
     <Content Include="WebServices\HoldingReport.asmx" />
+    <Content Include="WebServices\PSMtrialBalanceReport.asmx" />
     <Content Include="WebServices\SummaryReport.asmx" />
     <Content Include="WebServices\TransactionStatement.asmx" />
   </ItemGroup>
@@ -2316,6 +2319,7 @@
     <Compile Include="Models\GETCOA\Customer.cs" />
     <Compile Include="Models\GETCOA\GetReportData.cs" />
     <Compile Include="Models\LoginClasss\Logindetails.cs" />
+    <Compile Include="Models\ReportsClasses\BindGridAllField.cs" />
     <Compile Include="Models\ReportsClasses\CSVUtilityClass.cs" />
     <Compile Include="Models\ReportsClasses\HoldingReport.cs" />
     <Compile Include="Models\ReportsClasses\SummaryReport.cs" />
@@ -2376,6 +2380,10 @@
     </Compile>
     <Compile Include="WebServices\HoldingReport.asmx.cs">
       <DependentUpon>HoldingReport.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\PSMtrialBalanceReport.asmx.cs">
+      <DependentUpon>PSMtrialBalanceReport.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\SummaryReport.asmx.cs">
@@ -2639,10 +2647,8 @@
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
-
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
   </Target>
-
 </Project>
