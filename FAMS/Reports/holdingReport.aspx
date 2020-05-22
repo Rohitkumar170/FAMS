@@ -48,10 +48,10 @@
                         Holding Report
                     </div>
                     <div class="btncon col-md-9 col-sm-9 col-xs-12">
-                        <div class="btnpannel">
+                      <%--  <div class="btnpannel">
                             <button type="button" class="btn btn-sm btnconinsideBtn" id="btnBack"><i class="fa fa fa-home" aria-hidden="true"></i> Home</button>
 
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
 

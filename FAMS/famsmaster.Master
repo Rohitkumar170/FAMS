@@ -195,11 +195,11 @@
           }
             .shownotification
         {
-            display: inline-block;
-            position: relative;
-            cursor: pointer;
-                left: 92%;
-                top: -3px;
+           display: inline-block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: -9px;
 
         }
         .bellicon
@@ -446,7 +446,7 @@
                     </div>
                     
 
-
+<div class="home"><i class="fa fa fa-home" aria-hidden="true"></i></div>
            <div class="shownotification"><i class="fa fa-bell bellicon" aria-hidden="true"></i>
                                <%-- <div id="divnotificationcircle" class="notificationcircle">
                                     <p id="lblcountnotification">
