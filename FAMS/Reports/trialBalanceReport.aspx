@@ -90,64 +90,36 @@
 
                     </div>
                     
+                
+                
                     <div class="row boxrow">
-                       <%-- <div class="col-md-12 col-sm-12 col-xs-12">
-                            <label>Account: <span>100345 Milind Goyal</span></label>
-
-                        </div>--%>
+                        
                         <div class="col-md-8 pull-left">
                             <div class="pdfexport">
-                               <a href="../ExcelReports/TB_File.csv">  <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
+                               <a href="../ExcelReports/TB_File.csv""> <button type="button" id="btnExport" class="btn  pdfbtns" title="Export">
                                     <i class="fa fa-file-excel-o"></i>
                                 </button></a>
-                                <a href="../ExcelReports/TB_File.pdf"> <button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
+                                <a href="../ExcelReports/TB_File.pdf><button type="button" id="btnPdf" class="btn  pdfbtns" title="PDF">
                                     <i class="fa fa-file-pdf-o"></i>
-                                </button><a />
+                                </button></a>
 
 
                             </div>
 
 
                         </div>
+
+                        
+                        
+                     
                          <div class="btncon col-md-4 col-sm-4 col-xs-12 pt-2">
                             <div class="pull-right">
-                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday">Previous Day</button>
-                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek">Last One Week</button>
-                                <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks">One Month</button>
-                            </div>
-
-                        </div>
-<%--                        <div class="col-md-2 pull-left mt-2">
-                            <div class="searchDropdown">
-                                <div class="row">
-                                    <label class=" col-md-8 showLebel">Show Records :</label>
-                                    <select id="ddlLoadMore" class=" col-md-4  showrecords pull-right">
-                                        <option>2 </option>
-                                        <option>5 </option>
-                                        <option>50 </option>
-                                        <option>100 </option>
-                                        <option>150</option>
-                                        <option>200</option>
-                                        <option>500</option>
-                                    </select>
+                             <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday"> Previous day</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek"> Last one week</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks"> One month</button>
                                 </div>
-
-                            </div>
-                        </div>
-                        <div class="col-md-2 pull-right mt-2 ">
-
-
-                            <div class="searchbox col-md-12 col-sm-12 col-xs-12 p-0">
-
-
-
-                                <input type="text" class="col-md-12 col-sm-12 col-xs-12 round" placeholder="Search" autocomplete="off" />
-                                <div class="faiconsarch">
-                                    <i class="fa fa-search"></i>
-                                </div>
-
-                            </div>
-                        </div>--%>
+                        
+                    </div>
                     </div>
                       <div id="trialBalanceGrid">
                         <table class="bankmasterTable">

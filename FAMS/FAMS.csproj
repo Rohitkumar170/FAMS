@@ -104,6 +104,7 @@
     <Content Include="Assets\image\cash_icon.png" />
     <Content Include="Assets\image\holding_icon.png" />
     <Content Include="Assets\image\preloader.gif" />
+    <Content Include="Assets\image\success-icon.png" />
     <Content Include="Assets\image\summary_icon.png" />
     <Content Include="Assets\image\transaction_icon.png" />
     <Content Include="Assets\image\trial_icon.png" />

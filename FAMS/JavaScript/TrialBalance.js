@@ -251,51 +251,51 @@ function BindGrid() {
                 TotalCDebit += jsonData.Table[14].CBDebit;
                 TotalCCredit += jsonData.Table[10].CBCredit;
                 TotalCCredit += jsonData.Table[9].CBCredit;
-                TotalCCredit += jsonData.Table[14].CBCredit;
+            TotalCCredit += jsonData.Table[14].CBCredit.toFixed(2);
 
-                TotalODebit += jsonData.Table[15].OBDebit;
-                TotalOCredit += jsonData.Table[15].OBCredit;
-                TotalTDebit += jsonData.Table[15].TransDebit;
-                TotalTCredit += jsonData.Table[15].TransCredit;
-                TotalCDebit += jsonData.Table[15].CBDebit;
-                TotalCCredit += jsonData.Table[15].CBCredit;
+            TotalODebit += jsonData.Table[15].OBDebit.toFixed(2);
+            TotalOCredit += jsonData.Table[15].OBCredit.toFixed(2);
+            TotalTDebit += jsonData.Table[15].TransDebit.toFixed(2);
+            TotalTCredit += jsonData.Table[15].TransCredit.toFixed(2);
+            TotalCDebit += jsonData.Table[15].CBDebit.toFixed(2);
+            TotalCCredit += jsonData.Table[15].CBCredit.toFixed(2);
 
-                TotalODebit += jsonData.Table[19].OBDebit;
-                TotalODebit += jsonData.Table[11].OBDebit;
-                TotalODebit += jsonData.Table[20].OBDebit;
+            TotalODebit += jsonData.Table[19].OBDebit.toFixed(2);
+            TotalODebit += jsonData.Table[11].OBDebit.toFixed(2);
+            TotalODebit += jsonData.Table[20].OBDebit.toFixed(2);
 
-                TotalOCredit += jsonData.Table[19].OBCredit;
-                TotalOCredit += jsonData.Table[11].OBCredit;
-                TotalOCredit += jsonData.Table[20].OBCredit;
+            TotalOCredit += jsonData.Table[19].OBCredit.toFixed(2);
+            TotalOCredit += jsonData.Table[11].OBCredit.toFixed(2);
+            TotalOCredit += jsonData.Table[20].OBCredit.toFixed(2);
 
-                TotalTDebit += jsonData.Table[19].TransDebit;
-                TotalTDebit += jsonData.Table[11].TransDebit;
-                TotalTDebit += jsonData.Table[20].TransDebit;
+            TotalTDebit += jsonData.Table[19].TransDebit.toFixed(2);
+            TotalTDebit += jsonData.Table[11].TransDebit.toFixed(2);
+            TotalTDebit += jsonData.Table[20].TransDebit.toFixed(2);
 
-                TotalTCredit += jsonData.Table[19].TransCredit;
-                TotalTCredit += jsonData.Table[11].TransCredit;
-                TotalTCredit += jsonData.Table[20].TransCredit;
+            TotalTCredit += jsonData.Table[19].TransCredit.toFixed(2);
+            TotalTCredit += jsonData.Table[11].TransCredit.toFixed(2);
+            TotalTCredit += jsonData.Table[20].TransCredit.toFixed(2);
 
-                TotalCDebit += jsonData.Table[19].CBDebit;
-                TotalCDebit += jsonData.Table[11].CBDebit;
-                TotalCDebit += jsonData.Table[20].CBDebit;
+            TotalCDebit += jsonData.Table[19].CBDebit.toFixed(2);
+            TotalCDebit += jsonData.Table[11].CBDebit.toFixed(2);
+            TotalCDebit += jsonData.Table[20].CBDebit.toFixed(2);
 
-                TotalCCredit += jsonData.Table[19].CBCredit;
-                TotalCCredit += jsonData.Table[11].CBCredit;
-                TotalCCredit += jsonData.Table[20].CBCredit;
+            TotalCCredit += jsonData.Table[19].CBCredit.toFixed(2);
+            TotalCCredit += jsonData.Table[11].CBCredit.toFixed(2);
+            TotalCCredit += jsonData.Table[20].CBCredit.toFixed(2);
 
-                TotalODebit += jsonData.Table[22].OBDebit;
-                TotalODebit += jsonData.Table[21].OBDebit;
-                TotalOCredit += jsonData.Table[22].OBCredit;
-                TotalOCredit += jsonData.Table[21].OBCredit;
-                TotalTDebit += jsonData.Table[22].TransDebit;
-                TotalTDebit += jsonData.Table[21].TransDebit;
-                TotalTCredit += jsonData.Table[22].TransCredit;
-                TotalTCredit += jsonData.Table[21].TransCredit;
-                TotalCDebit += jsonData.Table[22].CBDebit;
-                TotalCDebit += jsonData.Table[21].CBDebit;
-                TotalCCredit += jsonData.Table[22].CBCredit;
-                TotalCCredit += jsonData.Table[21].CBCredit;
+            TotalODebit += jsonData.Table[22].OBDebit.toFixed(2);
+            TotalODebit += jsonData.Table[21].OBDebit.toFixed(2);
+            TotalOCredit += jsonData.Table[22].OBCredit.toFixed(2);
+            TotalOCredit += jsonData.Table[21].OBCredit.toFixed(2);
+            TotalTDebit += jsonData.Table[22].TransDebit.toFixed(2);
+            TotalTDebit += jsonData.Table[21].TransDebit.toFixed(2);
+            TotalTCredit += jsonData.Table[22].TransCredit.toFixed(2);
+            TotalTCredit += jsonData.Table[21].TransCredit.toFixed(2);
+            TotalCDebit += jsonData.Table[22].CBDebit.toFixed(2);
+            TotalCDebit += jsonData.Table[21].CBDebit.toFixed(2);
+            TotalCCredit += jsonData.Table[22].CBCredit.toFixed(2);
+            TotalCCredit += jsonData.Table[21].CBCredit.toFixed(2);
 
                 $('#totalODebit').html(TotalODebit);
                 $('#totalODebit').html(TotalODebit);

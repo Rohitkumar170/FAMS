@@ -5,6 +5,13 @@
     <script src="../JavaScript/HoldingReport.js"></script>
 
     <style>
+        .profit {
+
+            color:green;
+        }
+        .loss {
+            color:red;
+        }
         .bodypartnav {
             max-width: 100%
         }

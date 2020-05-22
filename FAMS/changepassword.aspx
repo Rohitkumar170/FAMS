@@ -8,6 +8,12 @@
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../Assets/css/bootstrap.min.css" rel="stylesheet"   type="text/css" />
     <script src="Assets/js/jquery.min.js"></script>
+    <link href="../Assets/css/bootstrap.min.css" rel="stylesheet" />
+      <script src="../Assets/js/jquery.min.js"></script>
+    <script src="../Assets/js/bootstrap.min.js"></script>
+    <link href="../Assets/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../assets/css/custom.css" rel="stylesheet" />
+
        <style>
         body
         {
@@ -137,11 +143,26 @@
             }
         }
     </style>
+
+      <script type="text/javascript" language="javascript">
+          $(document).ready(function () {
+            var industries = $("#HdnIndustries").val();
+            if (industries == "Y") {
+                Showpop();
+                $("#HdnIndustries").val('');
+            }
+        });
+        function Showpop() {
+            $('#forgetpasspopup').modal('show');
+        }
+         </script>
+
+
 </head>
 <body>
     <form id="form1" runat="server">
 
-
+               <input type='hidden' runat="server" id='HdnIndustries' />
  <div class="container login-container">
         <div class="row mainlogidiv">
             <div class="loginCon">
@@ -157,13 +178,13 @@
                         <label for="Password" class="lbltxt">
                         Password</label>
                            <%--<input type="password" id="e" class="form-control" placeholder="Password " value="" />--%>
-                          <asp:TextBox ID="txtPassword"  runat="server" class="form-control" placeholder="Password" ></asp:TextBox>
+                          <asp:TextBox ID="txtPassword"  runat="server" class="form-control" placeholder="Password" TextMode="Password" ></asp:TextBox>
                     </div>
                     <div class="form-group">
                            <label for= "ConfirmPassword" class="lbltxt">
                        Confirm  Password</label>
                       <%--<input type="password" id="" class="form-control" placeholder="Confirm Password " value="" />--%>
-                        <asp:TextBox ID="txtConfirmPassword"  runat="server" class="form-control" placeholder="Password" ></asp:TextBox>
+                        <asp:TextBox ID="txtConfirmPassword"  runat="server" class="form-control" placeholder="Password" TextMode="Password" ></asp:TextBox>
                     </div>
                     <div class="form-group" style="margin-top:20px;">
                            <%--<input type="submit" class="btnSubmit" id="btnSubmit"   value="Done"/>--%>
@@ -181,6 +202,38 @@
                 </div>
             </div>
         </div>
+    </div>
+           <div class="modal fade" id="forgetpasspopup" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="height: 53px;">
+                  <%--  <h4 class="modal-title">Customer Create</h4>--%>
+                    <div class="col-md-12" style="text-align:center">
+                    <img src="../Assets/image/success-icon.png" style="width: 12%;text-align: center;margin-top: -9px;" />
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="text" style="text-align:center">
+                    <label style="font-size: 13px;">Password Changed Successfully</label>
+                   </div></div>
+                    <div class="col-md-7 col-sm-7 col-xs-7">
+                 <a href="../login.aspx"><button type="button" class="col-md-3 btn btn-default closexbtn mt-1" id="btnUpdatePassword">OK</button></a>
+           </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+
+
     </div>
     </form>
 </body>
