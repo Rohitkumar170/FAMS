@@ -627,12 +627,12 @@ function BindGrid() {
                 TotalCCredit += jsonData.Table[10].CBCredit;
                 TotalCCredit += jsonData.Table[9].CBCredit;
                 TotalCCredit += jsonData.Table[14].CBCredit;
-                $('#totalODebit').html(TotalODebit);
-                $('#totalOCredit').html(TotalOCredit);
-                $('#totalTDebit').html(TotalTDebit);
-                $('#totalTCredit').html(TotalTCredit);
-                $('#totalCDebit').html(TotalCDebit);
-                $('#totalCCredit').html(TotalCCredit);
+                $('#totalODebit').html(TotalODebit.toFixed(2));
+                $('#totalOCredit').html(TotalOCredit.toFixed(2));
+                $('#totalTDebit').html(TotalTDebit.toFixed(2));
+                $('#totalTCredit').html(TotalTCredit.toFixed(2));
+                $('#totalCDebit').html(TotalCDebit.toFixed(2));
+                $('#totalCCredit').html(TotalCCredit.toFixed(2));
             }
 
             if (Accounts == 'Laibilities' && AccountSubLayer == "Capital") {
@@ -656,12 +656,12 @@ function BindGrid() {
                 TotalCDebit += jsonData.Table[15].CBDebit;
                 TotalCCredit += jsonData.Table[15].CBCredit;
 
-                $('#totalODebit').html(TotalODebit);
-                $('#totalOCredit').html(TotalOCredit);
-                $('#totalTDebit').html(TotalTDebit);
-                $('#totalTCredit').html(TotalTCredit);
-                $('#totalCDebit').html(TotalCDebit);
-                $('#totalCCredit').html(TotalCCredit);
+                $('#totalODebit').html(TotalODebit.toFixed(2));
+                $('#totalOCredit').html(TotalOCredit.toFixed(2));
+                $('#totalTDebit').html(TotalTDebit.toFixed(2));
+                $('#totalTCredit').html(TotalTCredit.toFixed(2));
+                $('#totalCDebit').html(TotalCDebit.toFixed(2));
+                $('#totalCCredit').html(TotalCCredit.toFixed(2));
             }
 
             if (Accounts == 'Laibilities' && AccountSubLayer == "Current Liabilities") {
@@ -715,12 +715,12 @@ function BindGrid() {
                 TotalCCredit += jsonData.Table[19].CBCredit;
                 TotalCCredit += jsonData.Table[11].CBCredit;
                 TotalCCredit += jsonData.Table[20].CBCredit;
-                $('#totalODebit').html(TotalODebit);
-                $('#totalOCredit').html(TotalOCredit);
-                $('#totalTDebit').html(TotalTDebit);
-                $('#totalTCredit').html(TotalTCredit);
-                $('#totalCDebit').html(TotalCDebit);
-                $('#totalCCredit').html(TotalCCredit);
+                $('#totalODebit').html(TotalODebit.toFixed(2));
+                $('#totalOCredit').html(TotalOCredit.toFixed(2));
+                $('#totalTDebit').html(TotalTDebit.toFixed(2));
+                $('#totalTCredit').html(TotalTCredit.toFixed(2));
+                $('#totalCDebit').html(TotalCDebit.toFixed(2));
+                $('#totalCCredit').html(TotalCCredit.toFixed(2));
             }
 
             if (Accounts == 'Laibilities' && AccountSubLayer == "Unrealized Gain\Loss") {
@@ -755,12 +755,12 @@ function BindGrid() {
                 TotalCDebit += jsonData.Table[21].CBDebit;
                 TotalCCredit += jsonData.Table[22].CBCredit;
                 TotalCCredit += jsonData.Table[21].CBCredit;
-                $('#totalODebit').html(TotalODebit);
-                $('#totalOCredit').html(TotalOCredit);
-                $('#totalTDebit').html(TotalTDebit);
-                $('#totalTCredit').html(TotalTCredit);
-                $('#totalCDebit').html(TotalCDebit);
-                $('#totalCCredit').html(TotalCCredit);
+                $('#totalODebit').html(TotalODebit.toFixed(2));
+                $('#totalOCredit').html(TotalOCredit.toFixed(2));
+                $('#totalTDebit').html(TotalTDebit.toFixed(2));
+                $('#totalTCredit').html(TotalTCredit.toFixed(2));
+                $('#totalCDebit').html(TotalCDebit.toFixed(2));
+                $('#totalCCredit').html(TotalCCredit.toFixed(2));
             }
 
             if (Accounts == 'Laibilities' && AccountSubLayer == "All") {
@@ -856,12 +856,12 @@ function BindGrid() {
                 TotalCCredit += jsonData.Table[22].CBCredit;
                 TotalCCredit += jsonData.Table[21].CBCredit;
 
-                $('#totalODebit').html(TotalODebit);
-                $('#totalOCredit').html(TotalOCredit);
-                $('#totalTDebit').html(TotalTDebit);
-                $('#totalTCredit').html(TotalTCredit);
-                $('#totalCDebit').html(TotalCDebit);
-                $('#totalCCredit').html(TotalCCredit);
+                $('#totalODebit').html(TotalODebit.toFixed(2));
+                $('#totalOCredit').html(TotalOCredit.toFixed(2));
+                $('#totalTDebit').html(TotalTDebit.toFixed(2));
+                $('#totalTCredit').html(TotalTCredit.toFixed(2));
+                $('#totalCDebit').html(TotalCDebit.toFixed(2));
+                $('#totalCCredit').html(TotalCCredit.toFixed(2));
             }
 
             if (Accounts == 'All' && AccountSubLayer == "All") {
@@ -1080,13 +1080,13 @@ function BindGrid() {
                 TotalCCredit += jsonData.Table[22].CBCredit;
                 TotalCCredit += jsonData.Table[21].CBCredit;
 
-                $('#totalODebit').html(TotalODebit);
-                $('#totalODebit').html(TotalODebit);
-                $('#totalOCredit').html(TotalOCredit);
-                $('#totalTDebit').html(TotalTDebit);
-                $('#totalTCredit').html(TotalTCredit);
-                $('#totalCDebit').html(TotalCDebit);
-                $('#totalCCredit').html(TotalCCredit);
+                $('#totalODebit').html(TotalODebit.toFixed(2));
+                $('#totalODebit').html(TotalODebit.toFixed(2));
+                $('#totalOCredit').html(TotalOCredit.toFixed(2));
+                $('#totalTDebit').html(TotalTDebit.toFixed(2));
+                $('#totalTCredit').html(TotalTCredit.toFixed(2));
+                $('#totalCDebit').html(TotalCDebit.toFixed(2));
+                $('#totalCCredit').html(TotalCCredit.toFixed(2));
             }
         }
     });

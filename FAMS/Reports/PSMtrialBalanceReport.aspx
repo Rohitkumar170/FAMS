@@ -75,8 +75,8 @@
   <div class="col-md-7 col-xs-12 col-sm-7 p-0 d-inline-block">
             <select class="dropdown col-md-12 col-xs-12 col-sm-12" id="ddlCustomer">
                 <option>Select</option>
-                <option value="Cust_000001">Test1</option>
-                <option value="Cust_000002">Test2</option>
+                <option value="Cust_000001">Customer 1</option>
+                <option value="Cust_000002">Customer 2</option>
               <%--  <option value="3">Mitali Roy</option>
                 <option value="4">Raushan Raj</option>--%>
             </select>

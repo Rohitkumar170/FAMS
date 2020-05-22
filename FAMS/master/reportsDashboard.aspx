@@ -115,7 +115,7 @@
   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label ID="lblIsDefaultPswdChange" runat="server" style="display:none"></asp:Label>
+  <%--  <asp:Label ID="lblIsDefaultPswdChange" runat="server" style="display:none"></asp:Label>--%>
     <div class="cardbody">
         <div class="row">
             <div class="allHtmlCode col-md-12 col-sm-12 col-xs-12">
@@ -190,5 +190,10 @@
             </div>
         </div>
     </div>
+
+
+
+
+     
         <asp:Label ID="lblIsDefaultPswdChange" runat="server" Style="display: none"></asp:Label>
 </asp:Content>

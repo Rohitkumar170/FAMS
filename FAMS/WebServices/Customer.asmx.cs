@@ -15,6 +15,9 @@ using System.Net.Mail;
 using System.IO;
 using System.Web.UI;
 using System.Text;
+using System.Net;
+using System.Net.Mail;
+
 
 namespace FAMS.WebServices
 {
@@ -101,50 +104,86 @@ namespace FAMS.WebServices
 
                 if (Convert.ToInt32(dt_Save_value.Rows[0]["value"]) != -1)
                 {
-                    // For mail purpose start
-                    using (StringWriter sw = new StringWriter())
+
+                    StringBuilder sb = new StringBuilder();
+                    string smtpAddress = "smtp.gmail.com";
+                    int portNumber = 587;
+                    bool enableSSL = true;
+                    string emailFromAddress = "vipulyoeki123@gmail.com"; //Sender Email Address  
+                    string password = "vipulyoeki"; //Sender Password  
+                    //string emailToAddress = "vipulcrystal@gmail.com"; //Receiver Email Address  
+                    string subject = "User New Password";
+                    string WebAppUrl = ConfigurationManager.AppSettings["WebAppUrl"].ToString();
+
+
+                    sb.Append("Dear " + UserName + ",<br> <br>");
+                    sb.Append("Please find your new Password is --   " + UserEmail.Split('@').ElementAtOrDefault(0) + " <br> <br>");
+
+                    //  string User = DbSecurity.Encrypt(dt.Rows[0]["UserId"].ToString());
+                    //sb.Append("<a href='" + WebAppUrl + "changepassword.aspx?Id=" + User + "' target='_blank'>");
+                    //sb.Append("<input style='background-color: #3965a9;color: #fff;padding: 3px 10px 3px 10px;' type='button' value='Change Password' /></a> </div>");
+
+                    using (MailMessage mail = new MailMessage())
                     {
-                        using (HtmlTextWriter hw = new HtmlTextWriter(sw))
+                        mail.From = new MailAddress(emailFromAddress);
+                        mail.To.Add(UserEmail);
+                        mail.Subject = subject;
+                        mail.Body = sb.ToString();
+                        mail.IsBodyHtml = true;
+                        //mail.Attachments.Add(new Attachment("D:\\TestFile.txt"));//--Uncomment this to send any attachment  
+                        using (SmtpClient smtp = new SmtpClient(smtpAddress, portNumber))
                         {
-                            StringBuilder sb = new StringBuilder();
-                            string WebAppUrl = ConfigurationManager.AppSettings["WebAppUrl"].ToString();
-                            string SMTPHost = ConfigurationManager.AppSettings["Amazon_SMTPHost"].ToString();
-                            string UserId_Mail = ConfigurationManager.AppSettings["Amazon_UserId"].ToString();
-                            string MailPassword = ConfigurationManager.AppSettings["Amazon_MailPassword"].ToString();
-                            string SMTPPort = ConfigurationManager.AppSettings["Amazon_SMTPPort"].ToString();
-                            string SMTPEnableSsl = ConfigurationManager.AppSettings["Amazon_SMTPEnableSsl"].ToString();
-                            string FromMailId = ConfigurationManager.AppSettings["Amazon_FromMailId"].ToString();
-                            string Teamtext = ConfigurationManager.AppSettings["Team"].ToString();
-
-                            sb.Append("Dear " + UserName + ",<br> <br>");
-                            sb.Append("Please find your new Password is --   " + UserEmail.Split('@').ElementAtOrDefault(0) + " <br> <br>");
-
-                            //  string User = DbSecurity.Encrypt(dt.Rows[0]["UserId"].ToString());
-                            //sb.Append("<a href='" + WebAppUrl + "changepassword.aspx?Id=" + User + "' target='_blank'>");
-                            //sb.Append("<input style='background-color: #3965a9;color: #fff;padding: 3px 10px 3px 10px;' type='button' value='Change Password' /></a> </div>");
-
-                            SmtpClient smtpClient = new SmtpClient();
-                            MailMessage mailmsg = new MailMessage();
-                            MailAddress mailaddress = new MailAddress(FromMailId);
-                            mailmsg.To.Add(UserEmail);
-                            mailmsg.From = mailaddress;
-
-                            mailmsg.Subject = "Recover Password";
-                            mailmsg.IsBodyHtml = true;
-                            mailmsg.Body = sb.ToString();
-
-                            smtpClient.Host = SMTPHost;
-                            smtpClient.Port = Convert.ToInt32(SMTPPort);
-                            smtpClient.EnableSsl = Convert.ToBoolean(SMTPEnableSsl);
-                            smtpClient.UseDefaultCredentials = true;
-                            smtpClient.Credentials = new System.Net.NetworkCredential(UserId_Mail, MailPassword);
-                           //smtpClient.Send(mailmsg);
-                            //  CommonManger.FillDatasetWithParam("Sp_SendEmail", "@QueryType", "@MandateId", "@EmailCount", "@SmsCount", "SendMail", Convert.ToString(0), "1", "0");
-
+                            smtp.Credentials = new NetworkCredential(emailFromAddress, password);
+                            smtp.EnableSsl = enableSSL;
+                            smtp.Send(mail);
                         }
                     }
+
+
+                    // For mail purpose start
+                    //using (StringWriter sw = new StringWriter())
+                    //{
+                    //    using (HtmlTextWriter hw = new HtmlTextWriter(sw))
+                    //    {
+                    //        StringBuilder sb = new StringBuilder();
+                    //        string WebAppUrl = ConfigurationManager.AppSettings["WebAppUrl"].ToString();
+                    //        string SMTPHost = ConfigurationManager.AppSettings["Amazon_SMTPHost"].ToString();
+                    //        string UserId_Mail = ConfigurationManager.AppSettings["Amazon_UserId"].ToString();
+                    //        string MailPassword = ConfigurationManager.AppSettings["Amazon_MailPassword"].ToString();
+                    //        string SMTPPort = ConfigurationManager.AppSettings["Amazon_SMTPPort"].ToString();
+                    //        string SMTPEnableSsl = ConfigurationManager.AppSettings["Amazon_SMTPEnableSsl"].ToString();
+                    //        string FromMailId = ConfigurationManager.AppSettings["Amazon_FromMailId"].ToString();
+                    //        string Teamtext = ConfigurationManager.AppSettings["Team"].ToString();
+
+                    //        sb.Append("Dear " + UserName + ",<br> <br>");
+                    //        sb.Append("Please find your new Password is --   " + UserEmail.Split('@').ElementAtOrDefault(0) + " <br> <br>");
+
+                    //        //  string User = DbSecurity.Encrypt(dt.Rows[0]["UserId"].ToString());
+                    //        //sb.Append("<a href='" + WebAppUrl + "changepassword.aspx?Id=" + User + "' target='_blank'>");
+                    //        //sb.Append("<input style='background-color: #3965a9;color: #fff;padding: 3px 10px 3px 10px;' type='button' value='Change Password' /></a> </div>");
+
+                    //        SmtpClient smtpClient = new SmtpClient();
+                    //        MailMessage mailmsg = new MailMessage();
+                    //        MailAddress mailaddress = new MailAddress(FromMailId);
+                    //        mailmsg.To.Add(UserEmail);
+                    //        mailmsg.From = mailaddress;
+
+                    //        mailmsg.Subject = "Recover Password";
+                    //        mailmsg.IsBodyHtml = true;
+                    //        mailmsg.Body = sb.ToString();
+
+                    //        smtpClient.Host = SMTPHost;
+                    //        smtpClient.Port = Convert.ToInt32(SMTPPort);
+                    //        smtpClient.EnableSsl = Convert.ToBoolean(SMTPEnableSsl);
+                    //        smtpClient.UseDefaultCredentials = true;
+                    //        smtpClient.Credentials = new System.Net.NetworkCredential(UserId_Mail, MailPassword);
+                    //       //smtpClient.Send(mailmsg);
+                    //        //  CommonManger.FillDatasetWithParam("Sp_SendEmail", "@QueryType", "@MandateId", "@EmailCount", "@SmsCount", "SendMail", Convert.ToString(0), "1", "0");
+
+                    //    }
+                    //}
                 }
-                 return Convert.ToInt32(dt_Save_value.Rows[0]["value"]); 
+                return Convert.ToInt32(dt_Save_value.Rows[0]["value"]); 
                 
             }
             catch (Exception ex)

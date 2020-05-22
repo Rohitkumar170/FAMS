@@ -14,6 +14,8 @@ using FAMS.Models.UserLogin;
 using FAMS.Entity;
 using BusinessLibrary;
 using System.Reflection;
+using System.Net;
+using System.Net.Mail;
 
 namespace FAMS
 {
@@ -90,50 +92,86 @@ namespace FAMS
                     // if (ds.Tables[1].Rows.Count > 0 && ds.Tables[1] != null)
                     if (dt.Rows.Count > 0 && dt != null)
                     {
-                        using (StringWriter sw = new StringWriter())
+                        StringBuilder sb = new StringBuilder();
+                        string smtpAddress = "smtp.gmail.com";
+                         int portNumber = 587;
+                         bool enableSSL = true;
+                         string emailFromAddress = "vipulyoeki123@gmail.com"; //Sender Email Address  
+                         string password = "vipulyoeki"; //Sender Password  
+                         string emailToAddress = "vipulcrystal@gmail.com"; //Receiver Email Address  
+                         string subject = "Recover Password";
+                        string WebAppUrl = ConfigurationManager.AppSettings["WebAppUrl"].ToString();
+
+                        sb.Append("Dear " + dt.Rows[0]["UserName"].ToString() + ",<br> <br>");
+                        sb.Append("Please click on the below button to set a new Password . <br> <br>");
+
+                        string User = DbSecurity.Encrypt(dt.Rows[0]["UserId"].ToString());
+                        sb.Append("<a href='" + WebAppUrl + "changepassword.aspx?Id=" + User + "' target='_blank'>");
+                        sb.Append("<input style='background-color: #3965a9;color: #fff;padding: 3px 10px 3px 10px;' type='button' value='Change Password' /></a> </div>");
+                       // string body = "Hello, This is Email sending test using gmail.";
+                        using (MailMessage mail = new MailMessage())
                         {
-                            using (HtmlTextWriter hw = new HtmlTextWriter(sw))
+                            mail.From = new MailAddress(emailFromAddress);
+                            mail.To.Add(txtRecoverEmail.Text);
+                            mail.Subject = subject;
+                            mail.Body = sb.ToString(); 
+                            mail.IsBodyHtml = true;
+                            //mail.Attachments.Add(new Attachment("D:\\TestFile.txt"));//--Uncomment this to send any attachment  
+                            using (SmtpClient smtp = new SmtpClient(smtpAddress, portNumber))
                             {
-                                StringBuilder sb = new StringBuilder();
-                                string WebAppUrl = ConfigurationManager.AppSettings["WebAppUrl"].ToString();
-                                string SMTPHost = ConfigurationManager.AppSettings["Amazon_SMTPHost"].ToString();
-                                string UserId = ConfigurationManager.AppSettings["Amazon_UserId"].ToString();
-                                string MailPassword = ConfigurationManager.AppSettings["Amazon_MailPassword"].ToString();
-                                string SMTPPort = ConfigurationManager.AppSettings["Amazon_SMTPPort"].ToString();
-                                string SMTPEnableSsl = ConfigurationManager.AppSettings["Amazon_SMTPEnableSsl"].ToString();
-                                string FromMailId = ConfigurationManager.AppSettings["Amazon_FromMailId"].ToString();
-                                string Teamtext = ConfigurationManager.AppSettings["Team"].ToString();
-
-                                sb.Append("Dear " + dt.Rows[0]["UserName"].ToString() + ",<br> <br>");
-                                sb.Append("Please click on the below button to set a new Password . <br> <br>");
-
-                                string User = DbSecurity.Encrypt(dt.Rows[0]["UserId"].ToString());
-                                sb.Append("<a href='" + WebAppUrl + "changepassword.aspx?Id=" + User + "' target='_blank'>");
-                                sb.Append("<input style='background-color: #3965a9;color: #fff;padding: 3px 10px 3px 10px;' type='button' value='Change Password' /></a> </div>");
-
-                                SmtpClient smtpClient = new SmtpClient();
-                                MailMessage mailmsg = new MailMessage();
-                                MailAddress mailaddress = new MailAddress(FromMailId);
-                                mailmsg.To.Add(txtRecoverEmail.Text);
-                                mailmsg.From = mailaddress;
-
-                                mailmsg.Subject = "Recover Password";
-                                mailmsg.IsBodyHtml = true;
-                                mailmsg.Body = sb.ToString();
-
-                                smtpClient.Host = SMTPHost;
-                                smtpClient.Port = Convert.ToInt32(SMTPPort);
-                                smtpClient.EnableSsl = Convert.ToBoolean(SMTPEnableSsl);
-                                smtpClient.UseDefaultCredentials = true;
-                                smtpClient.Credentials = new System.Net.NetworkCredential(UserId, MailPassword);
-                                //smtpClient.Send(mailmsg);
-                                //  CommonManger.FillDatasetWithParam("Sp_SendEmail", "@QueryType", "@MandateId", "@EmailCount", "@SmsCount", "SendMail", Convert.ToString(0), "1", "0");
-
+                                smtp.Credentials = new NetworkCredential(emailFromAddress, password);
+                                smtp.EnableSsl = enableSSL;
+                                smtp.Send(mail);
                             }
                         }
-                    }
+                            //using (StringWriter sw = new StringWriter())
+                            //{
+                            //    using (HtmlTextWriter hw = new HtmlTextWriter(sw))
+                            //    {
+                            //        StringBuilder sb = new StringBuilder();
+                            //        string WebAppUrl = ConfigurationManager.AppSettings["WebAppUrl"].ToString();
+                            //        string SMTPHost = ConfigurationManager.AppSettings["Amazon_SMTPHost"].ToString();
+                            //        string UserId = ConfigurationManager.AppSettings["Amazon_UserId"].ToString();
+                            //        string MailPassword = ConfigurationManager.AppSettings["Amazon_MailPassword"].ToString();
+                            //        string SMTPPort = ConfigurationManager.AppSettings["Amazon_SMTPPort"].ToString();
+                            //        string SMTPEnableSsl = ConfigurationManager.AppSettings["Amazon_SMTPEnableSsl"].ToString();
+                            //        string FromMailId = ConfigurationManager.AppSettings["Amazon_FromMailId"].ToString();
+                            //        string Teamtext = ConfigurationManager.AppSettings["Team"].ToString();
+
+                            //        sb.Append("Dear " + dt.Rows[0]["UserName"].ToString() + ",<br> <br>");
+                            //        sb.Append("Please click on the below button to set a new Password . <br> <br>");
+
+                            //        string User = DbSecurity.Encrypt(dt.Rows[0]["UserId"].ToString());
+                            //        sb.Append("<a href='" + WebAppUrl + "changepassword.aspx?Id=" + User + "' target='_blank'>");
+                            //        sb.Append("<input style='background-color: #3965a9;color: #fff;padding: 3px 10px 3px 10px;' type='button' value='Change Password' /></a> </div>");
+
+                            //        SmtpClient smtpClient = new SmtpClient();
+                            //        MailMessage mailmsg = new MailMessage();
+                            //        MailAddress mailaddress = new MailAddress(FromMailId);
+                            //        mailmsg.To.Add(txtRecoverEmail.Text);
+                            //        mailmsg.From = mailaddress;
+
+                            //        mailmsg.Subject = "Recover Password";
+                            //        mailmsg.IsBodyHtml = true;
+                            //        mailmsg.Body = sb.ToString();
+
+                            //        smtpClient.Host = SMTPHost;
+                            //        smtpClient.Port = Convert.ToInt32(SMTPPort);
+                            //        smtpClient.EnableSsl = Convert.ToBoolean(SMTPEnableSsl);
+                            //        smtpClient.UseDefaultCredentials = true;
+                            //        smtpClient.Credentials = new System.Net.NetworkCredential(UserId, MailPassword);
+                            //        //smtpClient.Send(mailmsg);
+                            //        //  CommonManger.FillDatasetWithParam("Sp_SendEmail", "@QueryType", "@MandateId", "@EmailCount", "@SmsCount", "SendMail", Convert.ToString(0), "1", "0");
+
+                            //    }
+                            //}
+                        }
                     txtRecoverEmail.Text = "";
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "msg", "alert('Email is sent!!!')", true);
+                    HdnIndustries.Value = "Y";
+                    //ScriptManager.RegisterStartupScript(this, typeof(Page), "msg", "ShowPopup()", true);
+                    //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "ShowPopup();", true);
+                    //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp", "<script type='text/javascript'>ShowMailPopup();</script>", false);
+                   // ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "ShowPopup();", true);
 
                 }
                 //    //else if (ds.Tables[0].Rows.Count > 0 && ds.Tables[0] != null && Convert.ToInt32(ds.Tables[0].Rows[0]["value"]) == 2)

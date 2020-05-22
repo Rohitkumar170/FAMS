@@ -81,8 +81,8 @@ namespace FAMS
                         dt_value = ToDataTable(dataList_value);
                         if (Convert.ToInt32(dt_value.Rows[0]["value"]) >= 0)
                         {
-
-                            ScriptManager.RegisterStartupScript(this, typeof(Page), "msg", "alert('Password Updated Successfuly !!');window.location ='Login.aspx';", true);
+                            HdnIndustries.Value = "Y";
+                            //ScriptManager.RegisterStartupScript(this, typeof(Page), "msg", "alert('Password Updated Successfuly !!');window.location ='Login.aspx';", true);
                             //Response.Redirect("~/Login.aspx");
                             txtConfirmPassword.Text = "";
                             txtPassword.Text = "";

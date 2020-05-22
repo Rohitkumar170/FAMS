@@ -112,7 +112,14 @@ function BindGrid() {
             var i = 0;
             jQuery.each(jsonData.Table, function (rec) {
                 if (jsonData.Table[i].Security != 'Cash' && jsonData.Table[i].Security != 'Birla SL Cash Plus -G') {
-                    var markup = "<tr><td style='width: 320px'> " + jsonData.Table[i].Security + "</td> <td style='width: 100px'>" + jsonData.Table[i].Quantity + "</td><td style='width: 150px'>" + jsonData.Table[i].UnitCost + "</td><td style='width: 150px'>" + jsonData.Table[i].Cost + "</td><td style='width: 150px'>" + jsonData.Table[i].Price + "</td><td style='width: 150px'>" + jsonData.Table[i].MarketValue + "</td><td style='width: 100px'>" + jsonData.Table[i].GainLoss + "</td><td style='width: 100px'>" + jsonData.Table[i].GainLossPer + "</td><td style='width: 100px'>" + jsonData.Table[i].Assets + "</td> </tr >";
+                    var markup=''
+                    if (parseFloat(jsonData.Table[i].GainLoss) >= 0) {
+                        markup = "<tr><td style='width: 320px'> " + jsonData.Table[i].Security + "</td> <td style='width: 100px'>" + jsonData.Table[i].Quantity + "</td><td style='width: 150px'>" + jsonData.Table[i].UnitCost + "</td><td style='width: 150px'>" + jsonData.Table[i].Cost + "</td><td style='width: 150px'>" + jsonData.Table[i].Price + "</td><td style='width: 150px'>" + jsonData.Table[i].MarketValue + "</td><td style='width: 100px'class='profit'>" + jsonData.Table[i].GainLoss + "</td><td style='width: 100px'class='profit'>" + jsonData.Table[i].GainLossPer + "</td><td style='width: 100px'>" + jsonData.Table[i].Assets + "</td> </tr >";
+                    }
+                    else {
+                        markup = "<tr><td style='width: 320px'> " + jsonData.Table[i].Security + "</td> <td style='width: 100px'>" + jsonData.Table[i].Quantity + "</td><td style='width: 150px'>" + jsonData.Table[i].UnitCost + "</td><td style='width: 150px'>" + jsonData.Table[i].Cost + "</td><td style='width: 150px'>" + jsonData.Table[i].Price + "</td><td style='width: 150px'>" + jsonData.Table[i].MarketValue + "</td><td style='width: 100px'class='loss'>" + jsonData.Table[i].GainLoss + "</td><td style='width: 100px'class='loss'>" + jsonData.Table[i].GainLossPer + "</td><td style='width: 100px'>" + jsonData.Table[i].Assets + "</td> </tr >";
+
+                    }
                     TotalCost = parseFloat(TotalCost) + parseFloat(jsonData.Table[i].Cost);
                     TotalMarketValue = parseFloat(TotalMarketValue) + parseFloat(jsonData.Table[i].MarketValue);
                     TotalGainLoss = parseFloat(TotalGainLoss) + parseFloat(jsonData.Table[i].GainLoss);
@@ -122,7 +129,13 @@ function BindGrid() {
 
                 }
                 else {
-                    var CashMarkup = "<tr><td style='width: 320px'> " + jsonData.Table[i].Security + "</td> <td style='width: 100px'>" + jsonData.Table[i].Quantity + "</td><td style='width: 150px'>" + jsonData.Table[i].UnitCost + "</td><td style='width: 150px'>" + jsonData.Table[i].Cost + "</td><td style='width: 150px'>" + jsonData.Table[i].Price + "</td><td style='width: 150px'>" + jsonData.Table[i].MarketValue + "</td><td style='width: 100px'>" + jsonData.Table[i].GainLoss + "</td><td style='width: 100px'>" + jsonData.Table[i].GainLossPer + "</td><td style='width: 100px'>" + jsonData.Table[i].Assets + "</td> </tr >";
+                    var CashMarkup=''
+                    if (parseFloat(jsonData.Table[i].GainLoss) >= 0) {
+                        CashMarkup = "<tr><td style='width: 320px'> " + jsonData.Table[i].Security + "</td> <td style='width: 100px'>" + jsonData.Table[i].Quantity + "</td><td style='width: 150px'>" + jsonData.Table[i].UnitCost + "</td><td style='width: 150px'>" + jsonData.Table[i].Cost + "</td><td style='width: 150px'>" + jsonData.Table[i].Price + "</td><td style='width: 150px'>" + jsonData.Table[i].MarketValue + "</td><td style='width: 100px'class='profit'>" + jsonData.Table[i].GainLoss + "</td><td style='width: 100px'class='profit'>" + jsonData.Table[i].GainLossPer + "</td><td style='width: 100px'>" + jsonData.Table[i].Assets + "</td> </tr >";
+                    }
+                    else {
+                        CashMarkup = "<tr><td style='width: 320px'> " + jsonData.Table[i].Security + "</td> <td style='width: 100px'>" + jsonData.Table[i].Quantity + "</td><td style='width: 150px'>" + jsonData.Table[i].UnitCost + "</td><td style='width: 150px'>" + jsonData.Table[i].Cost + "</td><td style='width: 150px'>" + jsonData.Table[i].Price + "</td><td style='width: 150px'>" + jsonData.Table[i].MarketValue + "</td><td style='width: 100px'class='loss'>" + jsonData.Table[i].GainLoss + "</td><td style='width: 100px'class='loss'>" + jsonData.Table[i].GainLossPer + "</td><td style='width: 100px'>" + jsonData.Table[i].Assets + "</td> </tr >";
+                    }
                     CashTotalCost = parseFloat(CashTotalCost) + parseFloat(jsonData.Table[i].Cost);
                     CashTotalMarketValue = parseFloat(CashTotalMarketValue) + parseFloat(jsonData.Table[i].MarketValue);
                     CashTotalGainLoss = parseFloat(CashTotalGainLoss) + parseFloat(jsonData.Table[i].GainLoss);
@@ -133,11 +146,23 @@ function BindGrid() {
                 }
                 i++;
             });
-            var FootMarkup = "<tr><td style='width: 275px'>Total</td> <td style='width: 78px' ></td><td style='width: 170px' class='price'></td><td style='width: 135px'class='price'>" + TotalCost + "</td><td style='width: 145px' class='price'></td><td style='width: 140px' class='price'>" + TotalMarketValue + "</td><td style='width: 92px' class='profit'>" + TotalGainLoss + "</td><td style='width: 93px' class='profit'>" + TotalGLPerc + "%</td><td style='width: 94px'>" + TotalAssets + "%</td> </tr >";
+            var FootMarkup = ''
+            if (parseFloat(TotalGainLoss) >= 0) {
+                FootMarkup = "<tr><td style='width: 275px'>Total</td> <td style='width: 78px' ></td><td style='width: 170px' class='price'></td><td style='width: 135px'class='price'>" + TotalCost.toFixed(2) + "</td><td style='width: 145px' class='price'></td><td style='width: 150px' class='price'>" + TotalMarketValue.toFixed(2) + "</td><td style='width: 92px' class='profit'>" + TotalGainLoss.toFixed(2) + "</td><td style='width: 93px' class='profit'>" + TotalGLPerc.toFixed(2) + "%</td><td style='width: 94px'>" + TotalAssets.toFixed(2) + "%</td> </tr >";
+            }
+            else {
+                FootMarkup = "<tr><td style='width: 275px'>Total</td> <td style='width: 78px' ></td><td style='width: 170px' class='price'></td><td style='width: 135px'class='price'>" + TotalCost.toFixed(2) + "</td><td style='width: 145px' class='price'></td><td style='width: 10px' class='price'>" + TotalMarketValue.toFixed(2) + "</td><td style='width: 92px' class='loss'>" + TotalGainLoss.toFixed(2) + "</td><td style='width: 93px' class='loss'>" + TotalGLPerc.toFixed(2) + "%</td><td style='width: 94px'>" + TotalAssets.toFixed(2) + "%</td> </tr >";
+            }
             $("#tblholdingreport  tfoot").append(FootMarkup);
-            var FootCashMarkup = "<tr><td style='width: 257px'>Total</td> <td style='width: 78px' ></td><td style='width: 194px' class='price'></td><td style='width: 135px'class='price'>" + CashTotalCost + "</td><td style='width: 145px' class='price'></td><td style='width: 140px' class='price'>" + CashTotalMarketValue + "</td><td style='width: 92px' class='profit'>" + CashTotalGainLoss + "</td><td style='width: 93px' class='profit'>" + CashTotalGLPerc + "%</td><td style='width: 94px'>" + CashTotalAssets + "%</td> </tr >";
+            var FootCashMarkup = ''
+            if (CashTotalGainLoss >= 0) {
+                FootCashMarkup = "<tr><td style='width: 257px'>Total</td> <td style='width: 78px' ></td><td style='width: 194px' class='price'></td><td style='width: 135px'class='price'>" + CashTotalCost.toFixed(2) + "</td><td style='width: 145px' class='price'></td><td style='width: 140px' class='price'>" + CashTotalMarketValue.toFixed(2) + "</td><td style='width: 92px' class='profit'>" + CashTotalGainLoss.toFixed(2) + "</td><td style='width: 93px' class='profit'>" + CashTotalGLPerc.toFixed(2) + "%</td><td style='width: 94px'>" + CashTotalAssets.toFixed(2) + "%</td> </tr >";
+            }
+            else {
+                FootCashMarkup = "<tr><td style='width: 257px'>Total</td> <td style='width: 78px' ></td><td style='width: 194px' class='price'></td><td style='width: 135px'class='price'>" + CashTotalCost.toFixed(2) + "</td><td style='width: 145px' class='price'></td><td style='width: 140px' class='price'>" + CashTotalMarketValue.toFixed(2) + "</td><td style='width: 92px' class='loss'>" + CashTotalGainLoss.toFixed(2) + "</td><td style='width: 93px' class='loss'>" + CashTotalGLPerc.toFixed(2) + "%</td><td style='width: 94px'>" + CashTotalAssets.toFixed(2) + "%</td> </tr >";
+            }
             $("#tblCash  tfoot").append(FootCashMarkup);
-            $('#holdingreportGridTable #MaintblTfoot').append("<tr><td style='width: 320px'>Total</td> <td style='width: 100px' ></td><td style='width: 163px' class='price'></td><td style='width: 100px'class='price'>" + (TotalCost + CashTotalCost) + "</td><td style='width: 150px' class='price'></td><td style='width: 195px' class='price'>" + (TotalMarketValue + CashTotalMarketValue) + "</td><td style='width: 60px' class='profit'>" + (TotalGainLoss + CashTotalGainLoss) + "</td><td style='width: 93px;text-align: right;' class='profit'>" + (TotalGLPerc + CashTotalGLPerc) + "%</td><td style='width: 100px'>" + (TotalAssets+CashTotalAssets) + "%</td> </tr >")
+            $('#holdingreportGridTable #MaintblTfoot').append("<tr><td style='width: 320px'>Total</td> <td style='width: 100px' ></td><td style='width: 253px' class='price'></td><td style='width: 100px'class='price'>" + (TotalCost + CashTotalCost).toFixed(2) + "</td><td style='width: 242px' class='price'></td><td style='width: 130px' class='price'>" + (TotalMarketValue + CashTotalMarketValue).toFixed(2) + "</td><td style='width: 141px;text-align: center;' class='profit'>" + (TotalGainLoss + CashTotalGainLoss).toFixed(2) + "</td><td style='width: 110px;' class='profit'>" + (TotalGLPerc + CashTotalGLPerc).toFixed(2) + "%</td><td style='width: 94px;'>" + (TotalAssets + CashTotalAssets).toFixed(2) + "%</td> </tr >")
             $('#Equity').css("display", "block")
             $('#Cash').css("display", "block")
 
