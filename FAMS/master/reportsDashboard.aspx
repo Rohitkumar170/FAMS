@@ -30,38 +30,48 @@
             width: 18.6%;
             display: inline-block;
             text-align: center;
-            background: #fbfcfd;
-            border: 1px solid #dedbdb;
-            border-radius: 4px;
+            border-right: 1px solid #eae6e6;
+            border-bottom: 1px solid #eae6e6;
             margin-bottom: 15px;
             padding: 15px 10px 10px;
             margin-right: 5px;
             margin-left: 5px;
             vertical-align: top;
-            height: 145px;
+            height: 68px;
             overflow: hidden;
         }
-
+            .portalBox:hover {
+            background: #f2f2f3;
+    box-shadow: 1px 1px 2px 1px #dfdfdf;
+            }
             .portalBox img {
-                width: 25%;
+                width: 13%;
+                display: inline-block;
+                float:left
             }
 
             .portalBox h5 {
-                font-size: 16px;
-                color: #20343f;
-                padding-top: 10px;
+               font-size: 16px;
+    color: #20343f;
+    padding-top: 0px;
+    display: inline-block;
+    float: left;
+    width: 87%;
+    text-align: left;
+    padding-left: 10px;
             }
-
+        .portalBox a{color:#fff}
         .noteBox {
-            background: #fbfcfd;
-            border-top: 1px solid #dedbdb;
-            border-radius: 0px;
-            margin-top: 15px;
-            padding: 15px 10px 10px;
-            box-shadow: 0px 1px 2px 1px #ddd;
-            font-family: Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
-            max-height: 310px;
-            overflow: auto;
+                background: #fbfcfd;
+    border-top: 1px solid #dedbdb;
+    border-radius: 0px;
+    margin-top: 15px;
+    padding: 15px 10px 10px;
+    box-shadow: 0px 1px 2px 1px #ddd;
+    font-family: Roboto,"Helvetica Neue",Arial,sans-serif,"Segoe UI Symbol" !important;
+    max-height: 386px;
+    overflow: auto;
+    min-height: 386px;
         }
 
             .noteBox h5 {
@@ -97,7 +107,7 @@
             .attachmentBtn i {
                 font-size: 15px;
                 font-weight: 600;
-                padding-right:4px;
+                padding-right: 4px;
             }
     </style>
     <script type="text/javascript">
@@ -106,16 +116,15 @@
         //}
         $(document).ready(function () {
             var IsDefaultPswdChange = jquery_1_11_3_min_p("#ContentPlaceHolder1_lblIsDefaultPswdChange").html();
-            if (IsDefaultPswdChange == "False")
-            {
+            if (IsDefaultPswdChange == "False") {
                 $("#changepasswordpop").modal('show');
             }
-        });  
+        });
     </script>
-  
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  <%--  <asp:Label ID="lblIsDefaultPswdChange" runat="server" style="display:none"></asp:Label>--%>
+    <%--  <asp:Label ID="lblIsDefaultPswdChange" runat="server" style="display:none"></asp:Label>--%>
     <div class="cardbody">
         <div class="row">
             <div class="allHtmlCode col-md-12 col-sm-12 col-xs-12">
@@ -134,41 +143,46 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 mt-3">
                 <div class=" col-md-12 col-sm-12 col-xs-12">
-                    <a id="anchorID" runat="server" href="../Reports/trialBalanceReport.aspx">
-                        <div class=" portalBox">
+
+                    <div class=" portalBox">
+                        <a id="anchorID" runat="server" href="../Reports/trialBalanceReport.aspx">
                             <img src="../Assets/image/trial_icon.png" />
                             <h5>Trial Balance Report</h5>
+                        </a>
+                    </div>
 
-                        </div>
-                    </a>
-                    <a href="../Reports/summaryReport.aspx">
-                        <div class="portalBox">
+
+                    <div class="portalBox">
+                        <a href="../Reports/summaryReport.aspx">
                             <img src="../Assets/image/summary_icon.png" />
                             <h5>Portfolio Performance Summary</h5>
+                        </a>
+                    </div>
 
-                        </div>
-                    </a>
-                    <a href="../Reports/holdingReport.aspx">
-                        <div class="portalBox">
+
+                    <div class="portalBox">
+                        <a href="../Reports/holdingReport.aspx">
                             <img src="../Assets/image/holding_icon.png" />
                             <h5>Holding Report</h5>
+                        </a>
+                    </div>
 
-                        </div>
-                    </a>
-                    <a href="../Reports/transactionStatement.aspx">
-                        <div class="portalBox">
+
+                    <div class="portalBox">
+                        <a href="../Reports/transactionStatement.aspx">
                             <img src="../Assets/image/transaction_icon.png" />
                             <h5>Transaction Statement</h5>
+                        </a>
+                    </div>
 
-                        </div>
-                    </a>
-                    <a href="../Reports/cashEquivalent.aspx">
-                        <div class="portalBox">
+
+                    <div class="portalBox">
+                        <a href="../Reports/cashEquivalent.aspx">
                             <img src="../Assets/image/cash_icon.png" />
                             <h5>Cash Equivalent</h5>
+                        </a>
+                    </div>
 
-                        </div>
-                    </a>
                 </div>
 
 
@@ -194,6 +208,6 @@
 
 
 
-     
-        <asp:Label ID="lblIsDefaultPswdChange" runat="server" Style="display: none"></asp:Label>
+
+    <asp:Label ID="lblIsDefaultPswdChange" runat="server" Style="display: none"></asp:Label>
 </asp:Content>

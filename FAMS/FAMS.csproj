@@ -152,8 +152,10 @@
     <Content Include="master\reportNew.aspx" />
     <Content Include="master\sectorsMaster.aspx" />
     <Content Include="master\securities.aspx" />
+    <Content Include="master\securityCustomerReport.aspx" />
     <Content Include="master\stateMaster.aspx" />
     <Content Include="master\TBStructure.aspx" />
+    <Content Include="master\userSetup.aspx" />
     <Content Include="Reports\cashEquivalent.aspx" />
     <Content Include="Reports\holdingReport.aspx" />
     <Content Include="Reports\PSMtrialBalanceReport.aspx" />
@@ -2287,6 +2289,13 @@
     <Compile Include="master\securities.aspx.designer.cs">
       <DependentUpon>securities.aspx</DependentUpon>
     </Compile>
+    <Compile Include="master\securityCustomerReport.aspx.cs">
+      <DependentUpon>securityCustomerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\securityCustomerReport.aspx.designer.cs">
+      <DependentUpon>securityCustomerReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="master\stateMaster.aspx.cs">
       <DependentUpon>stateMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2300,6 +2309,13 @@
     </Compile>
     <Compile Include="master\TBStructure.aspx.designer.cs">
       <DependentUpon>TBStructure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master\userSetup.aspx.cs">
+      <DependentUpon>userSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\userSetup.aspx.designer.cs">
+      <DependentUpon>userSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CommonFlag.cs" />
     <Compile Include="Models\CustomerClasses\Bindbankcust.cs" />

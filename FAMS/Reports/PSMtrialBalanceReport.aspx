@@ -56,11 +56,11 @@
                     <div class="legal col-md-3 col-sm-3 col-xs-12">
                         Trial Balance
                     </div>
-                    <div class="btncon col-md-9 col-sm-9 col-xs-12">
+                    <%--<div class="btncon col-md-9 col-sm-9 col-xs-12">
                         <div class="btnpannel">
                             <button type="button" class="btn btn-sm btnconinsideBtn" id="btnBack"><i class="fa fa fa-home" aria-hidden="true"></i> Home</button>
                         </div>
-                    </div>
+                    </div>--%>
                 </div>
 
 
@@ -162,7 +162,7 @@
                             <div class="pull-right">
                              <button type="button" class="btn btn-sm btnconinsideBtn" id="txtpreday"> Previous day</button>
                             <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek"> Last one week</button>
-                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks"> One month</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks">Last One Month</button>
                                 </div>
                         
                     </div>
