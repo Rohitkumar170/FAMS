@@ -28,7 +28,6 @@
               }
 
 
-
 	        jquery_1_11_3_min_p.ajax({
 		        type: "POST",
 		        contentType: "application/json; charset=utf-8",
