@@ -157,7 +157,7 @@
                     </div>
                     </div>
                     <div id="reportGrid">
-                        <table class="bankmasterTable" id="reportTable" style="display:none">
+                        <table class="bankmasterTable" >
                             <thead>
                                 <tr>
 
@@ -166,7 +166,7 @@
 
                                 </tr>
                             </thead>
-                            <tbody class="scrollbar">
+                            <tbody class="scrollbar" id="reportTable" style="display:none">
                                 <tr>
 
 
