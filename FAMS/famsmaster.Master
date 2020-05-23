@@ -397,7 +397,6 @@
     <form id="form1">
         <div>
 
-
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-2 col-sm-2 col-xs-2 p-0 logonav">
@@ -446,7 +445,11 @@
                     </div>
                     
 
+
 <div class="home"><i class="fa fa fa-home" aria-hidden="true"></i></div>
+
+<a href="../master/reportsDashboard.aspx"><div class="home" id="BtnHome" runat="server"><i class="fa fa fa-home" aria-hidden="true"></i></div></a>
+
            <div class="shownotification"><i class="fa fa-bell bellicon" aria-hidden="true"></i>
                                <%-- <div id="divnotificationcircle" class="notificationcircle">
                                     <p id="lblcountnotification">

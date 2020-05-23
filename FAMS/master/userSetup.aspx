@@ -3,6 +3,7 @@
 
 
 
+
          <script>     var jquery_1_11_3_min_p = jQuery.noConflict();</script>
     <script src="../js/bootstrap.min.js" type="text/javascript"></script>
     <script>        var bootstrap_min_js = jQuery.noConflict();</script>
@@ -456,4 +457,8 @@
 </div>
             </div>
          </div>
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
 </asp:Content>

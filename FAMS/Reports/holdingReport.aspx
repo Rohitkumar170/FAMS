@@ -39,6 +39,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+ <input type="hidden" id="CustAcc" runat="server" />
     <div class="cardbody">
         <div class="row">
             <div class="allHtmlCode col-md-12 col-sm-12 col-xs-12">
@@ -63,18 +64,30 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
+                                   <div class="col-md-3 col-xs-12 col-sm-4 pr-0" id="divDropdown" runat="server">
+
+                                    <label class="col-md-4 col-xs-12 col-sm-3 p-0">Customer Name:</label>
+
+                                   <select class="dropdown col-sm-12 col-md-7 col-xs-12"  id="ddlCustomer">
+                                                                        <option>Select</option>
+                <option value="Cust_000001">Customer 1</option>
+                <option value="Cust_000002">Customer 2</option> 
+                                                                       
+                                                                    </select>
+
+                                </div>
+                                <div class="col-md-3 col-xs-12 col-sm-4 pr-0">
                                     <label class="col-md-3 col-xs-12 col-sm-3 p-0">Select Date:</label>
 
                                     <input type="text" id="fromdate" name="" class="col-md-7 col-xs-12 col-sm-7" placeholder=" " />
 
                                 </div>
-                                <div class="col-md-4 col-xs-12 col-sm-4" style="display:none">
+                                <div class="col-md-3 col-xs-12 col-sm-4" style="display:none">
                                     <label class="col-md-3 col-xs-12 col-sm-3 p-0">To Date:</label>
 
                                     <input type="text" id="todate" class="col-md-7 col-xs-12 col-sm-7" placeholder=" " />
                                 </div>
-                                <div class="col-md-4 col-xs-12 col-sm-4 pr-0">
+                                <div class="col-md-3 col-xs-12 col-sm-4 pr-0">
                                     <button type="button" id="btnsearch" class="btn btn-sm btnconinsideBtn">Search</button>
                                 </div>
 

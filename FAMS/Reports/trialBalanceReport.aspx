@@ -155,7 +155,7 @@
                                         <table>
                                             <tbody>
                                             <tr>
-                                    <td width="300px">Receivable-KOTAK-Shares-Listed</td>
+                                    <td width="300px">Receivable-HDFC-Shares-Listed</td>
                                     <td class="text-center" style="width: 150px" id="tdCAOBDebit"></td>
                                     <td class="text-center" style="width: 150px" id="tdCAOBCredit"></td>
                                     <td class="text-center" style="width: 150px" id="tdCATransDebit"></td>
@@ -186,7 +186,7 @@
                                         <table>
                                             <tbody>
                                             <tr>
-                                    <td width="300px">Receivable-KOTAK-Shares-Listed</td>
+                                    <td width="300px">Receivable-HDFC-Shares-Listed</td>
                                     <td class="text-center" style="width: 150px" id="tdCA2OBDebit"></td>
                                     <td class="text-center" style="width: 150px" id="tdCA2OBCredit"></td>
                                     <td class="text-center" style="width: 150px" id="tdCA2TransDebit"></td>
@@ -364,7 +364,7 @@
                                         <table>
                                             <tbody>
                                             <tr>
-                                    <td width="300px">Payable-KOTAK-Shares-Listed</td>
+                                    <td width="300px">Payable-HDFC-Shares-Listed</td>
                                     <td class="text-center" style="width: 150px" id="Lia1ODebit"></td>
                                     <td class="text-center" style="width: 150px" id="Lia1OCredit"></td>
                                     <td class="text-center" style="width: 150px" id="Lia1TDebit"></td>

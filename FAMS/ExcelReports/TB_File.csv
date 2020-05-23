@@ -1,12 +1,12 @@
 XYZ Financials,,,,,,,,
 TRIAL BALANCE,,,,,,,,
-From 09/04/2020 To 10/04/2020,,,,,,,,
+,,,,,,,,
 Account : 100001     Test,,,,,,,,
 Account,,,Opening Balance,,Transaction During Period,,Closing Balance,
 ,,,Debit,Credit,Debit,Credit,Debit,Credit
 Assets,,,,,,,,
 ,Current Assets,,,,,,,
-,,Receivable-KOTAK-Shares-Listed,"83,65,964.22",0,0,"83,65,964.22",0,0
+,,Receivable-HDFC-Shares-Listed,"83,65,964.22",0,0,"83,65,964.22",0,0
 ,,Bank balance-DUMMY-100345,"3,33,372.14",0,"13,59,850.62",0,"16,93,222.76",0
 ,Investment,,,,,,,
 ,,Shares-Listed,"2,23,32,378.02",0,"66,35,773.48",0,"2,89,68,151.51",0
@@ -24,14 +24,14 @@ Liabilities,,,,,,,,
 ,Capital,,,,,,,
 ,,Corpus,0,"2,30,00,000.00",0,0,0,"2,30,00,000.00"
 ,Current Liabilities,,,,,,,
-,,Payable-KOTAK-Shares-Listed,0,"85,68,717.73","85,68,717.73",0,0,0
+,,Payable-HDFC-Shares-Listed,0,"85,68,717.73","85,68,717.73",0,0,0
 ,,Management Fees,0,"1,12,087.57","1,12,087.57",0,0,0
 ,,Sec. Tran. Tax,0,"16,934.41","16,934.41",0,0,0
 ,,Total,"3,27,05,708.98","3,27,05,708.98","1,72,36,492.95","1,72,36,492.95","3,28,78,498.00","3,28,78,498.00"
-Lighthouse Financials,,,,,,,,
+XYZ Financials,,,,,,,,
 TRIAL BALANCE,,,,,,,,
-From 01/04/2014 To 30/11/2014,,,,,,,,
-Account : 100345     Milind  Goyal,,,,,,,,
+From 09/04/2020 To 10/04/2020,,,,,,,,
+Account : 100001     Test,,,,,,,,
 Account,,,Opening Balance,,Transaction During Period,,Closing Balance,
 ,,,Debit,Credit,Debit,Credit,Debit,Credit
 ,Unrealized Gain\Loss,,,,,,,
