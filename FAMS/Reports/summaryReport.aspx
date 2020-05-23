@@ -138,7 +138,7 @@
                             <div class="pull-right">
                              <button type="button" class="btn btn-sm btnconinsideBtn" id="btnYesterday">Previous Day</button>
                             <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLastWeek"> Last One Week</button>
-                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks">One Month</button>
+                            <button type="button" class="btn btn-sm btnconinsideBtn" id="btnLast2Weeks">Last One Month</button>
                                 </div>
                         
                     </div>

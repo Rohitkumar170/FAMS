@@ -1468,7 +1468,7 @@ tfoot {
 }
 
     tfoot tr {
-        border-top: 2px solid #0a2e40;
+        border-top: 1px solid #b2b9bd;
     }
     tfoot tr td {
     font-size:13px; font-weight:bolder}

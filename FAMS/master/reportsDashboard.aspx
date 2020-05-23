@@ -51,12 +51,14 @@
             }
 
             .portalBox h5 {
-                font-size: 16px;
+               font-size: 16px;
     color: #20343f;
     padding-top: 0px;
     display: inline-block;
     float: left;
     width: 87%;
+    text-align: left;
+    padding-left: 10px;
             }
         .portalBox a{color:#fff}
         .noteBox {
