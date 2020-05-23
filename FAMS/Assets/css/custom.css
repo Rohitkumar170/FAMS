@@ -1472,3 +1472,7 @@ tfoot {
     }
     tfoot tr td {
     font-size:13px; font-weight:bolder}
+.price {
+    text-align: right !important;
+    padding-right: 10px !important
+}

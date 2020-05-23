@@ -527,15 +527,20 @@
                                     <a href="../master/Dashboard.aspx"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Dashboard</a>
 
                                 </li>
+                                <li>
+                                    <a href="../master/userSetup.aspx"><i class="fa fa-angle-double-right" aria-hidden="true"></i>User Setup</a>
 
+                                </li>
                                 <li class="reports" id="UserMasterli"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Reports </a>
                                     <ul class=" submenudropdownone">
 
-                                        <li><a href="  ../master/reportNew.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Report</a></li>
+                                        <li><a href="  ../master/reportNew.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Trial Balance Report</a></li>
+                                         <li><a href="  ../master/securityCustomerReport.aspx" target="_self"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Security-Customer Report</a></li>
+                                       
                                         <%--<li><a href="../master/legalField.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Legal Fields</a></li>--%>
                                     </ul>
 
-
+                                    
                                 </li>
                                 <li class="adminastator"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Administrator </a>
                                     <ul class=" submenudropdown">
