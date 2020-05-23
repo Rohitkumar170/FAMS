@@ -91,7 +91,15 @@ function BindGrid() {
 
     var TxtFromDate = $('#fromdate').val();
     var TxtToDate = $('#todate').val();
-    var CustomerAccount = $('#SPAccountNo').text();
+    var CustomerAccount = '';
+    //$('#ContentPlaceHolder1_lblFromDate').text($('#fromdate').val());
+    //$('#ContentPlaceHolder1_lblToDate').text($('#fromdate').val());
+    if ($('#ContentPlaceHolder1_CustAcc').val() == 'Cust_000134') {
+        CustomerAccount = $('#ddlCustomer option:selected').val();
+    }
+    else {
+        CustomerAccount = $('#SPAccountNo').text();
+    }
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",

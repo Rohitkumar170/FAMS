@@ -13,6 +13,24 @@ namespace FAMS.Reports {
     public partial class summaryReport {
         
         /// <summary>
+        /// CustAcc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden CustAcc;
+        
+        /// <summary>
+        /// divDropdown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDropdown;
+        
+        /// <summary>
         /// hdnFromDate control.
         /// </summary>
         /// <remarks>

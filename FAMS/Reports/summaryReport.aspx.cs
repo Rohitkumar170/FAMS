@@ -22,7 +22,16 @@ namespace FAMS.Reports
         string todate = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Convert.ToString(Session["AccountNo"]) == "Cust_000134")
+            {
+                divDropdown.Visible = true;
+                CustAcc.Value = Session["AccountNo"].ToString();
+            }
+            else
+            {
+                divDropdown.Visible = false;
+                CustAcc.Value = Session["AccountNo"].ToString();
+            }
         }
         protected void btnPdf_Click(object sender, EventArgs e)
         {

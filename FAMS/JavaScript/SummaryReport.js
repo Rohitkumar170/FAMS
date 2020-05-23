@@ -97,10 +97,15 @@ function BindGrid() {
     var TxtToDate = $('#todate').val();
     $('#ContentPlaceHolder1_hdnFromDate').val(TxtFromDate);
     $('#ContentPlaceHolder1_hdnToDate').val(TxtToDate);
-
+    var CustomerAccount = '';
     //$('#ContentPlaceHolder1_lblFromDate').text($('#fromdate').val());
     //$('#ContentPlaceHolder1_lblToDate').text($('#fromdate').val());
-    var CustomerAccount = $('#SPAccountNo').text();
+    if ($('#ContentPlaceHolder1_CustAcc').val() == 'Cust_000134') {
+        CustomerAccount = $('#ddlCustomer option:selected').val();
+    }
+    else {
+        CustomerAccount =  $('#SPAccountNo').text();
+    }
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
