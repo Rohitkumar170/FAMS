@@ -548,15 +548,15 @@
                     
           <li class="master"><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Master </a>
                             <ul class="submenudropdowntwo">
-               <li><a href="../master/countryMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Country</a></li>
-            <li><a href="../master/stateMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> State</a></li>
-                                <li><a href="../master/cityMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> City</a></li>
-                                <li><a href="../master/sectorsMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Sector</a></li>
-                                <li><a href="../master/designationMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Designation</a></li>
+               <li  id="LiCountry" runat="server"><a href="../master/countryMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Country</a></li>
+            <li  id="LiState" runat="server"><a href="../master/stateMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> State</a></li>
+                                <li  id="LiCity" runat="server"><a href="../master/cityMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> City</a></li>
+                                <li  id="LiSector" runat="server"><a href="../master/sectorsMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Sector</a></li>
+                                <li  id="LiDesg" runat="server"><a href="../master/designationMaster.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Designation</a></li>
                                 <li><a href="../master/custodian.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Custodian</a></li>
               <li><a href="../master/securities.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> Securities</a></li>
-                                <li><a href="../master/TBStructure.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> TB Structure</a></li>
-                                <li><a href="../master/PMSProvider.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Provider</a></li>
+                                <li  id="LiTBStruct" runat="server"><a href="../master/TBStructure.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> TB Structure</a></li>
+                                <li  id="LiPMSProvider" runat="server"><a href="../master/PMSProvider.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Provider</a></li>
                                 <li><a href="../master/PMSCustomers.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Customers List</a></li>
                                 <li><a href="../master/PMSEmployees.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> PMS Employees</a></li>
                <li><a href="../master/allCustomers.aspx" target="_self" ><i class="fa fa-angle-double-right" aria-hidden="true"></i> All Customers</a></li>

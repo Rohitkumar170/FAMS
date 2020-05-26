@@ -22,6 +22,27 @@ namespace FAMS
             {
                 BtnHome.Visible = true;
             }
+            if (Convert.ToString(Session["AccountNo"]) == "Cust_000005")
+            {
+                LiCountry.Visible = false;
+                LiState.Visible = false;
+                LiCity.Visible = false;
+                LiSector.Visible = false;
+                LiDesg.Visible = false;
+                LiTBStruct.Visible = false;
+                LiPMSProvider.Visible = false;
+
+            }
+            else
+            {
+                LiCountry.Visible = true;
+                LiState.Visible = true;
+                LiCity.Visible = true;
+                LiSector.Visible = true;
+                LiDesg.Visible = true;
+                LiTBStruct.Visible = true;
+                LiPMSProvider.Visible = true;
+            }
             if (!Page.IsPostBack)
             {
                 if (System.Web.HttpContext.Current.Session["UserId"] != null)
